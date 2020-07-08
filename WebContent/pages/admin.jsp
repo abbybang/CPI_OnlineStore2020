@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,49 +14,70 @@
 </head>
 <body>
 	<div class="container">
-  <h2>Table</h2>
-  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                      
-  <div class="table-responsive">          
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Product Name</th>
-        <th>Description</th>
-        <th>Age</th>
-        <th>City</th>
-        <th>Country</th>
-      </tr>
-    </thead>
-    <tbody>
-        <c:forEach  var="list" items="${productList}">
-			<tr>
-				<td class="Id">
-					<div class="Id-div">
-						${list.productId}
-					</div>
-				</td>
-				<td class="name">
-					<div class="name-div">
-						${list.productName}
-					</div>
-				</td>
-				
-				<td class="price">
-					<div class="price-div">
-						${list.price}
-					</div>
-				</td>
-				<td class="stocks">
-					<div class="stocks-div">
-						${list.stocks}
-					</div>
-				</td>
-			</tr>
-		</c:forEach>
-    </tbody>
-  </table>
-  </div>
-</div>
+		<div class="table-responsive">          
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<div class="custom-control custom-checkbox">
+  								<input type="checkbox" class="custom-control-input" id="th-checkbox" checked>
+							</div>
+						</th>
+						<th>ID</th>
+						<th>Product Name</th>
+						<th>Stock</th>
+						<th>Price</th>
+						<th>Brand</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+			<tbody>
+				<c:forEach  var="list" items="${productList}">
+					<tr>
+						<td>
+							<div class="custom-control custom-checkbox">
+  								<input type="checkbox" class="custom-control-input" id="th-checkbox" checked>
+							</div>
+						</td>
+						<td class="productId">
+							<div class="productId-div">
+								${list.productId}
+							</div>
+						</td>
+						<td class="productName">
+							<div class="productName-div">
+								${list.productName}
+							</div>
+						</td>
+						<td class="stock">
+							<div class="stock-div">
+								${list.stock}
+							</div>
+						</td>
+							<td class="price">
+								<div class="price-div">
+									${list.price}
+								</div>
+							</td>
+						</tr>
+						</td>
+							<td class="brand">
+								<div class="brand-div">
+									${list.brand}
+								</div>
+							</td>
+						</tr>
+						</td>
+							<td class="description">
+								<div class="description-div">
+									${list.description}
+								</div>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
 </html>

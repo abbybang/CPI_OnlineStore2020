@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.ProductsMapper">
+	<resultMap type="ph.com.cpi.onlinestore2020.model.Product" id="productListMap">
+		<result property="productId"	column="PRODUCTID"/>
+		<result property="productName"	column="PRODUCT_NAME"/>
+		<result property="brand"		column="BRAND"/>
+		<result property="price"		column="PRICE"/>
+		<result property="stock"		column="STOCK"/>
+		<result property="description"		column="DESCRIPTION"/>
+	</resultMap>
+	
+	<select id="getProductList" resultMap="productListMap">
+		SELECT PRODUCTID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION FROM PRODUCT
+	</select>
+</mapper>
