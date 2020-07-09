@@ -18,12 +18,12 @@
   
   <servlet-mapping>
   	<servlet-name>OnlineStoreController</servlet-name>
-  	<url-pattern>/Homepage1</url-pattern>
+  	<url-pattern>/Homepage</url-pattern>
   </servlet-mapping>
 
  <welcome-file-list>
  	<welcome-file>products</welcome-file>
-    <welcome-file>Homepage1</welcome-file>
+    <welcome-file>Homepage</welcome-file>
   </welcome-file-list>
 
 
