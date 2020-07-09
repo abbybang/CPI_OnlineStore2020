@@ -2,17 +2,36 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.ProductsMapper">
+<mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.ProductMapper">
 	<resultMap type="ph.com.cpi.onlinestore2020.model.Product" id="productListMap">
-		<result property="productId"	column="PRODUCTID"/>
+		<result property="productId"	column="PRODUCT_ID"/>
 		<result property="productName"	column="PRODUCT_NAME"/>
 		<result property="brand"		column="BRAND"/>
 		<result property="price"		column="PRICE"/>
 		<result property="stock"		column="STOCK"/>
-		<result property="description"		column="DESCRIPTION"/>
+		<result property="description"	column="DESCRIPTION"/>
 	</resultMap>
 	
 	<select id="getProductList" resultMap="productListMap">
-		SELECT PRODUCTID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION FROM PRODUCT
+		SELECT PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION FROM PRODUCT
 	</select>
+	
+	<update id="addProduct">
+		INSERT INTO PRODUCT(PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION)
+		VALUES(#{productId}, #{productName}, #{brand}, #{price}, #{stock}, #{description})
+	</update>
+	
+	<update id="updateProduct">
+		UPDATE PRODUCT
+		   SET PRODUCT_NAME = #{productName}, 
+				      BRAND = #{brand}, 
+				      PRICE = #{price}, 
+				      STOCK = #{stock}, 
+		        DESCRIPTION = #{description}
+		 WHERE PRODUCT_ID = #{productId}
+	</update>
+	
+	<update id="deleteProduct">
+		DELETE FROM PRODUCT WHERE PRODUCT_ID = #{productId}
+	</update>
 </mapper>
