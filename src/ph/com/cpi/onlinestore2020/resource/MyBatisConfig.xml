@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
-<configuration>
+<configuration>	
+
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
@@ -14,6 +17,8 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="ph/com/cpi/onlinestore2020/resource/mappers/ProductMapper.xml"/>
+        <mapper resource="ph/com/cpi/onlinestore2020/resource/mappers/ProductMapper.xml"/>
+		<mapper resource="ph/com/cpi/onlinestore2020/resource/mappers/LoginMapper.xml" />
 	</mappers>
+
 </configuration>
