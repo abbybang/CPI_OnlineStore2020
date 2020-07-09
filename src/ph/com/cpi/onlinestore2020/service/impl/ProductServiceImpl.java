@@ -63,4 +63,9 @@ public class ProductServiceImpl implements ProductService{
 		List<Product> students = productList.getProductList();
 		return students;
 	}
+
+	public Object getHomePageList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

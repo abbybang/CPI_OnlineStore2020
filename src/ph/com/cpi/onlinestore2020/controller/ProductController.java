@@ -14,6 +14,10 @@ import ph.com.cpi.onlinestore2020.service.ProductService;
 import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
 
 public class ProductController extends HttpServlet{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ProductServiceImpl productList = new ProductServiceImpl();
 	RequestDispatcher rd = null;
 	

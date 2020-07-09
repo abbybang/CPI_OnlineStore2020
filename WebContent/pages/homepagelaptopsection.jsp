@@ -6,10 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>LAPTOPS CATEGORY</title>
+<title>PRODUCTS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 <link rel="stylesheet" href= "css/HomePageCss/hoverpageselection.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -18,88 +21,67 @@
 <!-- Work Section -->
 <div class="ish-container" style="padding:0px 16px" id="work">
   <h3 class="ish-center">LAPTOPS DEALS</h3>
-  <p class="ish-center ish-small`"></p>
-  
-
-  <div class="ish-row-padding" style="margin-top:40px">
-  <div class="ish-col l3 m6">
-  
-  <div class="container">
-  <img src="homeimages/apple.jpg" alt="Avatar"  class="image" style="width:100%">
-  <div class="middle">
-  <button id="view" class="buttonhoverselection">VIEW</button>
-  </div>
-  </div>
-  </div>
-
-  
-   <div class="ish-col l3 m6">
-   <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="Ultra Thin">
-   <div class="middle">
-   <button id="view" class="buttonhoverselection">VIEW</button>
-   </div>
-    </div>
-    </div>
-    
-    <div class="ish-col l3 m6">
-    <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="Covertible">
-     <div class="middle">
-    <button id="view" class="buttonhoverselection">VIEW</button>
-     </div>
-    </div>
-    </div>
-    
-    <div class="ish-col l3 m6">
-    <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="Detachable">
-     <div class="middle">
-    <button id="view" class="buttonhoverselection">VIEW</button>
-     </div>
-    </div>
-  </div>
- </div>
  
-  <div class="ish-row-padding ish-section">
-    <div class="ish-col l3 m6">
-    <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="Chromebook">
-     <div class="middle">
-     <button id="view" class="buttonhoverselection">VIEW</button>
-     </div>
-    </div>
-    </div>
-    
-    <div class="ish-col l3 m6">
-    <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="Classic">
-     <div class="middle">
-     <button id="view" class="buttonhoverselection">VIEW</button>
-     </div>
-    </div>
-    </div>
-    
-    <div class="ish-col l3 m6">
-    <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="A typewriter">
-      <div class="middle">
-     <button id="view" class="buttonhoverselection">VIEW</button>
-     </div>
-     </div>
-     </div>
-     
-    <div class="ish-col l3 m6">
-    <div class="container">
-      <img src="homeimages/apple.jpg" style="width:100%" onclick="onClick(this)" class="ish-hover-opacity" alt="A tableturner">
-     <div class="middle">
-     <button id="view" class="buttonhoverselection">VIEW</button>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-
+<div class="container" class="container" >          
+  <table class="table table-bordered">
+ <thead>
+					<tr>
+					    <th>
+						</th>
+						<th>ID</th>
+						<th>Product Name</th>
+						<th>Stock</th>
+						<th>Price</th>
+						<th>Brand</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+			<tbody>
+				<c:forEach  var="list" items="${homepageList}">
+					<tr>
+					    <td class="productId">
+							<div class="productId-div">
+								<button id="add">VIEW</button>
+							</div>
+						</td>
+					
+						<td class="productId">
+							<div class="productId-div">
+								${list.productId}
+							</div>
+						</td>
+						<td class="productName">
+							<div class="productName-div">
+								${list.productName}
+							</div>
+						</td>
+						<td class="stock">
+							<div class="stock-div">
+								${list.stock}
+							</div>
+						</td>
+						<td class="price">
+							<div class="price-div">
+								${list.price}
+							</div>
+						</td>
+						<td class="brand">
+							<div class="brand-div">
+								${list.brand}
+							</div>
+						</td>
+						<td class="description">
+							<div class="description-div">
+								${list.description}
+							</div>
+						</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+  
 
 </body>
 </html>
