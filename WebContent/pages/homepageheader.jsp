@@ -17,10 +17,13 @@
 
 <!-- Header with full-height image -->
 <header>
+
+
 <div class="ish-content ish-display-container ish-grayscale-min" id="home">
   <img class="mySlides" src="homeimages/apple.jpg" style="width:100%">
   <img class="mySlides" src="homeimages/mac2.jpg" style="width:100%">
   <img class="mySlides" src="homeimages/mac3.jpg" style="width:100%">
+
 
 
   <button class="ish-button ish-black ish-display-left" onclick="plusDivs(-1)">&#10094;</button>
@@ -30,20 +33,14 @@
 
 
 
-<!--   <div class="ish-display-topmiddle ish-text-white" style="padding:48px">
+  <div class="ish-display-middle ish-text-white" style="padding:48px">
     <span class="ish-jumbo ish-hide-small">48 HOURS SALES</span><br>
-    <span class="ish-xxlarge ish-hide-large ish-hide-medium">Start something that matters</span><br>
-    <span class="ish-large">Stop wasting valuable time with projects that just isn't you.</span>
+    <span class="ish-xxlarge ish-hide-large ish-hide-medium">BIG SAVINGS!</span><br>
+    <span class="ish-large">Cyber Savings deals are live. Save on our most exceptional tech, up to $400 off.
+Plus, get 12 months financing on purchases $699+ and up to 6% back in rewards.
+Questions? Call 1-855-972-8226 or Click to Chat.</span>
     <p><a href="#about" class="ish-button ish-white ish-padding-large ish-large ish-margin-top ish-opacity ish-hover-opacity-off">Learn more and start today</a></p>
   </div> 
-  <div class="ish-display-bottomleft ish-text-grey ish-large" style="padding:24px 48px">
-    <i class="fa fa-facebook-official ish-hover-opacity"></i>
-    <i class="fa fa-instagram ish-hover-opacity"></i>
-    <i class="fa fa-snapchat ish-hover-opacity"></i>
-    <i class="fa fa-pinterest-p ish-hover-opacity"></i>
-    <i class="fa fa-twitter ish-hover-opacity"></i>
-    <i class="fa fa-linkedin ish-hover-opacity"></i> 
-  </div>-->
 
 
 

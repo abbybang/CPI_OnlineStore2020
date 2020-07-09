@@ -26,7 +26,7 @@
       <a href="#laptops" class="ish-bar-item ish-button  ish-text-white"> LAPTOPS</a>
       <a href="#contact" class="ish-bar-item ish-button  ish-text-white">CONTACT</a>
       <a href="#signin" class="ish-bar-item ish-button  ish-text-white"> SIGNIN</a>
-
+      
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 

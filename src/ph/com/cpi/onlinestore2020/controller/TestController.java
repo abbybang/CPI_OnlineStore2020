@@ -1,6 +1,8 @@
 package ph.com.cpi.onlinestore2020.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,8 +29,20 @@ public class TestController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at this is a change: ").append(request.getContextPath());
+		RequestDispatcher requestDispatcher = null;
+		String page = "";
+		try {
+			page = "/pages/Homepage.jsp";
+		}catch(Exception e) {
+			e.printStackTrace();
+			page = "/pages/error/error.jsp";
+		}
+		
+		requestDispatcher = request.getRequestDispatcher(page);
+		requestDispatcher.forward(request, response);
 	}
+
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -36,6 +50,11 @@ public class TestController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+
+		
 	}
+	
+	
 
 }

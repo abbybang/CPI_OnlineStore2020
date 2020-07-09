@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <jsp:include page="/pages/homepagenav.jsp"/>
 <jsp:include page="/pages/homepageheader.jsp"/>
-
+<jsp:include page="/pages/homepagelaptopsection.jsp"/>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -21,9 +21,11 @@ body, html {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("homeimages/apple.jpg");
+  background-image: url("homeimages/head.jpg");
   min-height: 100%;
 }
+
+
 
 .ish-bar .ish-button {
   padding: 16px;
