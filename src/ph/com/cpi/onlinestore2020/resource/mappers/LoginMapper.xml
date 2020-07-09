@@ -7,7 +7,7 @@
 
 <mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.LoginMapper">
 	<resultMap type="ph.com.cpi.onlinestore2020.model.User" id="userMap">
-		<result property="userId" column="USERID" />
+		<result property="userId" column="USER_ID" />
 		<result property="fname" column="FIRST_NAME" />
 		<result property="lname" column="LAST_NAME" />
 		<result property="email" column="EMAIL" />

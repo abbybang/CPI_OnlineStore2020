@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -30,11 +29,11 @@ public class LoginDAOimpl implements LoginDAO {
 	}
 	
 	@Override
-	public List<User> getUserDetails(HashMap<String, Object> params) throws SQLException {
-		List<User> user = null;
+	public User getUserDetails(HashMap<String, Object> params) throws SQLException {
+		User user = null;
 		
 		try(SqlSession session = sqlSessionFactory.openSession()){
-			user = session.selectList("getUser", params);
+			user = session.selectOne("getUser", params);
 		}
 		
 		return user;

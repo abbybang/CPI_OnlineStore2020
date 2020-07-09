@@ -7,26 +7,32 @@
 <jsp:include page="/pages/header.jsp" />
 <body>
 	<div id="loginContainer">
-	<h1>${msg}</h1>
-		<form>
+		<div id="loginInfo">
+			<img src='${pageContext.request.contextPath}/pages/loginpage/images/login-logo-img.jpg' alt='login-logo-img.jpg'>
+			<h1>LAPTOP FACTORY</h1>
+			<h3>Laptop for <span>GAMERS</span></h3>
+		</div>
+		<form id="loginForm">
 			<div>
-				<label for="username">Username: </label><input type="text" name="username" id="username">
+				<input type="text" name="username" id="username" placeholder="Username">
 			</div>
 			<div>
-				<label for="password">Password: </label><input type="password" name="password" id="password">
-			</div>
-			<div>
+				<input type="password" name="password" id="password" placeholder="Password">
+			</div>	
+			<div>	
 				<input type="button" id="loginBtn" value="Continue">
 			</div>
 		</form>
 	</div>
+	<jsp:include page="/pages/footer.jsp" />
+	<input type="hidden" value="${errMsg}" id="errMsg">
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#loginBtn").bind( "click", function(){
 			var username = $("#username").val();
 			var password = $("#password").val();
-			userLogin( username, password );
+			loginValidation( username, password );
 		});
 	});
 </script>
