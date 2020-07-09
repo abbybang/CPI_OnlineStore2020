@@ -13,6 +13,7 @@ import ph.com.cpi.onlinestore2020.service.ProductService;
 public class ProductServiceImpl implements ProductService{
 	ProductDao productList = new ProductDaoImpl();
 	
+	Integer productId = 0;
 	//GET PRODUCT LIST
 	@Override
 	public List<Product> getProductList() throws SQLException{
@@ -63,4 +64,12 @@ public class ProductServiceImpl implements ProductService{
 		List<Product> students = productList.getProductList();
 		return students;
 	}
+	
+	//GET PRODUCT LIST ID
+		@Override
+	public List<Product> getProductInfo(Integer productId) throws SQLException{
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put(  "productId", productId  );
+		return productList.getProductInfo(params);
+		}
 }

@@ -18,7 +18,7 @@ public class ProductController extends HttpServlet{
 	RequestDispatcher rd = null;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-		String page = "pages/admin.jsp";
+		String page = "pages/viewProduct/ShowProduct.jsp";
 		
 		try {
 			request.setAttribute("productList", productList.getProductList());
