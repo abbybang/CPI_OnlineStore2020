@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <jsp:include page="/pages/Homepagemain/homepagenav.jsp"/>
 <jsp:include page="/pages/Homepagemain/homepageheader.jsp"/>
+<jsp:include page="/pages/Homepagemain/homepageaboutus.jsp"/>
 <jsp:include page="/pages/Homepagemain/homepagelaptopsection.jsp"/>
+
 <link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script> 
