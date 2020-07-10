@@ -82,22 +82,21 @@
 				</tr>	<!-- Dummy row -->
 			</tbody>
 		</table>
-		<button type="button">CHECKOUT</button>
 	</div>
 	<div id="summaryDiv">
 		<p>ORDER SUMMARY:</p>
 		<table border="1">
 			<thead>
 				<tr>
-					<td colspan="3">1 PRODUCT</td>
+					<th colspan="3">1 PRODUCT</th>
+				</tr>
+				<tr>
+					<th>Name</th>	<!-- Product name here -->
+					<th>Quantity</th>	<!-- Order quantity here -->
+					<th>Subtotal</th>	<!-- Product order subtotal here -->
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Name</td>	<!-- Product name here -->
-					<td>Quantity</td>	<!-- Order quantity here -->
-					<td>Subtotal</td>	<!-- Product order subtotal here -->
-				</tr>
 				<tr>
 					<td>Sample Product Name</td>	<!-- Product name here -->
 					<td>3</td>	<!-- Order quantity here -->
