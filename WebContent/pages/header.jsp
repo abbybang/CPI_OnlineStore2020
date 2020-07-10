@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/third-party/font-awesome/css/font-awesome.css">
