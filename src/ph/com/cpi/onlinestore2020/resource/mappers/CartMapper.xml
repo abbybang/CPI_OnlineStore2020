@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.CarttMapper">
+	<resultMap type="ph.com.cpi.onlinestore2020.model.Cart" id="cartItemsMap">
+		<result property="customerId" column="USER_ID"/>
+		<result property="productId" column="PRODUCT_ID"/>
+		<result property="productName" column="PRODUCT_NAME"/>
+		<result property="price" column="PRICE"/>
+		<result property="quantity" column="QUANTITY"/>
+	</resultMap>
+	
+	<select id="getCartItems" resultMap="cartItemsMap">
+		SELECT 
+		       C.USER_ID,
+		       C.PRODUCT_ID,
+		       P.PRODUCT_NAME,
+		       C.PRICE,
+		       C.QUANTITY
+		  FROM PRODUCT P, CART C
+		 WHERE P.PRODUCT_ID = C.PRODUCT_ID
+		   AND C.USER_ID = #{customerID}
+	</select>
+</mapper>

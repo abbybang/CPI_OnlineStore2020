@@ -1,41 +1,38 @@
 package ph.com.cpi.onlinestore2020.dao.impl;
-import java.io.IOException;
+
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import ph.com.cpi.onlinestore2020.dao.LoginDao;
-import ph.com.cpi.onlinestore2020.model.User;
+import ph.com.cpi.onlinestore2020.dao.CartDAO;
+import ph.com.cpi.onlinestore2020.model.Cart;
 
-public class LoginDAOimpl implements LoginDao {
-
+public class CartDAOImpl implements CartDAO {
 	String resource = "ph/com/cpi/onlinestore2020/resource/MyBatisConfig.xml";
 	InputStream inputStream;
 	SqlSessionFactory sqlSessionFactory;
 	
-	public LoginDAOimpl() {
-		super();
+	public CartDAOImpl() {
 		try {
 			this.inputStream = Resources.getResourceAsStream(resource);
 			this.sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		} catch(IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
-	public User getUserDetails(HashMap<String, Object> params) throws SQLException {
-		User user = null;
-		
-		try(SqlSession session = sqlSessionFactory.openSession()){
-			user = session.selectOne("getUser", params);
+	public List<Cart> getCartItems(HashMap<String, Object> params) throws SQLException {
+		List<Cart> cartItems = null;
+		try(SqlSession session = sqlSessionFactory.openSession()) {
+			cartItems = session.selectList("getCartItems", params);
 		}
-		
-		return user;
+		return cartItems;
 	}
 }
