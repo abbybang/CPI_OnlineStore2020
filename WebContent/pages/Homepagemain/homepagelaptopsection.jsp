@@ -23,7 +23,7 @@
 
 <!-- Work Section -->
 <div class="ish-container" style="padding:0px 16px" id="laptops">
-  <h3 class="ish-center ish-text-white">LAPTOPS DEALS</h3>
+  <h3 class="ish-center ish-text-darkblue">LAPTOPS DEALS</h3>
  
 <div class="container" >          
   <table class="table table-bordered">
@@ -31,10 +31,10 @@
 					<tr>
 					    
 					    <th></th>
-						<th class="ish-text-white">Product Name</th>	
-						<th class="ish-text-white">Price(Peso)</th>
-						<th class="ish-text-white">Brand</th>
-						<th class="ish-text-white">Description</th>
+						<th class="">Product Name</th>	
+						<th class="">Price(Peso)</th>
+						<th class="">Brand</th>
+						<th class="">Description</th>
 				    
 					</tr>
 				</thead>
@@ -42,28 +42,28 @@
 				<c:forEach  var="list" items="${homepageList}">
 					<tr>
 					    <td class="productId">
-							<div class="productId-div ish-text-white">
+							<div class="productId-div ">
 								<a href="${pageContext.request.contextPath}/ShowProduct?productId=${list.productId}">VIEW</a>
 							</div>
 						</td>
 						<td class="productName">
-							<div class="productName-div ish-text-white">
+							<div class="productName-div ">
 								${list.productName}
 							</div>
 							
 						<td class="price ">
-						<div class="price-div ish-text-white">
+						<div class="price-div ">
 						<fmt:formatNumber type="number" pattern="###,###.##" value="${list.price}"/>
 						</div>
 						</td>
 				        
 						<td class="brand">
-							<div class="brand-div ish-text-white">
+							<div class="brand-div ">
 								${list.brand}
 							</div>
 						</td>
 						<td class="description">
-							<div class="description-div ish-text-white">
+							<div class="description-div ">
 								${list.description}
 							</div>
 						</td>
