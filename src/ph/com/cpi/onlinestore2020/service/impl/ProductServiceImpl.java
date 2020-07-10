@@ -74,9 +74,9 @@ public class ProductServiceImpl implements ProductService{
 	
 	//GET PRODUCT LIST ID
 	@Override
-	public List<Product> getProductInfo(Integer productId) throws SQLException{
+	public Product getProductId(Integer productId) throws SQLException{
 		HashMap<String, Object> params = new HashMap<String, Object>();
 		params.put(  "productId", productId  );
-		return productList.getProductInfo(params);
+		return productList.getProductId(params);
 		}
 }

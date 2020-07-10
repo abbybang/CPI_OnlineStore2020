@@ -26,7 +26,7 @@ public class ProductInfoController extends HttpServlet {
 		String page = "pages/viewProduct/ShowProduct.jsp";
 		try {
 			Integer productId = Integer.parseInt(request.getParameter("productId"));
-			request.setAttribute("productList", productService.getProductInfo(productId));
+			request.setAttribute("productInfo", productService.getProductId(productId));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

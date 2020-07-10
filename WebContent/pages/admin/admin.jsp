@@ -29,7 +29,7 @@
   								<input type="checkbox" class="custom-control-input" id="th-checkbox">
 							</div>
 						</th>
-						<th>ID</th>
+						<th id="th-id">ID</th>
 						<th>Product Name</th>
 						<th>Stock</th>
 						<th>Price</th>

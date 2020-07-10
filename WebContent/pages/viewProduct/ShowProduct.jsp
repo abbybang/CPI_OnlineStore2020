@@ -12,7 +12,6 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/productinfo.js"></script>
 	<link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script> 
 </head>
 
@@ -35,37 +34,38 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach  var="list" items="${productList}">
 						<tr>
 							<td class="productimage">
 								<img alt="Not Found" height= "500" width="500" type="image" src="${pageContext.request.contextPath}/productinfoimages/99.jpg">
 							</td>
 							<td class="ProductDetails">
 								<div class="productName-div">
-									${list.productName}
+									${productInfo.productName}
 								</div>
 								<div class="stock-div">
-									${list.stock}
+									${productInfo.stock}
+									<%-- Stock: < id="stock" value="${productInfo.stock}"/> element--%>
 								</div>
 								<div class="price-div">
-									${list.price}
+									Price: <fmt:formatNumber type="number" pattern="###,###.##" value="${productInfo.price}"/>
 								</div>
 								<div class="brand-div">
-									${list.brand}
+									Brand: ${productInfo.brand}
 								</div>
 								<div class="description-div">
-									${list.description}
+									${productInfo.description}
 								</div>
-								<label>Quantity</label>
-								<input type="button" value="-" id="minus"> 
-								<input type="text" value="0" name="quantity" id="quantityValue" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-								<input type="button" value="+" id="add"> 
-								<input type="button" value="Add to Cart" id="addToCartBtn"> 
-								<input type="button" id="logoutButton" value="Logout">
+								<form>
+									<label>Quantity</label>
+									<input type="button" value="-" id="minus"> 
+									<input type="number" value="0" name="quantity" id="quantityValue" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+									<input type="button" value="+" id="add"><br><br>
+									<input type="button" value="Add to Cart" id="addToCartBtn"> 
+									<input type="button" value="Checkout"id="checkout">
+									<input type="submit">
+								</form>
 							</td>
 						</tr>
-					</c:forEach>
-								
 				</tbody>
 			</table>
 		</div>
