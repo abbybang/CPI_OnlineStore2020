@@ -64,4 +64,15 @@ public class ProductDaoImpl implements ProductDao{
 			session.commit();
 		}
 	}
+	
+	//GENERATE NEW PRODUCT ID
+		@Override
+		public Integer generateProductId() throws SQLException {
+			Integer newProductId;
+			try(SqlSession session = sqlSessionFactory.openSession()){
+				newProductId = session.selectOne("newProductId");
+			}
+			
+			return newProductId;
+		}
 }

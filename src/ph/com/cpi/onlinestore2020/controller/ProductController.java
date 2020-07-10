@@ -44,7 +44,6 @@ public class ProductController extends HttpServlet{
 				BigDecimal price = new BigDecimal(request.getParameter("price"));
 				Integer stock = Integer.parseInt(request.getParameter("stock"));
 				String description = request.getParameter("description");
-				
 				if(action.equals("add")) {
 					System.out.println("ADD--PRODUCT CONTROLLER");
 					request.setAttribute("productList", productList.addProduct(productId, productName, brand, price, stock, description));

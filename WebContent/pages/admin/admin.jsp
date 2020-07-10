@@ -9,7 +9,7 @@
 	<title>Admin Page</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/adminStyle.css">
+	<link rel="stylesheet" href="css/adminStyle.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="js/adminJS.js"></script>
@@ -37,41 +37,41 @@
 						<th>Description</th>
 					</tr>
 				</thead>
-			<tbody id="tbody">
-				<c:forEach  var="list" items="${productList}">
-					<tr>
-						<td>
-							<div class="custom-control custom-checkbox">
-  								<input type="checkbox" class="custom-control-input" id="th-checkbox" name="toDelete" value="${list.productId}">
-							</div>
-						</td>
-						<td class="productId">
-								${list.productId}
-						</td>
-						<td class="productName">
-								${list.productName}
-
-						</td>
-						<td class="stock">
-							<div class="stock-div">
-								${list.stock}
-							</div>
-						</td>
-						<td class="price">
-							<div class="price-div">
-								${list.price}
-							</div>
-						</td>
-						<td class="brand">
-							<div class="brand-div">
-								${list.brand}
-							</div>
-						</td>
-						<td class="description">
-							<div class="description-div">
-								${list.description}
-							</div>
-						</td>
+				<tbody id="tbody">
+					<c:forEach  var="list" items="${productList}">
+						<tr>
+							<td>
+								<div class="custom-control custom-checkbox">
+  									<input type="checkbox" class="custom-control-input" id="th-checkbox" name="toDelete" value="${list.productId}">
+								</div>
+							</td>
+							<td class="productId">
+									${list.productId}
+							</td>
+							<td class="productName">
+									${list.productName}
+	
+							</td>
+							<td class="stock">
+								<div class="stock-div">
+									${list.stock}
+								</div>
+							</td>
+							<td class="price">
+								<div class="price-div">
+									${list.price}
+								</div>
+							</td>
+							<td class="brand">
+								<div class="brand-div">
+									${list.brand}
+								</div>
+							</td>
+							<td class="description">
+								<div class="description-div">
+									${list.description}
+								</div>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -149,6 +149,7 @@
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="add">Save</button>
+                <button type="button" class="btn btn-primary" id="edit">Save</button>
             </div>
         </div>
     </div>

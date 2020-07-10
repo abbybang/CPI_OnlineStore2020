@@ -1,3 +1,5 @@
+var tableData;
+$('.productId').hide();
 $(document).ready(function(){
 	$("#th-checkbox").attr("disabled", true);
 
@@ -26,17 +28,44 @@ $(document).ready(function(){
 	        })
 	        .done(function(text){       	
 	        	$("#container-div").html(text);
+	        	getData();
 	        }); 
        }else{
     	   alert('No selected row!');
        }
 	});
-	$( "#add" ).bind( "click", function() {        	
-        $.ajax({
+	$("#add" ).bind( "click", function() {    
+		var empty = $('input').each(function() {
+						if(!$(this).val()){
+							alert('Some fields are empty');
+							return false;
+						}
+					});
+		if(empty!=false){
+	        $.ajax({
+	        	url: "products",
+	        	type:"POST",
+	        	data: {
+	        		action     : "add",
+	        		productId  : $('#productId').val(),
+	        		productName: $('#productName').val(),
+	    			brand      : $('#brand').val(),
+	    			price      : $('#price').val(),
+	    			stock      : $('#stock').val(),
+	    			description: $('#description').val()
+	        	}
+	        }).done(function(text){       	
+	        	$("#container-div").html(text);
+	        	getData();
+	        });  
+		}
+	});
+	$('#edit').bind('click', function(){
+		$.ajax({
         	url: "products",
         	type:"POST",
         	data: {
-        		action     : "add",
+        		action     : "update",
         		productId  : $('#productId').val(),
         		productName: $('#productName').val(),
     			brand      : $('#brand').val(),
@@ -44,28 +73,49 @@ $(document).ready(function(){
     			stock      : $('#stock').val(),
     			description: $('#description').val()
         	}
-        })
-        .done(function(text){       	
+        }).done(function(text){       	
         	$("#container-div").html(text);
-        });    
+        	getData();
+        });  	
 	});
-	$('#productTable tbody').on('click', 'tr', function() {
-	//get row contents into an array
-		var tableData = $(this).children("td").map(function() {
-							return $(this).text();
-            			}).get();
-		$('#productName').val(tableData[2]);
-		$('#brand').val(tableData[3]);
-		$('#price').val(tableData[4]);
-		$('#stock').val(tableData[5]);
-		$('#description').val(tableData[6]);
-	});
-	$( "#addForm" ).bind( "click", function() {
+	
+	
+	
+	
+	$( "#addForm").bind( "click", function() {
+		$('#add').show();
+		$('#edit').hide();
+		
+		$('#productId').val(null);
 		$('#productName').val(null);
 		$('#brand').val(null);
 		$('#price').val(null);
 		$('#stock').val(null);
 		$('#description').val(null);
+		$('.modal-title').text('Add Product');
 	});
-	
+	$("#editForm").bind("click", function(){
+		$('#add').hide();
+		$('#edit').show();
+		$('.modal-title').text('Edit Product');
+		$('#productId').val($.trim(tableData[1]));
+		$('#productName').val($.trim(tableData[2]));
+		$('#stock').val($.trim(tableData[3]));		
+		$('#price').val($.trim(tableData[4]));
+		$('#brand').val($.trim(tableData[5]));
+		$('#description').val($.trim(tableData[6]));
+		tableData=null;
+	});
+	getData();
 });
+
+function getData(){
+	$('#tbody tr').click(function() {
+		//get row contents into an array
+			$(this).addClass('selected').siblings().removeClass('selected'); 
+			
+			tableData = $(this).children("td").map(function() {
+								return $(this).text();
+	            			}).get();
+		});
+}

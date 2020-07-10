@@ -19,7 +19,7 @@
 						<th>Description</th>
 					</tr>
 				</thead>
-			<tbody>
+			<tbody id="tbody">
 				<c:forEach  var="list" items="${productList}">
 					<tr>
 						<td>
