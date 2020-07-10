@@ -54,7 +54,7 @@ public class HomePageController extends HttpServlet {
 				
 				
 				ProductServiceImpl productService = null;
-				request.setAttribute("productList", productService.getProductInfo(productId));
+				request.setAttribute("productList", productService.getProductId(productId));
 			}else {
 				page = "pages/Homepagemain/Homepage.jsp";
 			}
