@@ -21,15 +21,15 @@
 					<td>
 						<p>SAMPLE PRODUCT NAME</p>
 						<p>PHP 9,999.99</p>
-						<p>
-							The quick brown fox jumps over the lazy dog.<br>
-							The five boxing wizards jump quickly<br>
-							Bright vixens jump; dozy fowl quack
-						</p>
+<!-- 						<p> -->
+<!-- 							The quick brown fox jumps over the lazy dog.<br> -->
+<!-- 							The five boxing wizards jump quickly<br> -->
+<!-- 							Bright vixens jump; dozy fowl quack -->
+<!-- 						</p> -->
 					</td>	<!-- Product name, unit price, description here -->
 					<td>
-						<input type="number">
 						<button type="button">+</button>
+						<input type="number">
 						<button type="button">-</button>
 						&nbsp;|&nbsp;
 						<button type="button">Remove</button>
@@ -43,15 +43,10 @@
 					<td>
 						<p>SAMPLE PRODUCT NAME</p>
 						<p>PHP 9,999.99</p>
-						<p>
-							The quick brown fox jumps over the lazy dog.<br>
-							The five boxing wizards jump quickly<br>
-							Bright vixens jump; dozy fowl quack
-						</p>
 					</td>	<!-- Product name, unit price, description here -->
 					<td>
-						<input type="number">
 						<button type="button">+</button>
+						<input type="number">
 						<button type="button">-</button>
 						&nbsp;|&nbsp;
 						<button type="button">Remove</button>
@@ -65,15 +60,10 @@
 					<td>
 						<p>SAMPLE PRODUCT NAME</p>
 						<p>PHP 9,999.99</p>
-						<p>
-							The quick brown fox jumps over the lazy dog.<br>
-							The five boxing wizards jump quickly<br>
-							Bright vixens jump; dozy fowl quack
-						</p>
 					</td>	<!-- Product name, unit price, description here -->
 					<td>
-						<input type="number">
 						<button type="button">+</button>
+						<input type="number">
 						<button type="button">-</button>
 						&nbsp;|&nbsp;
 						<button type="button">Remove</button>
