@@ -42,6 +42,7 @@
 					    <td class="productId">
 							<div class="productId-div">
 								<button id="add">VIEW</button>
+
 							</div>
 						</td>
 					

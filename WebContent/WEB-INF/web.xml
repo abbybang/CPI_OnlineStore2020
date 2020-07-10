@@ -11,6 +11,15 @@
 		<servlet-name>ProductController</servlet-name>
 		<url-pattern>/products</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ProductInfoController</servlet-name>
+		<servlet-class>ph.com.cpi.onlinestore2020.controller.ProductInfoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductInfoController</servlet-name>
+		<url-pattern>/ShowProduct</url-pattern>
+	</servlet-mapping>
 
  <servlet>
   	<servlet-name>OnlineStoreController</servlet-name>
