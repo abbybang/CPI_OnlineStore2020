@@ -44,7 +44,6 @@ $(document).ready(function(){
 							return true;
 						}
 					});
-		alert("emtpy" + empty);
 		if(empty!=false){
 	        $.ajax({
 	        	url: "products",
