@@ -4,10 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<jsp:include page="/pages/header.jsp" />
-<div class="content">
+<jsp:include page="/pages/header.jsp"/>
+<body>
+   <div class="content">
 
-  <div class="loader-wrapper">
+    <div class="loader-wrapper">
    <div class="loader"></div>
 
     <div class="loader-section section-left"></div>
@@ -15,8 +16,6 @@
   </div>
   </div>
   
-<body>
-
 	<div id="loginContainer">
 		<div id="loginInfo">
 			<img src='${pageContext.request.contextPath}/pages/loginpage/images/login-logo-img.jpg' alt='login-logo-img.jpg'>

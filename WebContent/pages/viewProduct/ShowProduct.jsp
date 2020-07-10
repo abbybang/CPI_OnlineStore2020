@@ -11,9 +11,23 @@
 	<script>var contextPath = '${pageContext.request.contextPath}' + '/';</script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/productinfo.js"></script>
-	
+	<link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script> 
 </head>
+
 <body>
+   <div class="content">
+
+   <div class="loader-wrapper">
+   <div class="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  </div>
+
+
 		<div class="Products" id="showProducts">
 			<table class="showProduct" align="center">
 				<thead>
