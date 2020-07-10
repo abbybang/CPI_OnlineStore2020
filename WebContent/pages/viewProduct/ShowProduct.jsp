@@ -9,57 +9,52 @@
 <meta charset="ISO-8859-1">
 	<title>Products</title>
 	<script>var contextPath = '${pageContext.request.contextPath}' + '/';</script>
-	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/productinfo.js"></script>
+	
 </head>
 <body>
 		<div class="Products">
-			<table border="1" class="showProduct" align="center">
+			<table class="showProduct" align="center">
 				<thead>
 					<tr>
-						<th>Product Name</th>
-						<th>Stock</th>
-						<th>Price</th>
-						<th>Brand</th>
-						<th>Description</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach  var="list" items="${productList}">
 						<tr>
 							<td class="productimage">
-								<img alt="Not Found" height= "400" width="250" type="image" src="../../productinfoimages/99.jpg">
+								<img alt="Not Found" height= "500" width="500" type="image" src="${pageContext.request.contextPath}/productinfoimages/99.jpg">
 							</td>
-							<td class="productName">
+							<td class="ProductDetails">
 								<div class="productName-div">
 									${list.productName}
 								</div>
-							</td>
-							<td class="stock">
 								<div class="stock-div">
 									${list.stock}
 								</div>
-							</td>
-								<td class="price">
 								<div class="price-div">
 									${list.price}
 								</div>
-							</td>
-							<td class="brand">
 								<div class="brand-div">
 									${list.brand}
 								</div>
-							</td>
-							<td class="description">
 								<div class="description-div">
 									${list.description}
 								</div>
+								<label>Quantity</label>
+								<input type="button" value="-" id="minus"> 
+								<input type="text" value="0" name="quantity" id="quantityValue" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+								<input type="button" value="+" id="add"> 
+								<input type="button" value="Add to Cart" id="addToCartBtn"> 
+								<input type="button" id="logoutButton" value="Logout">
 							</td>
 						</tr>
 					</c:forEach>
+								
 				</tbody>
 			</table>
-			</div>
+		</div>
 
 </body>
 </html>
