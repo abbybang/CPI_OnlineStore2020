@@ -19,7 +19,7 @@
 <body>
 
 <!-- Work Section -->
-<div class="ish-container" style="padding:0px 16px" id="work">
+<div class="ish-container" style="padding:0px 16px" id="laptops">
   <h3 class="ish-center">LAPTOPS DEALS</h3>
  
 <div class="container" class="container" >          

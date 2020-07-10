@@ -28,10 +28,10 @@ public class HomePageController extends HttpServlet {
 		
 	try {
 		request.setAttribute("homepageList", homepageList.getHomePageList());
-		page = "pages/Homepage.jsp";
+		page = "pages/Homepagemain/Homepage.jsp";
 	}catch(Exception e) {
 		e.printStackTrace();
-		page = "/pages/error/error.jsp";
+		page = "/pages/error.jsp";
 	}
 	
 	rd = request.getRequestDispatcher(page);
