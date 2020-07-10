@@ -22,7 +22,6 @@
     <!-- Right-sided navbar links -->
     <div class="ish-right ish-hide-small">
       <a href="#about" class="ish-bar-item ish-button  ish-text-white">ABOUT</a>
-      <a href="#team" class="ish-bar-item ish-button  ish-text-white">TEAM</a>
       <a href="#laptops" class="ish-bar-item ish-button  ish-text-white"> LAPTOPS</a>
       <a href="#contact" class="ish-bar-item ish-button  ish-text-white">CONTACT</a>
       <a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">ACCOUNT</a>
