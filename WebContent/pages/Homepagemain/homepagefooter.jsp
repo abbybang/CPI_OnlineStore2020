@@ -26,7 +26,7 @@
     <i class="fa fa-twitter ish-hover-opacity"></i>
     <i class="fa fa-linkedin ish-hover-opacity"></i>
   </div>
-  <p>Powered by <a href="" title="ish.CSS" target="_blank" class="ish-hover-text-green">JAVA TRAINEES</a></p>
+  <p> © 2020 Computer Professionals Inc.</p>
 </footer>
 
 
