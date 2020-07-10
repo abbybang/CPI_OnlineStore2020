@@ -45,7 +45,7 @@
   padding: 16px 32px;
 }
 
-
+.text-body{color:#212529}
 
 h1 {
   font-family: Helvetica, sans-serif;
@@ -99,7 +99,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .ish-ul{list-style-type:none;padding:0;margin:0}.ish-ul li{padding:8px 16px;border-bottom:1px solid #ddd}.ish-ul li:last-child{border-bottom:none}
 .ish-tooltip,.ish-display-container{position:relative}.ish-tooltip .ish-text{display:none}.ish-tooltip:hover .ish-text{display:inline-block}
 .ish-ripple:active{opacity:0.5}.ish-ripple{transition:opacity 0s}
-.ish-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+.ish-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%;}
 .ish-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
 .ish-dropdown-click,.ish-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
 .ish-dropdown-hover:hover .ish-dropdown-content{display:block}

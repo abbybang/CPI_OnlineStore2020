@@ -51,8 +51,7 @@ public class HomePageController extends HttpServlet {
 			String action = request.getParameter("action");
 			
 			if(action.equals("get")) {
-				
-				
+
 				ProductServiceImpl productService = null;
 				request.setAttribute("productList", productService.getProductInfo(productId));
 			}else {

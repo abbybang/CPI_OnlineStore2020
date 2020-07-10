@@ -18,8 +18,8 @@
 <!-- Header with full-height image -->
 
 
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
+<header class="bgimg-1 ish-display-container ish-grayscale-min" id="home"style="padding:50px 150px" >
+  <div class="ish-display-left ish-text-white" style="padding:48px">
   </div> 
 <div class="ish-content ish-display-container ish-grayscale-min" id="home">
   <img class="mySlides" src="homeimages/apple.jpg" style="width:100%">
@@ -36,10 +36,10 @@
 
 
   <div class="ish-display-middle ish-text-white" style="padding:48px">
-  <!--   <span class="ish-jumbo ish-hide-small">48 HOURS SALES</span><br>
+    <span class="ish-jumbo ish-hide-small">48 HOURS SALES</span><br>
     <span class="ish-xxlarge ish-hide-large ish-hide-medium">BIG SAVINGS!</span><br>
     <span class="ish-large"></span>
-   -->
+   <p><a href="#about" class="ish-button ish-white ish-padding-large ish-large ish-margin-top ish-opacity ish-hover-opacity-off">Learn more and start today</a></p>
   </div> 
 
 

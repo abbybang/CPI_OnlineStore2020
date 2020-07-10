@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <link rel="icon" href="homeimages/favicon.ico" type="image/gif" sizes="16x16">
 	<meta charset="ISO-8859-1">
 	<title>Admin Page</title>
 	

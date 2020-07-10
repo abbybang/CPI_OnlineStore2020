@@ -25,6 +25,7 @@ public class ProductInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String page = "pages/viewProduct/ShowProduct.jsp";
 		try {
+			
 			Integer productId = Integer.parseInt(request.getParameter("productId"));
 			request.setAttribute("productList", productService.getProductInfo(productId));
 		} catch (SQLException e) {
