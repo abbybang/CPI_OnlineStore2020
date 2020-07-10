@@ -35,8 +35,10 @@
 		DELETE FROM PRODUCT WHERE PRODUCT_ID = #{productId}
 	</update>
 	
-	<select id="getProductInfo" resultMap="productListMap">
-		SELECT PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = #{productId}
+	<select id="getProductId" resultMap="productListMap">
+		SELECT PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION 
+		  FROM PRODUCT 
+		 WHERE PRODUCT_ID = #{productId}
 	</select>
 	
 

@@ -68,14 +68,14 @@ public class ProductDaoImpl implements ProductDao{
 
 	//GET PRODUCT WITH SPECIFIC PRODUCT ID
 	@Override
-	public List<Product> getProductInfo(HashMap<String, Object> params) throws SQLException {
-		List<Product> getProductInfoId = null;
+	public Product getProductId(HashMap<String, Object> params) throws SQLException {
+		Product getProductInfoId ;
 		try(SqlSession session = sqlSessionFactory.openSession()){
-			getProductInfoId = session.selectList("getProductInfo", params);
+			getProductInfoId = session.selectOne("getProductId", params);
 		}
 		return getProductInfoId;
 	}
-
+ 
 	//GENERATE NEW PRODUCT ID
 		@Override
 		public Integer generateProductId() throws SQLException {
@@ -83,7 +83,6 @@ public class ProductDaoImpl implements ProductDao{
 			try(SqlSession session = sqlSessionFactory.openSession()){
 				newProductId = session.selectOne("newProductId");
 			}
-			
 			return newProductId;
 		}
 }

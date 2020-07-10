@@ -14,7 +14,12 @@ $(document).ready(function(){
 	});
 	$("#add").click(function() {
 		var qty = parseInt($('#quantityValue').val());
+		var stock = parseInt($('#stock').val());
 		var total;
+		if(stock < qty)
+		{
+			alert("Lack of stock")
+		}
 		total = qty + 1;
 		$('#quantityValue').val(total);
 	});
