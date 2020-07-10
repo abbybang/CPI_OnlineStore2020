@@ -16,9 +16,11 @@
 <body>
 
 <!-- Header with full-height image -->
-<header>
 
 
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+  </div> 
 <div class="ish-content ish-display-container ish-grayscale-min" id="home">
   <img class="mySlides" src="homeimages/apple.jpg" style="width:100%">
   <img class="mySlides" src="homeimages/mac2.jpg" style="width:100%">
@@ -34,10 +36,10 @@
 
 
   <div class="ish-display-middle ish-text-white" style="padding:48px">
-    <span class="ish-jumbo ish-hide-small">48 HOURS SALES</span><br>
+  <!--   <span class="ish-jumbo ish-hide-small">48 HOURS SALES</span><br>
     <span class="ish-xxlarge ish-hide-large ish-hide-medium">BIG SAVINGS!</span><br>
     <span class="ish-large"></span>
-  
+   -->
   </div> 
 
 
