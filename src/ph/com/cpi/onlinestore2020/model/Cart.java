@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Cart {
 	private Integer customerId;
 	private Integer productId;
-	private Integer productName;
+	private String productName;
 	private BigDecimal price;
 	private Integer quantity;
 	
@@ -22,10 +22,10 @@ public class Cart {
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
-	public Integer getProductName() {
+	public String getProductName() {
 		return productName;
 	}
-	public void setProductName(Integer productName) {
+	public void setProductName(String productName) {
 		this.productName = productName;
 	}
 	public BigDecimal getPrice() {
