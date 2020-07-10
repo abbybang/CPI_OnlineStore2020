@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,8 +19,9 @@ public class ProductController extends HttpServlet{
 	RequestDispatcher rd = null;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-		String page = "pages/viewProduct/ShowProduct.jsp";
-		
+
+		String page = "pages/admin/admin.jsp";
+
 		try {
 			request.setAttribute("productList", productList.getProductList());
 		} catch (SQLException e) {
@@ -43,7 +45,6 @@ public class ProductController extends HttpServlet{
 				BigDecimal price = new BigDecimal(request.getParameter("price"));
 				Integer stock = Integer.parseInt(request.getParameter("stock"));
 				String description = request.getParameter("description");
-				
 				if(action.equals("add")) {
 					System.out.println("ADD--PRODUCT CONTROLLER");
 					request.setAttribute("productList", productList.addProduct(productId, productName, brand, price, stock, description));
@@ -51,15 +52,14 @@ public class ProductController extends HttpServlet{
 					System.out.println("UPDATE--PRODUCT CONTROLLER");
 					request.setAttribute("productList", productList.updateProduct(productId, productName, brand, price, stock, description));
 				}
-			}else if(action.equals("delete")) {
+			}else if(action.equals("delete")) {			
 				String[] toDelete = request.getParameterValues("toDelete[]");
 				request.setAttribute("productList", productList.deleteProduct(toDelete));
 			}
-			
-			page = "/products";
+			page = "pages/admin/updateTable.jsp";			
 		}catch(Exception e){
 			e.printStackTrace();
-			page = "pages/admin.jsp";
+			page = "pages/admin/admin.jsp";
 		}
 		requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);

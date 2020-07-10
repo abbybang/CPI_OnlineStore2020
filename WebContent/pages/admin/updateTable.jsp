@@ -2,24 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Admin Page</title>
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  	<script type="text/javascript" src="js/adminJS.js"></script>
-<script>
-	var contextPath = '${pageContext.request.contextPath}' + '/';
-</script>
-</head>
-<body>
-
-	<div class="container" id="container-div">
-		<div class="table-responsive">          
+	<div class="table-responsive">          
 			<table class="table">
 				<thead>
 					<tr>
@@ -36,7 +19,7 @@
 						<th>Description</th>
 					</tr>
 				</thead>
-			<tbody>
+			<tbody id="tbody">
 				<c:forEach  var="list" items="${productList}">
 					<tr>
 						<td>
@@ -79,7 +62,3 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-	<input type="button" value="delete" id="delete">
-</body>
-</html>

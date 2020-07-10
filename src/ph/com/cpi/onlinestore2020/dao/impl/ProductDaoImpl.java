@@ -65,6 +65,7 @@ public class ProductDaoImpl implements ProductDao{
 		}
 	}
 	
+
 	//GET PRODUCT WITH SPECIFIC PRODUCT ID
 	@Override
 	public List<Product> getProductInfo(HashMap<String, Object> params) throws SQLException {
@@ -74,5 +75,16 @@ public class ProductDaoImpl implements ProductDao{
 		}
 		return getProductInfoId;
 	}
+
+	//GENERATE NEW PRODUCT ID
+		@Override
+		public Integer generateProductId() throws SQLException {
+			Integer newProductId;
+			try(SqlSession session = sqlSessionFactory.openSession()){
+				newProductId = session.selectOne("newProductId");
+			}
+			
+			return newProductId;
+		}
 }
 	

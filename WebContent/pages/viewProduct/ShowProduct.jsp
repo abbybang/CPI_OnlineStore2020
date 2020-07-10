@@ -11,7 +11,6 @@
 	<script>var contextPath = '${pageContext.request.contextPath}' + '/';</script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/productinfo.js"></script>
-	
 </head>
 <body>
 		<div class="Products">
@@ -34,10 +33,10 @@
 									${list.stock}
 								</div>
 								<div class="price-div">
-									${list.price}
+									Price: <fmt:formatNumber type="number" pattern="###,###.##" value="${list.price}"/>
 								</div>
 								<div class="brand-div">
-									${list.brand}
+									Brand: ${list.brand}
 								</div>
 								<div class="description-div">
 									${list.description}
@@ -45,13 +44,12 @@
 								<label>Quantity</label>
 								<input type="button" value="-" id="minus"> 
 								<input type="text" value="0" name="quantity" id="quantityValue" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-								<input type="button" value="+" id="add"> 
+								<input type="button" value="+" id="add"><br><br>
 								<input type="button" value="Add to Cart" id="addToCartBtn"> 
-								<input type="button" id="logoutButton" value="Logout">
+								<input type="button" value="Checkout"id="checkout">
 							</td>
 						</tr>
 					</c:forEach>
-								
 				</tbody>
 			</table>
 		</div>

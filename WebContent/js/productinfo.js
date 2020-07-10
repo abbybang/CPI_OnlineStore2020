@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
 	$("#minus").click(function() {
 		var qty = parseInt($('#quantityValue').val());
 		if(qty == 0){
