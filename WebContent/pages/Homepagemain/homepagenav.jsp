@@ -16,7 +16,7 @@
 <body>
 <!-- Navbar (sit on top) -->
 <div class="ish-top">
-  <div class="ish-bar ish-white ish-card" id="myNavbar">
+  <div class="ish-bar ish-darkblue ish-card" id="myNavbar">
     <a href="#home" class="ish-bar-item ish-button ish-wide ish-text-white">HOME</a>
     
     <!-- Right-sided navbar links -->
@@ -25,7 +25,7 @@
       <a href="#team" class="ish-bar-item ish-button  ish-text-white">TEAM</a>
       <a href="#laptops" class="ish-bar-item ish-button  ish-text-white"> LAPTOPS</a>
       <a href="#contact" class="ish-bar-item ish-button  ish-text-white">CONTACT</a>
-      <a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white"> SIGNIN</a>
+      <a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">ACCOUNT</a>
       
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->

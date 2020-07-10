@@ -36,10 +36,8 @@
   <div class="ish-display-middle ish-text-white" style="padding:48px">
     <span class="ish-jumbo ish-hide-small">48 HOURS SALES</span><br>
     <span class="ish-xxlarge ish-hide-large ish-hide-medium">BIG SAVINGS!</span><br>
-    <span class="ish-large">Cyber Savings deals are live. Save on our most exceptional tech, up to $400 off.
-Plus, get 12 months financing on purchases $699+ and up to 6% back in rewards.
-Questions? Call 1-855-972-8226 or Click to Chat.</span>
-    <p><a href="#about" class="ish-button ish-white ish-padding-large ish-large ish-margin-top ish-opacity ish-hover-opacity-off">Learn more and start today</a></p>
+    <span class="ish-large"></span>
+  
   </div> 
 
 

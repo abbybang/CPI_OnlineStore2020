@@ -1,17 +1,22 @@
 $(document).ready(function(){
-	$("#add").click(function(){
+	$("#view").click(function(){
 		$.ajax({
-			url: contextPath + "Items",
+			url: contextPath + "homepageList",
 			method: "POST",
 			data :{
-				action: "view",
+				action: "get",
 				productId:    $('#productId').val(),
-				quantity:     $('#quantity').val()
+	
 				
 			}
 		}).done(function(result){
-			$('#cartContents').html(result);
+			$('#showProducts').html(result);
 		})
 	})
 	
 })
+
+
+setTimeout(function(){
+  $('body').addClass('loaded');
+}, 2000);

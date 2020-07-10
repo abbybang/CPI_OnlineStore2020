@@ -43,7 +43,29 @@ public class HomePageController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String page = "";
+		RequestDispatcher requestDispatcher = null;
+		try {
+			Integer productId = Integer.parseInt(request.getParameter("productId"));
+			
+			String action = request.getParameter("action");
+			
+			if(action.equals("get")) {
+				
+				
+				ProductServiceImpl productService = null;
+				request.setAttribute("productList", productService.getProductInfo(productId));
+			}else {
+				page = "pages/Homepagemain/Homepage.jsp";
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			page = "pages/error.jsp";
+		}
+		requestDispatcher = request.getRequestDispatcher(page);
+		requestDispatcher.forward(request, response);
+		 
 	}
-
 }
+

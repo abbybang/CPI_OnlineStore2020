@@ -14,7 +14,7 @@
 	
 </head>
 <body>
-		<div class="Products">
+		<div class="Products" id="showProducts">
 			<table class="showProduct" align="center">
 				<thead>
 					<tr>

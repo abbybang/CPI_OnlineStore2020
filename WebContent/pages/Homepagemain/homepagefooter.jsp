@@ -15,20 +15,13 @@
 
 
 <!-- Footer -->
-<footer class="ish-center ish-black ish-padding-64">
-  <a href="#home" class="ish-button ish-light-grey"><i class="fa fa-arrow-up ish-margin-right"></i>GO TO HOME</a>
-  <div class="ish-xlarge ish-section">
-  #fff
+<footer class="ish-center ish-grey ish-padding-16">
     <i class="fa fa-facebook-official ish-hover-opacity"></i>
     <i class="fa fa-instagram ish-hover-opacity"></i>
     <i class="fa fa-snapchat ish-hover-opacity"></i>
     <i class="fa fa-pinterest-p ish-hover-opacity"></i>
     <i class="fa fa-twitter ish-hover-opacity"></i>
-    <i class="fa fa-linkedin ish-hover-opacity"></i>
-  </div>
-  <p> © 2020 Computer Professionals Inc.</p>
+    <i class="fa fa-linkedin ish-hover-opacity"></i><p> © 2020 Computer Professionals Inc.</p>
 </footer>
-
-
 </body>
 </html>
