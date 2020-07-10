@@ -63,4 +63,12 @@ public class ProductServiceImpl implements ProductService{
 		List<Product> students = productList.getProductList();
 		return students;
 	}
+	
+	//GENERATE PRODUCT NEW ID
+	@Override
+	public Integer generateProductId() throws SQLException {
+		System.out.println("SERVICE: " + productList.generateProductId());
+		return productList.generateProductId();
+	}
+	
 }

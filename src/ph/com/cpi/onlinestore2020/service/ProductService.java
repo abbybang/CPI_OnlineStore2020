@@ -12,4 +12,5 @@ public interface ProductService {
 	public List<Product> addProduct(Integer productId, String productName, String brand, BigDecimal price, Integer stock, String description) throws SQLException;
 	public List<Product> updateProduct(Integer productId, String productName, String brand, BigDecimal price, Integer stock, String description) throws SQLException;
 	public List<Product> deleteProduct(String[] productId) throws SQLException;
+	public Integer generateProductId() throws SQLException;
 }

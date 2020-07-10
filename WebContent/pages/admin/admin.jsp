@@ -99,10 +99,6 @@
             <!-- Modal Body -->
             <div class="modal-body">                
                 <form role="form">
-                	<div class="form-group">
-			            <label for="productId">Product ID</label>
-			             <input type="text" class="form-control" id="productId" placeholder="ID" required/>
-		            </div>
                 	<table>
                 		<tr>
                 			<td colspan="2">

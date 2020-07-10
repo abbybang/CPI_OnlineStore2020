@@ -72,7 +72,7 @@ public class ProductDaoImpl implements ProductDao{
 			try(SqlSession session = sqlSessionFactory.openSession()){
 				newProductId = session.selectOne("newProductId");
 			}
-			
+			System.out.print("DAO: "+ newProductId);
 			return newProductId;
 		}
 }

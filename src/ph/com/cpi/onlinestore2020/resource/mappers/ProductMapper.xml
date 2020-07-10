@@ -36,6 +36,6 @@
 	</update>
 	
 	<select resultType="java.lang.Integer" id="newProductId">
-		SELECT MAX(NVL(PRODUCT_ID, 0)) + 1 FROM PRODUCT;
+		SELECT MAX(NVL(PRODUCT_ID, 0)) + 1 FROM PRODUCT
 	</select>
 </mapper>

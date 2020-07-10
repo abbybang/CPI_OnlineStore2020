@@ -34,13 +34,17 @@ $(document).ready(function(){
     	   alert('No selected row!');
        }
 	});
-	$("#add" ).bind( "click", function() {    
+	$("#add" ).bind( "click", function() { 
+		
 		var empty = $('input').each(function() {
 						if(!$(this).val()){
 							alert('Some fields are empty');
 							return false;
+						}else{
+							return true;
 						}
 					});
+		alert("emtpy" + empty);
 		if(empty!=false){
 	        $.ajax({
 	        	url: "products",
@@ -57,6 +61,8 @@ $(document).ready(function(){
 	        }).done(function(text){       	
 	        	$("#container-div").html(text);
 	        	getData();
+	        	clearFields();
+	        	
 	        });  
 		}
 	});
@@ -78,27 +84,17 @@ $(document).ready(function(){
         	getData();
         });  	
 	});
-	
-	
-	
-	
 	$( "#addForm").bind( "click", function() {
 		$('#add').show();
 		$('#edit').hide();
+		clearFields();
 		
-		$('#productId').val(null);
-		$('#productName').val(null);
-		$('#brand').val(null);
-		$('#price').val(null);
-		$('#stock').val(null);
-		$('#description').val(null);
 		$('.modal-title').text('Add Product');
 	});
 	$("#editForm").bind("click", function(){
 		$('#add').hide();
 		$('#edit').show();
 		$('.modal-title').text('Edit Product');
-		$('#productId').val($.trim(tableData[1]));
 		$('#productName').val($.trim(tableData[2]));
 		$('#stock').val($.trim(tableData[3]));		
 		$('#price').val($.trim(tableData[4]));
@@ -118,4 +114,11 @@ function getData(){
 								return $(this).text();
 	            			}).get();
 		});
+}
+function clearFields(){
+	$('#productName').val(null);
+	$('#brand').val(null);
+	$('#price').val(null);
+	$('#stock').val(null);
+	$('#description').val(null);
 }
