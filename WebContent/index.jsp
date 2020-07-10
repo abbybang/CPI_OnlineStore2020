@@ -10,7 +10,8 @@
 </head>
 <body>
 	<h1>Inside index.jsp</h1>
-	<div id="mainDiv"></div>
-	<button type="button" id="viewCartBtn">View Cart</button>
+	<div id="mainDiv">
+		<button type="button" id="viewCartBtn">View Cart</button>
+	</div>
 </body>
 </html>

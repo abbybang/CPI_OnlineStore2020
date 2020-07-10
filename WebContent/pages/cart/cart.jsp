@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css\cart\cart_style.css" />
+<script type="text/javascript">var contextPath = '${pageContext.request.contextPath}' + '/';</script>
 <div id="cartDiv">
 	<p id="cartHeader">
 		<span>YOUR SHOPPING CART</span>&nbsp;
