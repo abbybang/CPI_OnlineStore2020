@@ -4,7 +4,9 @@
 <div id="cartDiv">
 	<p id="cartHeader">
 		<span>YOUR SHOPPING CART</span>&nbsp;
-		<span>1 ITEM</span>&nbsp;
+		<span>
+			<c:out value="${itemCount }"></c:out> ITEM(S)
+		</span>&nbsp;
 		<a>Continue Shopping</a>
 	</p>
 	<div id="ordersDiv">
@@ -13,6 +15,7 @@
 				<tr>
 					<td></td>	<!-- Product image here -->
 					<td></td>	<!-- Product name and unit price here -->
+					<td></td>	<!-- Product order quantity here -->
 					<td></td>	<!-- 'Remove' button here -->
 					<td></td>	<!-- Product order subtotal here -->
 				</tr>
@@ -92,7 +95,14 @@
 			<tbody>
 				<tr>
 					<td colspan=2>Total</td>
-					<td>PHP 29,999.97</td>	<!-- Grand total here  -->
+					<td>
+						<c:if test="${items !=  null }">
+							<c:out value="${grandTotal }"></c:out> 
+						</c:if>
+						<c:if test="${items == null }">
+							0
+						</c:if>
+					</td>	<!-- Grand total here  -->
 				</tr>
 				<tr>
 					<td colspan=2>Enter Payment</td>

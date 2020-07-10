@@ -1,6 +1,7 @@
 package ph.com.cpi.onlinestore2020.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -27,14 +28,31 @@ public class CartController extends HttpServlet {
 		String page = "";
 		
 		try {
-			page = "pages/cart/cart.jsp";
-			Integer customerID = Integer.parseInt(request.getParameter("customerID"));
-			List<Cart> items = cartService.getCartItems(customerID);
-			request.setAttribute("items", items);
-			System.out.println("Inside CartController");
+			String action = request.getParameter("action");
+			
+			if(action.equals("load cart")) {
+				page = "pages/cart/cart.jsp";
+				Integer customerID = Integer.parseInt(request.getParameter("customerID"));
+				List<Cart> items = cartService.getCartItems(customerID);
+				
+				BigDecimal grandTotal = new BigDecimal(0);
+				Integer itemCount = 0;
+				for(Cart item : items) {
+					BigDecimal subTotal = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
+					grandTotal = grandTotal.add(subTotal);
+					itemCount += item.getQuantity();
+				}
+				
+				request.setAttribute("items", items);
+				request.setAttribute("grandTotal", grandTotal);
+				request.setAttribute("itemCount", itemCount);
+				
+				System.out.println("Inside CartController");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);
 	}
