@@ -35,7 +35,12 @@
 		DELETE FROM PRODUCT WHERE PRODUCT_ID = #{productId}
 	</update>
 	
+
 	<select resultType="java.lang.Integer" id="newProductId">
 		SELECT MAX(NVL(PRODUCT_ID, 0)) + 1 FROM PRODUCT
+	</select>
+	
+	<select id="getProductInfo" resultMap="productListMap">
+		SELECT PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = #{productId}
 	</select>
 </mapper>

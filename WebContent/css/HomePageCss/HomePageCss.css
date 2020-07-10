@@ -1,15 +1,191 @@
-/* ish.CSS 4.13 June 2019 by Jan Egil and Borge Refsnes */
-html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
-/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
-html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}summary{display:list-item}
-audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
-audio:not([controls]){display:none;height:0}[hidden],template{display:none}
-a{background-color:transparent}a:active,a:hover{outline-width:0}
 
-
-.ish-white,.ish-hover-white:hover{color:#000!important;background-color:#061D40}
+.ish-darkblue,.ish-hover-darkblue:hover{color:#000!important;background-color:#061D40}
 .fa-facebook-official:before{content:"\f230"}
+
+.buttonload {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px /* Set a font size */
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: white;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+body
+{
+  background:#000;
+}
+
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color:#fff;
+}
+p{
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color:#fff;
+}
+
+
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.loader-wrapper .loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  border: 3px solid transparent;
+  border-top-color: #000000;
+  border-radius: 50%;
+  z-index: 1001;
+  -webkit-animation: spin 1.5s infinite linear;
+          animation: spin 1.5s infinite linear;
+}
+.loader-wrapper .loader:before, .loader-wrapper .loader:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+.loader-wrapper .loader:before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 3px solid transparent;
+  border-top-color:#000000;
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
+}
+.loader-wrapper .loader:after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 3px solid transparent;
+  border-top-color: #000000;
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*Section */
+.loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #fff9f9;
+  z-index: 1000;
+}
+.loader-section.section-left {
+  left: 0;
+}
+.loader-section.section-right {
+  right: 0;
+}
+
+/*Finished Loading Styles*/
+.loaded .section-left {
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.loaded .section-right {
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.loaded .loader {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+}
+.loaded .loader-wrapper {
+  visibility: hidden;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 1s ease-out;
+}
+
+/*Content*/
+.content {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  width: 80%;
+  max-width: 978px;
+}
 
 
 abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
@@ -147,7 +323,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .ish-padding-small{padding:4px 8px!important}.ish-padding{padding:8px 16px!important}.ish-padding-large{padding:12px 24px!important}
 .ish-padding-16{padding-top:16px!important;padding-bottom:16px!important}.ish-padding-24{padding-top:24px!important;padding-bottom:24px!important}
 .ish-padding-32{padding-top:32px!important;padding-bottom:32px!important}.ish-padding-48{padding-top:48px!important;padding-bottom:48px!important}
-.ish-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.ish-padding-64{padding-top:20px!important;padding-bottom:20px!important}
 .ish-left{float:left!important}.ish-right{float:right!important}
 .ish-button:hover{color:#000!important;background-color:#ccc!important}
 .ish-transparent,.ish-hover-none:hover{background-color:transparent!important}
@@ -175,7 +351,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .ish-teal,.ish-hover-teal:hover{color:#fff!important;background-color:#009688!important}
 .ish-yellow,.ish-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
 
-.ish-black,.ish-hover-black:hover{color:#fff!important;background-color:#000!important}
+.ish-black,.ish-hover-black:hover{color:#fff!important;background-color:#616161!important}
 .ish-grey,.ish-hover-grey:hover,.ish-gray,.ish-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
 .ish-light-grey,.ish-hover-light-grey:hover,.ish-light-gray,.ish-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
 .ish-dark-grey,.ish-hover-dark-grey:hover,.ish-dark-gray,.ish-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}

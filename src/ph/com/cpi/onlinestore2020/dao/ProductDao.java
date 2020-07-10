@@ -19,4 +19,5 @@ public interface ProductDao {
 	public void updateProduct(HashMap<String, Object> params) throws SQLException;
 	public void deleteProduct(HashMap<String, Object> params) throws SQLException;
 	public Integer generateProductId() throws SQLException;
+	public List<Product> getProductInfo(HashMap<String, Object> params) throws SQLException;
 }

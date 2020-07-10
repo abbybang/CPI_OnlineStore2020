@@ -75,4 +75,15 @@ public class ProductDaoImpl implements ProductDao{
 			System.out.print("DAO: "+ newProductId);
 			return newProductId;
 		}
+
+	//GET PRODUCT WITH SPECIFIC PRODUCT ID
+	@Override
+	public List<Product> getProductInfo(HashMap<String, Object> params) throws SQLException {
+		List<Product> getProductInfoId = null;
+		try(SqlSession session = sqlSessionFactory.openSession()){
+			getProductInfoId = session.selectList("getProductInfo", params);
+		}
+		return getProductInfoId;
+	}
 }
+	
