@@ -10,6 +10,15 @@ public class Cart {
 	private Integer quantity;
 	
 	
+	public Cart(Integer customerId, Integer productId, String productName, BigDecimal price, Integer quantity) {
+		super();
+		this.customerId = customerId;
+		this.productId = productId;
+		this.productName = productName;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
 	public Integer getUserId() {
 		return customerId;
 	}

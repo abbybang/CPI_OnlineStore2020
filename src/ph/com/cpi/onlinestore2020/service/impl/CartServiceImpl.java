@@ -10,13 +10,13 @@ import ph.com.cpi.onlinestore2020.model.Cart;
 import ph.com.cpi.onlinestore2020.service.CartService;
 
 public class CartServiceImpl implements CartService {
-	CartDAO cartItems = new CartDAOImpl();
+	CartDAO cartDAO = new CartDAOImpl();
 
 	@Override
 	public List<Cart> getCartItems(Integer customerID) throws SQLException {
 		HashMap<String, Object> params = new HashMap<String, Object>();
 		params.put("customerID", customerID);
-		List<Cart> items = cartItems.getCartItems(params);
-		return items;
+		List<Cart> cartItems = cartDAO.getCartItems(params);
+		return cartItems;
 	}
 }

@@ -30,20 +30,21 @@ public class CartController extends HttpServlet {
 		try {
 			String action = request.getParameter("action");
 			
-			if(action.equals("load cart")) {
+			if(action.equals("view")) {
 				page = "pages/cart/cart.jsp";
 				Integer customerID = Integer.parseInt(request.getParameter("customerID"));
-				List<Cart> items = cartService.getCartItems(customerID);
+				List<Cart> cartItems = cartService.getCartItems(customerID);
 				
 				BigDecimal grandTotal = new BigDecimal(0);
 				Integer itemCount = 0;
-				for(Cart item : items) {
+				
+				for(Cart item : cartItems) {
 					BigDecimal subTotal = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
 					grandTotal = grandTotal.add(subTotal);
 					itemCount += item.getQuantity();
 				}
 				
-				request.setAttribute("items", items);
+				request.setAttribute("cartItems", cartItems);
 				request.setAttribute("grandTotal", grandTotal);
 				request.setAttribute("itemCount", itemCount);
 				

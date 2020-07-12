@@ -4,7 +4,7 @@ $(document).ready(function() {
 			url: contextPath + "cart",
 			data: {
 				customerID: "34",
-				action: "load cart"
+				action: "view"
 			},
 			method: "POST",
 			success: function(result) {
@@ -12,4 +12,4 @@ $(document).ready(function() {
 			}
 		});
 	});
-})
+});

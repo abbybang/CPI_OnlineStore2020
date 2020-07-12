@@ -1,12 +1,27 @@
-#ordersDiv, #summaryDiv {
-	float: left;
+
+div.imageDiv {
+	width: 200px;
+	height: 200px;
 }
 
-div#ordersDiv {
-    width: max-content;
+div#cartItemsDiv {
+	border-left: 6px groove steelblue;
 }
 
 div#summaryDiv {
-    width: max-content;
-    margin-left: 20px;
+	border-left: 4px groove cadetblue;
+}
+
+tr#gTotalRow {
+	font-weight: bold;
+}
+
+div#shopBtnDiv {
+	width: max-content;
+    margin-left: auto;
+}
+
+div#checkoutBtnDiv {
+	width: max-content;
+    margin-left: auto;
 }

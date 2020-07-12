@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.CarttMapper">
+<mapper namespace="ph.com.cpi.onlinestore2020.resource.mappers.CartMapper">
 	<resultMap type="ph.com.cpi.onlinestore2020.model.Cart" id="cartItemsMap">
-		<result property="customerId" column="USER_ID"/>
-		<result property="productId" column="PRODUCT_ID"/>
+		<result property="customerId"  column="USER_ID"/>
+		<result property="productId"   column="PRODUCT_ID"/>
 		<result property="productName" column="PRODUCT_NAME"/>
-		<result property="price" column="PRICE"/>
-		<result property="quantity" column="QUANTITY"/>
+		<result property="price"       column="PRICE"/>
+		<result property="quantity"    column="QUANTITY"/>
 	</resultMap>
 	
 	<select id="getCartItems" resultMap="cartItemsMap">
