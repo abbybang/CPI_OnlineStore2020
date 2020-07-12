@@ -26,70 +26,86 @@
 	<div class="row" id="contentDiv">
 		<div class="col-md-1"></div>
 		<div class="col-md-6" id="cartItemsDiv">
-			<table class="table table-hover table-responsive">
-				<tbody>
-<!-- 					<tr> -->
-<!-- 						<td></td>	Product image here -->
-<!-- 						<td></td>	Product name and unit price here -->
-<!-- 						<td></td>	Product order quantity here -->
-<!-- 						<td></td>	Product order subtotal here -->
-<!-- 					</tr> -->
-					<tr>
-						<td>
-							<div class="imageDiv">
-								<img class="img-responsive" src="img\cart\black-laptop.png">
-							</div>
-						</td>	<!-- Product image here -->
-						<td>
-							<p class="lead">
-								SAMPLE PRODUCT NAME
-							</p>
-							<p>
-								<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-							</p>
-						</td>	<!-- Product name and unit price here -->
-						<td>
-							<p class="text-right">
-								1
-							</p>
-						</td>	<!-- Order quantity here -->
-						<td>
-							<p class="text-right">
-								<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-							</p>
-						</td>	<!-- Product order subtotal here -->
-					</tr>	<!-- Dummy row -->
-					<c:if test="${cartItems != null }">
-						<c:forEach var="item" items="${cartItems }">
-							<tr>
-								<td>
-									<div class="imageDiv">
-										<img class="img-responsive" src="img\cart\black-laptop.png">
-									</div>
-								</td>
-								<td>
-									<p class="lead">
-										<c:out value="${item.getProductName() }"></c:out>
+			<c:if test="${cartItems != null }">
+				<table class="table table-hover table-responsive">
+					<tbody>
+	<!-- 					<tr> -->
+	<!-- 						<td></td>	Product image here -->
+	<!-- 						<td></td>	Product name and unit price here -->
+	<!-- 						<td></td>	Product order quantity here -->
+	<!-- 						<td></td>	Product order subtotal here -->
+	<!-- 					</tr> -->
+						<tr>
+							<td>
+								<div class="imageDiv">
+									<img class="img-responsive" src="img\cart\black-laptop.png">
+								</div>
+							</td>	<!-- Product image here -->
+							<td>
+								<button class="prodNameBtn" type="button">
+									<p class="lead prodNamePrg">
+										SAMPLE PRODUCT NAME
 									</p>
-									<p>
-										<fmt:formatNumber value="${item.getPrice() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-									</p>
-								</td>
-								<td>
-									<p class="text-right">
-										<c:out value="${item.getQuantity() }"></c:out>
-									</p>
-								</td>
-								<td>
-									<p class="text-right">
-										<fmt:formatNumber value="${item.getPrice() * item.getQuantity() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-									</p>
-								</td>
-							</tr>
-						</c:forEach>
-					</c:if>
-				</tbody>
-			</table>
+								</button>
+								<p>
+									<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+								</p>
+							</td>	<!-- Product name and unit price here -->
+							<td>
+								<p class="text-right">
+									1
+								</p>
+							</td>	<!-- Order quantity here -->
+							<td>
+								<p class="text-right">
+									<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+								</p>
+							</td>	<!-- Product order subtotal here -->
+						</tr>	<!-- Dummy row -->
+							<c:forEach var="item" items="${cartItems }">
+								<tr>
+									<td>
+										<div class="imageDiv">
+											<img class="img-responsive" alt="Laptop sample's image" src="img\cart\black-laptop.png">
+										</div>
+									</td>
+									<td>
+										<button class="prodNameBtn" type="button">
+											<p class="lead prodNamePrg">
+												<c:out value="${item.getProductName() }"></c:out>
+											</p>
+										</button>
+										<p>
+											<fmt:formatNumber value="${item.getPrice() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+										</p>
+									</td>
+									<td>
+										<p class="text-right">
+											<c:out value="${item.getQuantity() }"></c:out>
+										</p>
+									</td>
+									<td>
+										<p class="text-right">
+											<fmt:formatNumber value="${item.getPrice() * item.getQuantity() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
+					</tbody>
+				</table>
+			</c:if>
+			<c:if test="${cartItems == null }">
+				<div class="well">
+					<div class="imageDiv" id="emptyCartDiv">
+						<img class="img-responsive" alt="Empty shopping cart logo" src="img\cart\empty-cart.png">
+					</div>
+					<p class="lead" id="emptyCartPrg">
+						Your shopping cart is empty.
+						<br>
+						Get your own laptop now to open the doors of new possibilities!
+					</p>
+				</div>
+			</c:if>
 		</div>
 		<div class="col-md-4" id="summaryDiv">
 			<h3>
@@ -99,82 +115,85 @@
 					<c:out value="${(itemCount > 1 || itemCount == 0) ? ' PRODUCTS' : ' PRODUCT'}"></c:out>
 				</small>
 			</h3>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							<p>
-								Name
-							</p>
-						</th>	<!-- Product name here -->
-						<th>
-							<p class="text-right">
-								Quantity
-							</p>
-						</th>	<!-- Order quantity here -->
-						<th>
-							<p class="text-right">
-								Subtotal
-							</p>
-						</th>	<!-- Product order subtotal here -->
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<p>
-								Sample Product Name
-							</p>
-						</td>	<!-- Product name here -->
-						<td>
-							<p class="text-right">
-								3
-							</p>
-						</td>	<!-- Order quantity here -->
-						<td>
-							<p class="text-right">
-								<fmt:formatNumber value="29999.97" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-							</p>
-						</td>	<!-- Product order subtotal here -->
-					</tr>	<!-- Dummy row -->
-					<c:if test="${cartItems != null }">
-						<c:forEach var="item" items="${cartItems }">
-							<tr>
-								<td>
-									<p>
-										<c:out value="${item.getProductName() }"></c:out>
-									</p>
-								</td>
-								<td>
-									<p class="text-right">
-										<c:out value="${item.getQuantity() }"></c:out>
-									</p>
-								</td>
-								<td>
-									<p class="text-right">
-										<fmt:formatNumber value="${item.getPrice() * item.getQuantity() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-									</p>
-								</td>
-							</tr>
-						</c:forEach>
-						<tr class="info" id="gTotalRow">
-							<td colspan=2>
+			<hr>
+			<c:if test="${cartItems != null }">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
 								<p>
-									Total
+									Name
 								</p>
-							</td>
+							</th>	<!-- Product name here -->
+							<th>
+								<p class="text-right">
+									Quantity
+								</p>
+							</th>	<!-- Order quantity here -->
+							<th>
+								<p class="text-right">
+									Subtotal
+								</p>
+							</th>	<!-- Product order subtotal here -->
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p>
+									Sample Product Name
+								</p>
+							</td>	<!-- Product name here -->
 							<td>
 								<p class="text-right">
-									<fmt:formatNumber value="${grandTotal }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+									3
 								</p>
-							</td>	<!-- Grand total here  -->
-						</tr>
-					</c:if>
-				</tbody>
-			</table>
-			<div id="checkoutBtnDiv">
-				<button class="btn btn-success" id="checkoutBtn" type="button">CHECKOUT</button>
-			</div>
+							</td>	<!-- Order quantity here -->
+							<td>
+								<p class="text-right">
+									<fmt:formatNumber value="29999.97" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+								</p>
+							</td>	<!-- Product order subtotal here -->
+						</tr>	<!-- Dummy row -->
+	
+							<c:forEach var="item" items="${cartItems }">
+								<tr>
+									<td>
+										<p>
+											<c:out value="${item.getProductName() }"></c:out>
+										</p>
+									</td>
+									<td>
+										<p class="text-right">
+											<c:out value="${item.getQuantity() }"></c:out>
+										</p>
+									</td>
+									<td>
+										<p class="text-right">
+											<fmt:formatNumber value="${item.getPrice() * item.getQuantity() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
+							<tr class="info" id="gTotalRow">
+								<td colspan=2>
+									<p>
+										Total
+									</p>
+								</td>
+								<td>
+									<p class="text-right">
+										<fmt:formatNumber value="${grandTotal }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+									</p>
+								</td>	<!-- Grand total here  -->
+							</tr>
+	
+					</tbody>
+				</table>
+				<div id="checkoutBtnDiv">
+					<button class="btn btn-success" id="checkoutBtn" type="button">CHECKOUT</button>
+				</div>
+			</c:if>
 		</div>
 		<div class="col-md-1"></div>
 	</div>

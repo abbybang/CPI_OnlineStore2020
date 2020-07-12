@@ -38,10 +38,12 @@ public class CartController extends HttpServlet {
 				BigDecimal grandTotal = new BigDecimal(0);
 				Integer itemCount = 0;
 				
-				for(Cart item : cartItems) {
-					BigDecimal subTotal = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
-					grandTotal = grandTotal.add(subTotal);
-					itemCount += item.getQuantity();
+				if(cartItems != null) {
+					for(Cart item : cartItems) {
+						BigDecimal subTotal = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
+						grandTotal = grandTotal.add(subTotal);
+						itemCount += item.getQuantity();
+					}
 				}
 				
 				request.setAttribute("cartItems", cartItems);
