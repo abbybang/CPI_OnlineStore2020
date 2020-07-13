@@ -15,7 +15,7 @@
 
 
 <!-- Footer -->
-<footer class="ish-center ish-grey ish-padding-16">
+<footer class="ish-center ish-grey " style="padding:20px 16px ">
     <i class="fa fa-facebook-official ish-hover-opacity"></i>
     <i class="fa fa-instagram ish-hover-opacity"></i>
     <i class="fa fa-snapchat ish-hover-opacity"></i>
