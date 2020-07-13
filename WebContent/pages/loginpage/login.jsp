@@ -22,6 +22,7 @@
 			<div>	
 				<input type="button" id="loginBtn" value="Continue">
 			</div>
+			<p style="font-size: 13px;">If you haven't signed up yet, <a href="${pageContext.request.contextPath}/pages/registration/registration.jsp">click here</a>.</p>
 		</form>
 	</div>
 	<jsp:include page="/pages/footer.jsp" />

@@ -7,7 +7,7 @@
 <title>Laptop Factory</title>
 </head>
 <body>
-	<h1>You are logged in</h1>
+	<h1>You are logged in as admin</h1>
 	<p>${ user }</p>
 </body>
 </html>
