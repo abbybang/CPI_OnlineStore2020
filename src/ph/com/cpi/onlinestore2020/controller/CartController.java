@@ -29,12 +29,12 @@ public class CartController extends HttpServlet {
 		
 		try {
 			String action = request.getParameter("action");
+			Integer customerID = Integer.parseInt(request.getParameter("customerID"));
 			
 			if(action.equals("view")) {
 				page = "pages/cart/cart.jsp";
-				Integer customerID = Integer.parseInt(request.getParameter("customerID"));
-				List<Cart> cartItems = cartService.getCartItems(customerID);
 				
+				List<Cart> cartItems = cartService.getCartItems(customerID);
 				BigDecimal grandTotal = new BigDecimal(0);
 				Integer itemCount = 0;
 				
@@ -46,10 +46,12 @@ public class CartController extends HttpServlet {
 					}
 				}
 				
+				request.setAttribute("customerID", customerID.toString());
 				request.setAttribute("cartItems", cartItems);
 				request.setAttribute("grandTotal", grandTotal);
 				request.setAttribute("itemCount", itemCount);
 				
+				System.out.println("Customer ID: " + customerID);
 				System.out.println("Inside CartController");
 			}
 		} catch (Exception e) {

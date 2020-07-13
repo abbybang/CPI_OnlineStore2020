@@ -44,7 +44,7 @@ public class CartDAOImpl implements CartDAO {
 		cartItems.add(item2);
 		cartItems.add(item3);
 		
-		cartItems = null;
+//		cartItems = null;
 		
 		return cartItems;
 	}

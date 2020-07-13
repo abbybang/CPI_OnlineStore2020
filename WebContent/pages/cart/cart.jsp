@@ -2,7 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="stylesheet" type="text/css" href="css\cart\cart_style.css" />
-<script type="text/javascript">var contextPath = '${pageContext.request.contextPath}' + '/';</script>
+<script type="text/javascript">
+	var contextPath = '${pageContext.request.contextPath}' + '/';
+	var customerID = "${customerID}";
+</script>
 <script type="text/javascript" src="js/cart/cart.js"></script>
 <div class="container-fluid" id="cartDiv">
 	<div class="row" id="headerDiv">
@@ -18,7 +21,7 @@
 		</div>
 		<div class="col-md-2">
 			<div id="shopBtnDiv">
-				<button class="btn btn-primary" type="button">Continue Shopping</button>
+				<button class="btn btn-primary" id="shopBtn" type="button">Continue Shopping</button>
 			</div>
 		</div>
 		<div class="col-md-5"></div>
@@ -62,35 +65,35 @@
 								</p>
 							</td>	<!-- Product order subtotal here -->
 						</tr>	<!-- Dummy row -->
-							<c:forEach var="item" items="${cartItems }">
-								<tr>
-									<td>
-										<div class="imageDiv">
-											<img class="img-responsive" alt="Laptop sample's image" src="img\cart\black-laptop.png">
-										</div>
-									</td>
-									<td>
-										<button class="prodNameBtn" type="button">
-											<p class="lead prodNamePrg">
-												<c:out value="${item.getProductName() }"></c:out>
-											</p>
-										</button>
-										<p>
-											<fmt:formatNumber value="${item.getPrice() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+						<c:forEach var="item" items="${cartItems }">
+							<tr>
+								<td>
+									<div class="imageDiv">
+										<img class="img-responsive" alt="Laptop sample's image" src="img\cart\black-laptop.png">
+									</div>
+								</td>
+								<td>
+									<button class="prodNameBtn" id="prod${item.getProductId() }_Btn" type="button">
+										<p class="lead prodNamePrg">
+											<c:out value="${item.getProductName() }"></c:out>
 										</p>
-									</td>
-									<td>
-										<p class="text-right">
-											<c:out value="${item.getQuantity() }"></c:out>
-										</p>
-									</td>
-									<td>
-										<p class="text-right">
-											<fmt:formatNumber value="${item.getPrice() * item.getQuantity() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-										</p>
-									</td>
-								</tr>
-							</c:forEach>
+									</button>
+									<p>
+										<fmt:formatNumber value="${item.getPrice() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+									</p>
+								</td>
+								<td>
+									<p class="text-right">
+										<c:out value="${item.getQuantity() }"></c:out>
+									</p>
+								</td>
+								<td>
+									<p class="text-right">
+										<fmt:formatNumber value="${item.getPrice() * item.getQuantity() }" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
+									</p>
+								</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</c:if>
