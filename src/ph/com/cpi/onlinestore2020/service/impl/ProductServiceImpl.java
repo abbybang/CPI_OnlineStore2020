@@ -31,8 +31,8 @@ public class ProductServiceImpl implements ProductService{
 		params.put(      "stock", stock      );
 		params.put("description", description );
 		productList.addProduct(params);
-		List<Product> students = productList.getProductList();
-		return students;
+		List<Product> products = productList.getProductList();
+		return products;
 	}
 	
 	//UPDATE PRODUCT
@@ -46,8 +46,8 @@ public class ProductServiceImpl implements ProductService{
 		params.put(      "stock", stock      );
 		params.put("description", description );
 		productList.updateProduct(params);
-		List<Product> students = productList.getProductList();
-		return students;
+		List<Product> products = productList.getProductList();
+		return products;
 	}
 
 	//DELETE PRODUCT
@@ -61,14 +61,13 @@ public class ProductServiceImpl implements ProductService{
 			params.put("productId", productId[i]);
 			productList.deleteProduct(params);
 	    }
-		List<Product> students = productList.getProductList();
-		return students;
+		List<Product> products = productList.getProductList();
+		return products;
 	}
 	
 	//GENERATE PRODUCT NEW ID
 	@Override
 	public Integer generateProductId() throws SQLException {
-		System.out.println("SERVICE: " + productList.generateProductId());
 		return productList.generateProductId();
 	}
 	
