@@ -35,10 +35,6 @@ public class User {
 		this.isAdmin = isAdmin;
 	}
 
-	public Integer userId() {
-		return userId;
-	}
-
 	public void setUserID(Integer userId) {
 		this.userId = userId;
 	}
