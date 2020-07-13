@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
 			HttpSession session = request.getSession();
 			User user = (User) session.getAttribute("user");
 			if( user != null) {
-				pagePath =  "pages/home/Homepage.jsp";
+				pagePath =  "pages/HomepageM/Homepage.jsp";
 				request.setAttribute("user", user);
 				dispatcher = request.getRequestDispatcher(pagePath);
 				dispatcher.forward(request, response);
@@ -56,7 +56,7 @@ public class LoginController extends HttpServlet {
 					 user = loginServiceImpl.getUser(username, password); 
 					 if(user != null) {
 						 if(user.getStatus().equalsIgnoreCase("Y")) {
-							 pagePath = "pages/home/AdminPage.jsp";
+							 pagePath = "pages/admin/admin.jsp";
 						 } else {
 							 pagePath = "pages/home/SampleHome.jsp";
 						 }

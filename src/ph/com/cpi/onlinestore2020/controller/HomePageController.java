@@ -29,7 +29,7 @@ public class HomePageController extends HttpServlet {
 		
 	try {
 		request.setAttribute("homepageList", homepageList.getHomePageList());
-		page = "pages/Homepagemain/Homepage.jsp";
+		page = "/pages/HomepageM/Homepage.jsp";
 	}catch(Exception e) {
 		e.printStackTrace();
 		page = "/pages/error.jsp";
@@ -48,7 +48,7 @@ public class HomePageController extends HttpServlet {
 		RequestDispatcher requestDispatcher = null;
 		try {
 			Integer productId = Integer.parseInt(request.getParameter("productId"));
-			User user = new User();
+		
 			String action = request.getParameter("action");
 			
 			if(action.equals("get")) {
@@ -57,7 +57,7 @@ public class HomePageController extends HttpServlet {
 				request.setAttribute("productList", productService.getProductId(productId));
 				
 			}else {
-				page = "pages/Homepagemain/Homepage.jsp";
+				page = "/pages/HomepageM/Homepage.jsp";
 			}
 			
 		}catch(Exception e) {
