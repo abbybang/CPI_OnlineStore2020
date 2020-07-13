@@ -10,10 +10,19 @@ public class Cart {
 	private Integer quantity;
 	
 	
-	public Integer getUserId() {
+	public Cart(BigDecimal customerId, BigDecimal productId, String productName, BigDecimal price, BigDecimal quantity) {
+		super();
+		this.customerId = customerId.intValue();
+		this.productId = productId.intValue();
+		this.productName = productName;
+		this.price = price;
+		this.quantity = quantity.intValue();
+	}
+	
+	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setUserId(Integer userId) {
+	public void setCustomerId(Integer userId) {
 		this.customerId = userId;
 	}
 	public Integer getProductId() {

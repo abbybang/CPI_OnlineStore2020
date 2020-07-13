@@ -1,12 +1,48 @@
-#ordersDiv, #summaryDiv {
-	float: left;
+
+div.imageDiv {
+	width: 200px;
+	height: 200px;
 }
 
-div#ordersDiv {
-    width: max-content;
+button.prodNameBtn {
+	background: none;
+    border: none;
+    padding: 0px;
+}
+
+p.prodNamePrg {
+	margin-bottom: 0px;
+    text-decoration: underline;
+    color: #004586;
+}
+
+p#emptyCartPrg {
+	text-align: center;
+    font-style: italic;
+}
+
+div#cartItemsDiv {
+	border-left: 6px groove steelblue;
 }
 
 div#summaryDiv {
-    width: max-content;
-    margin-left: 20px;
+	border-left: 4px groove cadetblue;
+}
+
+tr#gTotalRow {
+	font-weight: bold;
+}
+
+div#shopBtnDiv {
+	width: max-content;
+    margin-left: auto;
+}
+
+div#checkoutDiv {
+	width: max-content;
+    margin-left: auto;
+}
+
+.imageDiv#emptyCartDiv {
+	margin: auto;
 }

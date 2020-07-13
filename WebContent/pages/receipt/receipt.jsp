@@ -7,9 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/receiptCss/receiptStyle.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/receiptCss/receiptStyle.css">
 </head>
 <body>
 	<div class="header">

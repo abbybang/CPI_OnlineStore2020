@@ -1,6 +1,7 @@
 package ph.com.cpi.onlinestore2020.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ph.com.cpi.onlinestore2020.model.Cart;
+import ph.com.cpi.onlinestore2020.model.Transaction;
 import ph.com.cpi.onlinestore2020.service.impl.CartServiceImpl;
 
 /**
@@ -27,14 +29,55 @@ public class CartController extends HttpServlet {
 		String page = "";
 		
 		try {
-			page = "pages/cart/cart.jsp";
+			String action = request.getParameter("action");
 			Integer customerID = Integer.parseInt(request.getParameter("customerID"));
-			List<Cart> items = cartService.getCartItems(customerID);
-			request.setAttribute("items", items);
-			System.out.println("Inside CartController");
+			
+			if(action.equals("view")) {
+				page = "pages/cart/cart.jsp";
+				
+				List<Cart> cartItems = cartService.getCartItems(customerID);
+				BigDecimal grandTotal = new BigDecimal(0);
+				Integer itemCount = 0;
+				
+				if(cartItems != null) {
+					for(Cart item : cartItems) {
+						BigDecimal subTotal = item.getPrice().multiply(new BigDecimal(item.getQuantity()));
+						grandTotal = grandTotal.add(subTotal);
+						itemCount += item.getQuantity();
+					}
+				}
+				
+				request.setAttribute("customerID", customerID.toString());
+				request.setAttribute("cartItems", cartItems);
+				request.setAttribute("grandTotal", grandTotal);
+				request.setAttribute("itemCount", itemCount);
+				
+				System.out.println("Is cartItems empty? " + (cartItems == null));
+				System.out.println("cartItems.size(): " + cartItems.size());
+				System.out.println("Customer ID: " + customerID);
+				System.out.println("Performed 'view' action");
+			} else if(action.equals("confirm")) {
+				page = "pages/cart/cart.jsp";
+				BigDecimal grandTotal = new BigDecimal(Double.parseDouble(request.getParameter("grandTotal")));
+				cartService.addTransaction(customerID, grandTotal);
+				Transaction transaction = cartService.getTransaction(customerID).get(0);
+				List<Cart> cartItems = cartService.getCartItems(customerID);
+				
+				for(Cart item : cartItems) {
+					cartService.addSale(transaction.getTransactionID(), item.getProductId(), item.getPrice(), item.getQuantity());
+				}
+				
+				for(Cart item : cartItems) {
+					cartService.deleteItem(customerID, item.getProductId());
+				}
+				
+				System.out.println("Transaction ID: " + transaction.getTransactionID());
+				System.out.println("Performed 'confirm' action");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);
 	}

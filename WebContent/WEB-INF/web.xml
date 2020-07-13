@@ -3,15 +3,6 @@
   <display-name>OnlineStore2020</display-name>
   
 	<servlet>
-		<servlet-name>logincontroller</servlet-name>
-		<servlet-class>ph.com.cpi.onlinestore2020.controller.LoginController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>logincontroller</servlet-name>
-  		<url-pattern>/user-login</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
  		<servlet-name>OnlineStoreController</servlet-name>
  		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
  	</servlet>
@@ -19,6 +10,15 @@
  		<servlet-name>OnlineStoreController</servlet-name>
  		<url-pattern>/Homepage</url-pattern>
  	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>logincontroller</servlet-name>
+		<servlet-class>ph.com.cpi.onlinestore2020.controller.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logincontroller</servlet-name>
+  		<url-pattern>/user-login</url-pattern>
+	</servlet-mapping>
   
 	<servlet>
 		<servlet-name>ProductController</servlet-name>
