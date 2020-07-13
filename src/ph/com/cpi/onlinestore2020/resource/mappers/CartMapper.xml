@@ -20,4 +20,10 @@
 		 WHERE P.PRODUCT_ID = C.PRODUCT_ID
 		   AND C.USER_ID = #{customerID}
 	</select>
+	
+	<update id="addCartItems">
+		INSERT INTO CART(USER_ID, PRODUCT_ID, PRICE, QUANTITY)
+		VALUES(#{customerId}, #{PRODUCT_ID}, #{price}, #{PRICE}, #{quantity})
+	</update>
+	
 </mapper>

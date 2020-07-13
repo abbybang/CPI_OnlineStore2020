@@ -35,4 +35,11 @@ public class CartDAOImpl implements CartDAO {
 		}
 		return cartItems;
 	}
+	@Override
+	public void addCartItems(HashMap<String, Object> params) throws SQLException{
+		try(SqlSession session = sqlSessionFactory.openSession()){
+			session.update("addCartItems",params);
+			session.commit();
+		}
+	}
 }

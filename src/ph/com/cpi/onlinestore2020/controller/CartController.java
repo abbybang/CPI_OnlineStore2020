@@ -1,11 +1,11 @@
 package ph.com.cpi.onlinestore2020.controller;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,10 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import ph.com.cpi.onlinestore2020.model.Cart;
 import ph.com.cpi.onlinestore2020.service.impl.CartServiceImpl;
 
-/**
- * Servlet implementation class CartController
- */
-@WebServlet("/CartController")
 public class CartController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -39,8 +35,33 @@ public class CartController extends HttpServlet {
 		requestDispatcher.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String page = "";
+		RequestDispatcher requestDispatcher = null;
+		try {
+			String action = request.getParameter("action");	
+			
+			
+			if(action.equals("addProductCart")){				
+				Integer customerId = Integer.parseInt(request.getParameter("customerId"));	
+				Integer productId = Integer.parseInt(request.getParameter("productId"));	
+				BigDecimal price = new BigDecimal(request.getParameter("price"));				
+				Integer quantity = Integer.parseInt(request.getParameter("quantity"));	
+
+				System.out.println("ADD--CART CONTROLLER");
+				request.setAttribute("productList", cartService.addCartItems(customerId, productId, price, quantity));
+			
+				page = "pages/cart/cart.jsp";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("FAILED--ADD--CART CONTROLLER");
+			page = "pages/cart/cart.jsp";
+		}
+		requestDispatcher = request.getRequestDispatcher(page);
+		requestDispatcher.forward(request, response);
+	}
 }
+
+
