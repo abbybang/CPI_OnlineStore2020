@@ -52,25 +52,31 @@ public class LoginController extends HttpServlet {
 			if(event.equalsIgnoreCase("login")) {
 				String username = request.getParameter("username");
 				String password = request.getParameter("password");
-					 try { 
-						 user = loginServiceImpl.getUser(username, password); 
-						 if(user != null) {
-							 pagePath = "pages/Homepagemain/Homepage.jsp";
-							 dispatcher = request.getRequestDispatcher(pagePath);
-							 request.setAttribute("user", user);
-							 HttpSession session = request.getSession();
-							 session.setAttribute("user", user);
-							 dispatcher.forward(request, response);
+				
+				 try { 
+					 user = loginServiceImpl.getUser(username, password); 
+					 if(user != null) {
+						 if(user.getStatus().equalsIgnoreCase("Y")) {
+							 pagePath = "pages/home/AdminPage.jsp";
 						 } else {
-							 pagePath = "pages/loginpage/login.jsp";
-							 String errMsg = "The credentials you have entered is invalid. Please try again.";
-							 dispatcher = request.getRequestDispatcher(pagePath);
-							 request.setAttribute("errMsg", errMsg);
-							 dispatcher.forward(request, response);
+							 pagePath = "pages/Homepagemain/Homepage.jsp";
 						 }
-					 } catch(SQLException e) { 
-						  e.printStackTrace(); 
+						 
+						 dispatcher = request.getRequestDispatcher(pagePath);
+						 request.setAttribute("user", user);
+						 HttpSession session = request.getSession();
+						 session.setAttribute("user", user);
+						 dispatcher.forward(request, response);
+					 } else {
+						 pagePath = "pages/loginpage/login.jsp";
+						 String errMsg = "The credentials you have entered is invalid. Please try again.";
+						 dispatcher = request.getRequestDispatcher(pagePath);
+						 request.setAttribute("errMsg", errMsg);
+						 dispatcher.forward(request, response);
 					 }
+				 } catch(SQLException e) { 
+					  e.printStackTrace(); 
+				 }
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

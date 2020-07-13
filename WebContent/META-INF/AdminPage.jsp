@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Laptop Factory</title>
 </head>
 <body>
-	<h2>An error occurred. Please <a href="/products">try</a> again.</h2> 
-
-	<h1>You are logged in</h1>
+	<h1>You are logged in as admin</h1>
 	<p>${ user }</p>
-
 </body>
 </html>

@@ -8,8 +8,7 @@ public class Cart {
 	private String productName;
 	private BigDecimal price;
 	private Integer quantity;
-	
-	
+		
 	public Cart(BigDecimal customerId, BigDecimal productId, String productName, BigDecimal price, BigDecimal quantity) {
 		super();
 		this.customerId = customerId.intValue();
@@ -22,8 +21,9 @@ public class Cart {
 	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Integer userId) {
-		this.customerId = userId;
+	
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 	public Integer getProductId() {
 		return productId;
@@ -50,10 +50,11 @@ public class Cart {
 		this.quantity = quantity;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "Cart [userId=" + customerId + ", productId=" + productId + ", productName=" + productName + ", price="
-				+ price + ", quantity=" + quantity + "]";
+		return "Cart [customerId=" + customerId + ", productId=" + productId + ", productName=" + productName
+				+ ", price=" + price + ", quantity=" + quantity + "]";
 	}
+	
+	
 }

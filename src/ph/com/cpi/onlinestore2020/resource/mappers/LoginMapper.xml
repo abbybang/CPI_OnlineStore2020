@@ -14,11 +14,39 @@
 		<result property="address" column="ADDRESS" />
 		<result property="phoneNumber" column="PHONE_NUMBER" />
 		<result property="userName" column="USERNAME" />
-		<result property="password" column="PASSWORD" />
-		<result property="status" column="IS_ADMIN" />
+		<result property="passWord" column="PASSWORD" />
+		<result property="isAdmin" column="IS_ADMIN" />
 	</resultMap>
 
 	<select id="getUser" resultMap="userMap">
 		SELECT * FROM USER_TBL WHERE USERNAME = #{username} AND PASSWORD = #{password}
+	</select>
+	
+	<update id="addUser">
+		INSERT INTO USER_TBL(USER_ID, 
+							FIRST_NAME, 
+							LAST_NAME, 
+							EMAIL,
+							ADDRESS, 
+							PHONE_NUMBER, 
+							USERNAME, 
+							PASSWORD, 
+							IS_ADMIN)
+					VALUES((SELECT MAX(NVL(USER_ID, 0)) + 1 FROM USER_TBL),
+							#{fname},
+							#{lname},
+							#{email},
+							#{address},
+							#{phoneNumber},
+							#{userName},
+							#{passWord},
+							#{isAdmin})
+	</update>
+	
+	<select id="authenticateUser" resultMap="userMap">
+		SELECT * FROM USER_TBL WHERE USERNAME LIKE LOWER(#{username})
+				OR (LOWER(FIRST_NAME) LIKE LOWER(#{firstname})
+				AND LOWER(LAST_NAME) LIKE LOWER(#{lastname})) 
+				OR LOWER(EMAIL) LIKE LOWER(#{email})
 	</select>
 </mapper>
