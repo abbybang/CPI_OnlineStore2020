@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
 	<meta charset="ISO-8859-1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 	<title>Insert title here</title>
 	<script type="text/javascript">var contextPath = '${pageContext.request.contextPath}' + '/';</script>
 	<script type="text/javascript" src="js/third-party/jquery-3.5.1.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 	<script type="text/javascript" src="js/cart/index_cart.js"></script>
 </head>
 <body>
