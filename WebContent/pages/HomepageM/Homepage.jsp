@@ -44,7 +44,7 @@ body, html {
 .bgimg-2 {
   background-position: center;
   background-size: cover;
-  background-image: url("homeimages/mac3.jpg");
+  background-image: url("homeimages/pre3.jpg");
   min-height: 100%;
 }
 
