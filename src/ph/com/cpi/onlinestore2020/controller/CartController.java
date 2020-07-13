@@ -51,6 +51,8 @@ public class CartController extends HttpServlet {
 				request.setAttribute("grandTotal", grandTotal);
 				request.setAttribute("itemCount", itemCount);
 				
+				System.out.println("Is cartItems empty? " + (cartItems == null));
+				System.out.println("cartItems.size(): " + cartItems.size());
 				System.out.println("Customer ID: " + customerID);
 				System.out.println("Inside CartController");
 			}

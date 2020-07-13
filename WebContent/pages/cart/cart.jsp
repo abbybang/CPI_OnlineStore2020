@@ -29,42 +29,42 @@
 	<div class="row" id="contentDiv">
 		<div class="col-md-1"></div>
 		<div class="col-md-6" id="cartItemsDiv">
-			<c:if test="${cartItems != null }">
+			<c:if test="${cartItems.size() > 0 }">
 				<table class="table table-hover table-responsive">
 					<tbody>
-	<!-- 					<tr> -->
-	<!-- 						<td></td>	Product image here -->
-	<!-- 						<td></td>	Product name and unit price here -->
-	<!-- 						<td></td>	Product order quantity here -->
-	<!-- 						<td></td>	Product order subtotal here -->
-	<!-- 					</tr> -->
-						<tr>
-							<td>
-								<div class="imageDiv">
-									<img class="img-responsive" src="img\cart\black-laptop.png">
-								</div>
-							</td>	<!-- Product image here -->
-							<td>
-								<button class="prodNameBtn" type="button">
-									<p class="lead prodNamePrg">
-										SAMPLE PRODUCT NAME
-									</p>
-								</button>
-								<p>
-									<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-								</p>
-							</td>	<!-- Product name and unit price here -->
-							<td>
-								<p class="text-right">
-									1
-								</p>
-							</td>	<!-- Order quantity here -->
-							<td>
-								<p class="text-right">
-									<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-								</p>
-							</td>	<!-- Product order subtotal here -->
-						</tr>	<!-- Dummy row -->
+<!-- 						<tr> -->
+<!-- 							<td></td>	Product image here -->
+<!-- 							<td></td>	Product name and unit price here -->
+<!-- 							<td></td>	Product order quantity here -->
+<!-- 							<td></td>	Product order subtotal here -->
+<!-- 						</tr> -->
+<!-- 						<tr> -->
+<!-- 							<td> -->
+<!-- 								<div class="imageDiv"> -->
+<!-- 									<img class="img-responsive" src="img\cart\black-laptop.png"> -->
+<!-- 								</div> -->
+<!-- 							</td>	Product image here -->
+<!-- 							<td> -->
+<!-- 								<button class="prodNameBtn" type="button"> -->
+<!-- 									<p class="lead prodNamePrg"> -->
+<!-- 										SAMPLE PRODUCT NAME -->
+<!-- 									</p> -->
+<!-- 								</button> -->
+<!-- 								<p> -->
+<%-- 									<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber> --%>
+<!-- 								</p> -->
+<!-- 							</td>	Product name and unit price here -->
+<!-- 							<td> -->
+<!-- 								<p class="text-right"> -->
+<!-- 									1 -->
+<!-- 								</p> -->
+<!-- 							</td>	Order quantity here -->
+<!-- 							<td> -->
+<!-- 								<p class="text-right"> -->
+<%-- 									<fmt:formatNumber value="9999.99" type="currency" currencySymbol="&#8369;"></fmt:formatNumber> --%>
+<!-- 								</p> -->
+<!-- 							</td>	Product order subtotal here -->
+<!-- 						</tr>	Dummy row -->
 						<c:forEach var="item" items="${cartItems }">
 							<tr>
 								<td>
@@ -97,7 +97,7 @@
 					</tbody>
 				</table>
 			</c:if>
-			<c:if test="${cartItems == null }">
+			<c:if test="${cartItems.size() < 1 }">
 				<div class="well">
 					<div class="imageDiv" id="emptyCartDiv">
 						<img class="img-responsive" alt="Empty shopping cart logo" src="img\cart\empty-cart.png">
@@ -119,7 +119,7 @@
 				</small>
 			</h3>
 			<hr>
-			<c:if test="${cartItems != null }">
+			<c:if test="${cartItems.size() > 0 }">
 				<table class="table">
 					<thead>
 						<tr>
@@ -141,24 +141,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>
-								<p>
-									Sample Product Name
-								</p>
-							</td>	<!-- Product name here -->
-							<td>
-								<p class="text-right">
-									3
-								</p>
-							</td>	<!-- Order quantity here -->
-							<td>
-								<p class="text-right">
-									<fmt:formatNumber value="29999.97" type="currency" currencySymbol="&#8369;"></fmt:formatNumber>
-								</p>
-							</td>	<!-- Product order subtotal here -->
-						</tr>	<!-- Dummy row -->
-	
+<!-- 						<tr> -->
+<!-- 							<td> -->
+<!-- 								<p> -->
+<!-- 									Sample Product Name -->
+<!-- 								</p> -->
+<!-- 							</td>	Product name here -->
+<!-- 							<td> -->
+<!-- 								<p class="text-right"> -->
+<!-- 									3 -->
+<!-- 								</p> -->
+<!-- 							</td>	Order quantity here -->
+<!-- 							<td> -->
+<!-- 								<p class="text-right"> -->
+<%-- 									<fmt:formatNumber value="29999.97" type="currency" currencySymbol="&#8369;"></fmt:formatNumber> --%>
+<!-- 								</p> -->
+<!-- 							</td>	Product order subtotal here -->
+<!-- 						</tr>	Dummy row -->
 							<c:forEach var="item" items="${cartItems }">
 								<tr>
 									<td>
@@ -190,11 +189,27 @@
 									</p>
 								</td>	<!-- Grand total here  -->
 							</tr>
-	
 					</tbody>
 				</table>
-				<div id="checkoutBtnDiv">
-					<button class="btn btn-success" id="checkoutBtn" type="button">CHECKOUT</button>
+				<div id="checkoutDiv">
+					<button class="btn btn-success" id="checkoutBtn" type="button" data-toggle="modal" data-target="#confirmModal">CHECKOUT</button>
+					<div id="confirmModal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Order Confirmation</h4>
+								</div>
+								<div class="modal-body">
+									<p>Please confirm your order.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</c:if>
 		</div>
