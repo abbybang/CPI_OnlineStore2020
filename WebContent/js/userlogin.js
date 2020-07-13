@@ -22,6 +22,8 @@ function userLogin( username, password ){
 	}).done(function(result){
 		$("#loginContainer").html(result);
 		var errMsg = $("#errMsg").val();
+
+
 		if(errMsg){
 			alertify.alert("<i class='fa fa-exclamation-triangle'> " + errMsg + "</i>");
 		}
