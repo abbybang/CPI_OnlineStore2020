@@ -70,8 +70,8 @@ h1 {
 }
 
 #loginForm {
-    width: 32%;
-    left: 34%;
+    width: 27%;
+    left: 37%;
     top: 70px;
 }
 
@@ -109,14 +109,14 @@ h1 {
 }
 
 #loginForm input {
-    width: 70%;
+    width: 84%;
     margin: 5px;
     font-size: 16px;
 }
 
 #loginBtn {
     height: 53px!important;
-    width: 32%!important;
+    width: 38%!important;
     padding: 0!important;
     left: 7px;
 }
@@ -315,4 +315,36 @@ h1 {
 
 .errClass {
     border: 2px solid red!important;
+    transition: .3s ease-in-out;
+}
+
+.mandatory-err-msg {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    color: #ff4646;
+    cursor: pointer;
+    display: none;
+	transition: .3s ease-in-out;
+}
+
+.mandatory-err-msg:after {
+    content: "This is a mandatory field.";
+    position: absolute;
+    font-size: 11px;
+    width: 51px;
+    left: 25px;
+    background: #ffb100;
+    border: 1px solid #ffb100;
+    padding: 3px 11px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 1;
+    opacity:0;
+}
+
+.mandatory-err-msg:hover:after {
+	opacity:1;
+	transition: .3s ease-in-out;
 }

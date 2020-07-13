@@ -10,9 +10,29 @@ public class User {
 	private String userName;
 	private String passWord;
 	private String isAdmin;
-	
-	public Integer userId() {
+
+	public Integer getUserId() {
 		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	public void setUserID(Integer userId) {

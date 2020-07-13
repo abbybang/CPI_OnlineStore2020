@@ -33,32 +33,40 @@ $(document).ready(function(){
 	$("input").focus(function(){
 		if($(this).val()){
 			$(this).removeClass("errClass");
+			$(this).siblings(".mandatory-err-msg").hide();
 		} else {
 			$(this).addClass("errClass");
+			$(this).siblings(".mandatory-err-msg").show();
 		}
 	});
 
 	$("input").on( "keyup", function(){
 		if($(this).val()){
 			$(this).removeClass("errClass");
+			$(this).siblings(".mandatory-err-msg").hide();
 		} else {
 			$(this).addClass("errClass");
+			$(this).siblings(".mandatory-err-msg").show();
 		}
 	});
 	
 	$("textarea").focus(function(){
 		if($(this).val()){
 			$(this).removeClass("errClass");
+			$(this).siblings(".mandatory-err-msg").hide();
 		} else {
 			$(this).addClass("errClass");
+			$(this).siblings(".mandatory-err-msg").show();
 		}
 	});
 	
 	$("textarea").on( "keyup", function(){
 		if($(this).val()){
 			$(this).removeClass("errClass");
+			$(this).siblings(".mandatory-err-msg").hide();
 		} else {
 			$(this).addClass("errClass");
+			$(this).siblings(".mandatory-err-msg").show();
 		}
 	});
 });
@@ -70,10 +78,6 @@ function saveUserData(data){
 		url: contextPath + "user-register",
 		method: 'POST',
 		data: data
-//		success: function(result){
-//			console.log(result);
-//			console.log($(result).filter('#errMsg').val());
-//		}
 	}).done(function(result){
 		$('#errMsg').val($(result).filter('#errMsg').val());
 		var errMsg = $("#errMsg").val();
@@ -82,6 +86,7 @@ function saveUserData(data){
 					function(){
 						$('#fname').addClass("errClass");
 						$('#lname').addClass("errClass");
+						$('#fname').siblings(".mandatory-err-msg").val("Name already exists.").show();
 			});
 		} else if( errMsg == 'username' ){
 			alertify.alert("<i class='fa fa-exclamation-triangle'> Username already exists.</i>",
