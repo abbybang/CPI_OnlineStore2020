@@ -2,29 +2,26 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-	<div class="table-responsive">          
-			<table class="table">
+		<div class="table-responsive">          
+			<table class="table table-fixed">
 				<thead>
 					<tr>
-						<th>
-							<div class="custom-control custom-checkbox">
-  								<input type="checkbox" class="custom-control-input" id="th-checkbox">
-							</div>
+						<th width="2%">			
 						</th>
-						<th>ID</th>
-						<th>Product Name</th>
-						<th>Stock</th>
-						<th>Price</th>
-						<th>Brand</th>
-						<th>Description</th>
+						<th id="th-id" width="0%">ID</th>
+						<th width="20%">Product Name</th>
+						<th width="12%">Stock</th>
+						<th width="12%">Price(Php)</th>
+						<th width="13%">Brand</th>
+						<th width="40%">Description</th>
 					</tr>
 				</thead>
-			<tbody>
+			<tbody id="tbody">
 				<c:forEach  var="list" items="${productList}">
 					<tr>
 						<td>
 							<div class="custom-control custom-checkbox">
-  								<input type="checkbox" class="custom-control-input" id="th-checkbox" name="toDelete" value="${list.productId}">
+  								<input type="checkbox" class="custom-control-input" name="toDelete" value="${list.productId}">
 							</div>
 						</td>
 						<td class="productId">

@@ -1,0 +1,9 @@
+.showProduct {
+    background-color: #061D40;
+    border-style: solid;
+    border-color: black;
+    color: white;
+}
+#quantityValue{
+	width: 30px!important;
+}

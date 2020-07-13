@@ -1,0 +1,87 @@
+body{
+	font-family: "Trebuchet MS";
+}
+#pic-div{
+	width: 100px;
+	height: 100px;
+	}
+	#pic{
+	max-width: 100px;
+	max-height: 100px;
+	}
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	font-size: 14px;
+	text-align: center;
+  	margin-left:auto;
+ 	margin-right:auto;
+ 	border-spacing: 0;
+ 	width: 25%;
+}
+th{
+	text-align: left;
+	font-size: 14px;
+	border-top: 2px dashed #b3b3b3;
+	padding-top: 25px;
+}
+.title{
+	font-weight: 900;
+	font-size: 20px;
+}
+.title-bottom{
+	font-size: 13px;
+}
+.header{
+	width: 100%;
+	justify-content: center;
+	display: flex;
+}
+.title-div{
+	text-align: left;
+	max-width: 40%;
+	min-width: 400px;
+}
+#receipt td{
+	padding: 7px 0px;
+}
+.border{
+	border-bottom: 1px solid #e8e8e8;
+}
+#receipt{
+	width: 33%;
+	border: none;
+	margin-top: 10px;
+}
+.name-qty{
+	width: 45%;
+	align: center;
+}
+.name-qty-div{
+	width: 80%;
+	text-align: left;
+	margin-left: 15px;
+}
+.item-total{
+	width: 35%;
+	align: center;
+}
+.item-total-div{
+	width: 92%;
+	text-align: right;
+}
+.subtotal, .total{
+	width: 35%;
+	align: center;
+}
+.subtotal-div, .total-div{
+	width: 92%;
+	text-align: right;
+	font-size: 12px;
+}
+
+.total-div span{
+	color: #509cf2;
+	font-weight: 900;
+	font-size: 18px;
+}

@@ -9,10 +9,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import ph.com.cpi.onlinestore2020.dao.LoginDAO;
+import ph.com.cpi.onlinestore2020.dao.LoginDao;
 import ph.com.cpi.onlinestore2020.model.User;
 
-public class LoginDAOimpl implements LoginDAO {
+public class LoginDAOimpl implements LoginDao {
 
 	String resource = "ph/com/cpi/onlinestore2020/resource/MyBatisConfig.xml";
 	InputStream inputStream;

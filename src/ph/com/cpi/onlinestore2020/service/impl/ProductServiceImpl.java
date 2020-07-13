@@ -13,6 +13,7 @@ import ph.com.cpi.onlinestore2020.service.ProductService;
 public class ProductServiceImpl implements ProductService{
 	ProductDao productList = new ProductDaoImpl();
 	
+	Integer productId = 0;
 	//GET PRODUCT LIST
 	@Override
 	public List<Product> getProductList() throws SQLException{
@@ -30,8 +31,8 @@ public class ProductServiceImpl implements ProductService{
 		params.put(      "stock", stock      );
 		params.put("description", description );
 		productList.addProduct(params);
-		List<Product> students = productList.getProductList();
-		return students;
+		List<Product> products = productList.getProductList();
+		return products;
 	}
 	
 	//UPDATE PRODUCT
@@ -45,8 +46,8 @@ public class ProductServiceImpl implements ProductService{
 		params.put(      "stock", stock      );
 		params.put("description", description );
 		productList.updateProduct(params);
-		List<Product> students = productList.getProductList();
-		return students;
+		List<Product> products = productList.getProductList();
+		return products;
 	}
 
 	//DELETE PRODUCT
@@ -60,12 +61,21 @@ public class ProductServiceImpl implements ProductService{
 			params.put("productId", productId[i]);
 			productList.deleteProduct(params);
 	    }
-		List<Product> students = productList.getProductList();
-		return students;
+		List<Product> products = productList.getProductList();
+		return products;
 	}
-
-	public Object getHomePageList() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	//GENERATE PRODUCT NEW ID
+	@Override
+	public Integer generateProductId() throws SQLException {
+		return productList.generateProductId();
 	}
+	
+	//GET PRODUCT LIST ID
+	@Override
+	public Product getProductId(Integer productId) throws SQLException{
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put(  "productId", productId  );
+		return productList.getProductId(params);
+		}
 }

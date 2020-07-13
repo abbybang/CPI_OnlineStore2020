@@ -15,10 +15,6 @@ import ph.com.cpi.onlinestore2020.service.ProductService;
 import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
 
 public class ProductController extends HttpServlet{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	ProductServiceImpl productList = new ProductServiceImpl();
 	RequestDispatcher rd = null;
 	
@@ -42,19 +38,23 @@ public class ProductController extends HttpServlet{
 			
 			
 			if(action.equals("add") || action.equals("update")) {
-				Integer productId = Integer.parseInt(request.getParameter("productId"));
-				String productName = request.getParameter("productName");
-				String brand = request.getParameter("brand");
-				BigDecimal price = new BigDecimal(request.getParameter("price"));
-				Integer stock = Integer.parseInt(request.getParameter("stock"));
-				String description = request.getParameter("description");
-				
-				if(action.equals("add")) {
-					System.out.println("ADD--PRODUCT CONTROLLER");
-					request.setAttribute("productList", productList.addProduct(productId, productName, brand, price, stock, description));
-				}else if(action.equals("update")) {
-					System.out.println("UPDATE--PRODUCT CONTROLLER");
-					request.setAttribute("productList", productList.updateProduct(productId, productName, brand, price, stock, description));
+				try {
+					String productName = request.getParameter("productName");
+					String brand = request.getParameter("brand");
+					BigDecimal price = new BigDecimal(request.getParameter("price"));				
+					Integer stock = Integer.parseInt(request.getParameter("stock"));	
+					String description = request.getParameter("description");
+	
+					if(action.equals("add")) {
+						System.out.println("ADD--PRODUCT CONTROLLER");
+						request.setAttribute("productList", productList.addProduct(productList.generateProductId(), productName, brand, price, stock, description));
+					}else if(action.equals("update")) {
+						System.out.println("UPDATE--PRODUCT CONTROLLER");
+						Integer productId = Integer.parseInt(request.getParameter("productId"));
+						request.setAttribute("productList", productList.updateProduct(productId, productName, brand, price, stock, description));
+					}
+				}catch(Exception e) {
+					page = "pages/admin/error.jsp";
 				}
 			}else if(action.equals("delete")) {			
 				String[] toDelete = request.getParameterValues("toDelete[]");
@@ -62,7 +62,6 @@ public class ProductController extends HttpServlet{
 			}
 			page = "pages/admin/updateTable.jsp";			
 		}catch(Exception e){
-			e.printStackTrace();
 			page = "pages/admin/admin.jsp";
 		}
 		requestDispatcher = request.getRequestDispatcher(page);

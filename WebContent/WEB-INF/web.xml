@@ -30,6 +30,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>ProductInfoController</servlet-name>
+		<servlet-class>ph.com.cpi.onlinestore2020.controller.ProductInfoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductInfoController</servlet-name>
+		<url-pattern>/ShowProduct</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
  		<servlet-name>CartController</servlet-name>
  		<servlet-class>ph.com.cpi.onlinestore2020.controller.CartController</servlet-class>
  	</servlet>
@@ -37,5 +46,11 @@
  		<servlet-name>CartController</servlet-name>
  		<url-pattern>/cart</url-pattern>
  	</servlet-mapping>
+
+	<welcome-file-list> 
+		<welcome-file>index</welcome-file>
+		<welcome-file>Homepage</welcome-file>
+		<welcome-file>products</welcome-file>
+	</welcome-file-list> 
 
 </web-app>
