@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ph.com.cpi.onlinestore2020.model.Cart;
+import ph.com.cpi.onlinestore2020.model.Transaction;
 import ph.com.cpi.onlinestore2020.service.impl.CartServiceImpl;
 
 /**
@@ -54,7 +55,24 @@ public class CartController extends HttpServlet {
 				System.out.println("Is cartItems empty? " + (cartItems == null));
 				System.out.println("cartItems.size(): " + cartItems.size());
 				System.out.println("Customer ID: " + customerID);
-				System.out.println("Inside CartController");
+				System.out.println("Performed 'view' action");
+			} else if(action.equals("confirm")) {
+				page = "pages/cart/cart.jsp";
+				BigDecimal grandTotal = new BigDecimal(Double.parseDouble(request.getParameter("grandTotal")));
+				cartService.addTransaction(customerID, grandTotal);
+				Transaction transaction = cartService.getTransaction(customerID).get(0);
+				List<Cart> cartItems = cartService.getCartItems(customerID);
+				
+				for(Cart item : cartItems) {
+					cartService.addSale(transaction.getTransactionID(), item.getProductId(), item.getPrice(), item.getQuantity());
+				}
+				
+				for(Cart item : cartItems) {
+					cartService.deleteItem(customerID, item.getProductId());
+				}
+				
+				System.out.println("Transaction ID: " + transaction.getTransactionID());
+				System.out.println("Performed 'confirm' action");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

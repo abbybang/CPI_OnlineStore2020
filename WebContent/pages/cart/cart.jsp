@@ -5,6 +5,7 @@
 <script type="text/javascript">
 	var contextPath = '${pageContext.request.contextPath}' + '/';
 	var customerID = "${customerID}";
+	var grandTotal = "${grandTotal}";
 </script>
 <script type="text/javascript" src="js/cart/cart.js"></script>
 <div class="container-fluid" id="cartDiv">

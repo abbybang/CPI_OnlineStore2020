@@ -48,17 +48,19 @@ function initCartPage() {
 	});
 	
 	$("button#confirmBtn").click(function() {
-//		$.ajax({
-//			url: contextPath + "",
-//			data: {
-//				
-//			},
-//			method: ""
-//		}).done(function(result) {
-//			$("").html(result);
-//		}).fail(function(result) {
-//			console.log(result);
-//		});
+		$.ajax({
+			url: contextPath + "cart",
+			data: {
+				customerID: customerID,
+				grandTotal: grandTotal,
+				action: "confirm"
+			},
+			method: "POST"
+		}).done(function(result) {
+			$("#mainDiv").html(result);
+		}).fail(function(result) {
+			console.log(result);
+		});
 		
 	    console.log("'Confirm' button was clicked.");
 	});

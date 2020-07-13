@@ -3,7 +3,7 @@ $(document).ready(function() {
 		$.ajax({
 			url: contextPath + "cart",
 			data: {
-				customerID: "3",
+				customerID: "888",
 				action: "view"
 			},
 			method: "POST",

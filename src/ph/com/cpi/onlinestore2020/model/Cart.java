@@ -19,10 +19,10 @@ public class Cart {
 		this.quantity = quantity.intValue();
 	}
 	
-	public Integer getUserId() {
+	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setUserId(Integer userId) {
+	public void setCustomerId(Integer userId) {
 		this.customerId = userId;
 	}
 	public Integer getProductId() {

@@ -9,6 +9,14 @@
 		<result property="quantity"    column="QUANTITY"/>
 	</resultMap>
 	
+	<resultMap type="ph.com.cpi.onlinestore2020.model.Transaction" id="transactionMap">
+		<result property="transactionID" column="TRANSACTION_ID"/>
+		<result property="userID" column="USER_ID"/>
+		<result property="totalAmount" column="TOTAL_AMOUNT"/>
+		<result property="transactionDate" column="TRANSACTION_DATE"/>
+	</resultMap>
+	
+	
 	<select id="getCartItems" resultMap="cartItemsMap">
 		SELECT 
 		       C.USER_ID,
@@ -20,4 +28,38 @@
 		 WHERE P.PRODUCT_ID = C.PRODUCT_ID
 		   AND C.USER_ID = #{customerID}
 	</select>
+	
+	<select id="getTransactionID" resultMap="transactionMap">
+		 SELECT
+		        TRANSACTION_ID,
+		        USER_ID,
+		        TOTAL_AMOUNT,
+		        TRANSACTION_DATE
+		   FROM TRANSACTION WHERE TRANSACTION_DATE =
+		(SELECT MAX(TRANSACTION_DATE) FROM (
+		        SELECT TRANSACTION_DATE FROM TRANSACTION WHERE USER_ID = #{customerID}))
+	</select>
+	
+	
+	<update id="addTransaction">
+		INSERT INTO TRANSACTION
+		       (TRANSACTION_ID, USER_ID, TOTAL_AMOUNT, TRANSACTION_DATE)
+		VALUES
+		       ((SELECT NVL(MAX(TRANSACTION_ID), 0) + 1 FROM TRANSACTION),
+		       #{customerID},
+		       #{grandTotal},
+		       SYSDATE)
+	</update>
+	
+	<update id="addSale">
+		INSERT INTO SALES
+		       (TRANSACTION_ID, PRODUCT_ID, PRICE, QUANTITY)
+		VALUES
+		       (#{transactionID}, #{productID}, #{price}, #{quantity})
+	</update>
+	
+	<update id="deleteItem">
+		DELETE FROM CART WHERE USER_ID = #{customerID} AND PRODUCT_ID = #{productID}
+	</update>
+	
 </mapper>
