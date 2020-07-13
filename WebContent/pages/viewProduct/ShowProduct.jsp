@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 	<link rel="stylesheet" type="text/css" href="css/viewProductCss/product.css">
+	<jsp:include page="/pages/Homepagemain/homepageheader1.jsp"/>
 <head>
 <link rel="icon" href="homeimages/favicon.ico" type="image/gif" sizes="16x16">
 <meta charset="ISO-8859-1">
@@ -35,7 +36,7 @@
 	  </form>
 
 	  <p><button id="addProductCart">Add to Cart</button></p>
-	  <p><button>Checkout</button></p>
+	  <p><button id="checkout">Checkout</button></p>
 	</div>
 </body>
 	<jsp:include page="/pages/Homepagemain/homepagefooter.jsp"/>

@@ -37,19 +37,33 @@ $(document).ready(function(){
 	  });
 	
 	$("#addProductCart").bind( "click", function() { 
-	    $.ajax({
-	    url: "cart",
-	    type:"POST",
-	    data: {
-	        action        : "addProductCart",
-	        userId        : userId,
-	        productId     : productId,
-	        price         : price,
-	        quantity      : $('#quantityValue').val()
-	    }
-	    }).done(function(text){       	
-	    	console.log("success");
-	    });  
+		var qty = parseInt($('#quantityValue').val());
+		var total;
+		if(qty == 0)
+		{
+			alert("The quantity value must not be equal to zero.");
+		}
+		else
+		{
+		    $.ajax({
+		    url: "cart",
+		    type:"POST",
+		    data: {
+		        action        : "addProductCart",
+		        userId        : userId,
+		        productId     : productId,
+		        price         : price,
+		        quantity      : $('#quantityValue').val()
+		    }
+		    }).done(function(text){       	
+		    	console.log("success");
+		    });  
+		}
 	});
+	
+	$("#checkout").click(function() {
+		window.location.href = "pages/cart/cart.jsp";
+	});
+
 	
 });
