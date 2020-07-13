@@ -7,10 +7,11 @@
   font-family: arial;
 }
 
-.price {
+.Product #price{
   color: grey;
   font-size: 22px;
 }
+
 .Product stock {
   color: grey;
   font-size: 22px;

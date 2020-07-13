@@ -62,8 +62,21 @@ $(document).ready(function(){
 	});
 	
 	$("#checkout").click(function() {
-		window.location.href = "pages/cart/cart.jsp";
+//		window.location.href = "pages/cart/cart.jsp";
+		$.ajax({
+			url: contextPath + "ShowProduct",
+			data: {
+				customerID: userId,
+				action: "checkout"
+			},
+			method: "POST",
+			success: function(result) {
+				$("#mainDiv").html(result);
+			}
+		});
 	});
+	
+	
 
 	
 });
