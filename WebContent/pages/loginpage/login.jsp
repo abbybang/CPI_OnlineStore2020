@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+<head><link rel="icon" href="homeimages/favicon.ico" type="image/gif" sizes="16x16"></head>
 <jsp:include page="/pages/header.jsp"/>
 <body>
    <div class="content">

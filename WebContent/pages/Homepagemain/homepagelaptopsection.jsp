@@ -22,19 +22,20 @@
 <body>
 
 <!-- Work Section -->
-<div class="ish-container" style="padding:0px 16px" id="laptops">
-  <h3 class="ish-center ish-text-darkblue">LAPTOPS DEALS</h3>
+<div class="ish-container" style="padding:50px 16px" id="products">
+  <h3 class="ish-center ish-text-darkblue ish-xxlarge">PRODUCTS</h3>
  
 <div class="container" >          
   <table class="table table-bordered">
  <thead>
-					<tr>
+					<tr class="ish-darkblue">
 					    
 					    <th></th>
-						<th class="">Product Name</th>	
-						<th class="">Price(Peso)</th>
-						<th class="">Brand</th>
-						<th class="">Description</th>
+					    <th class="ish-text-white">Image</th>
+						<th class="ish-text-white">Product Name</th>	
+						<th class="ish-text-white">Price(Peso)</th>
+						<th class="ish-text-white">Brand</th>
+						<th class="ish-text-white">Description</th>
 				    
 					</tr>
 				</thead>
@@ -46,6 +47,9 @@
 								<a href="${pageContext.request.contextPath}/ShowProduct?productId=${list.productId}">VIEW</a>
 							</div>
 						</td>
+						<td class="productimage">
+								<img alt="Not Found" height= "150" width="150" type="image" src="${pageContext.request.contextPath}/productinfoimages/${productInfo.productId}.jpg">
+							</td>
 						<td class="productName">
 							<div class="productName-div ">
 								${list.productName}

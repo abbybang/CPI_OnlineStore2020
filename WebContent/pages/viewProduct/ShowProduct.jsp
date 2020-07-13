@@ -6,6 +6,7 @@
 <html>
 	<link rel="stylesheet" type="text/css" href="css/viewProductCss/product.css">
 <head>
+<link rel="icon" href="homeimages/favicon.ico" type="image/gif" sizes="16x16">
 <meta charset="ISO-8859-1">
 	<title>Products</title>
 	<script>var stock = '${productInfo.stock}'; 
