@@ -204,8 +204,8 @@
 									<p>Please confirm your order.</p>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
-									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+									<button class="btn btn-success" id="confirmBtn" type="button" data-dismiss="modal">Confirm</button>
+									<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
 						</div>

@@ -47,7 +47,7 @@ function initCartPage() {
 		}
 	});
 	
-	$("button#checkoutBtn").click(function() {
+	$("button#confirmBtn").click(function() {
 //		$.ajax({
 //			url: contextPath + "",
 //			data: {
@@ -60,6 +60,6 @@ function initCartPage() {
 //			console.log(result);
 //		});
 		
-	    console.log("'CHECKOUT' button was clicked.");
+	    console.log("'Confirm' button was clicked.");
 	});
 }
