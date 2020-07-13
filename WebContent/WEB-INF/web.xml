@@ -11,6 +11,16 @@
   		<url-pattern>/user-login</url-pattern>
 	</servlet-mapping>
 
+  <servlet>
+  	<servlet-name>registrationcontroller</servlet-name>
+  	<servlet-class>ph.com.cpi.onlinestore2020.controller.RegistrationController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>registrationcontroller</servlet-name>
+  	<url-pattern>/user-register</url-pattern>
+  </servlet-mapping>
+  
 	<servlet>
  		<servlet-name>OnlineStoreController</servlet-name>
  		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
@@ -53,4 +63,8 @@
 		<welcome-file>products</welcome-file>
 	</welcome-file-list> 
 
+  
+
+  
+  
 </web-app>
