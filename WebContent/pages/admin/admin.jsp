@@ -9,32 +9,42 @@
 	<title>Admin Page</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
 	<link rel="stylesheet" href="css/adminStyle.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="js/adminJS.js"></script>
 <script>
 	var contextPath = '${pageContext.request.contextPath}' + '/';
 </script>
 </head>
 <body>
-
+	<div id="header">
+		<div id="buttons">
+			<button type="button" value="Add" class="btn btn-crud" data-toggle="modal" data-target="#modalForm" id="addForm" title="Add">
+				<i class="glyphicon glyphicon-plus"></i>
+			</button>
+			<button type="button" value="Edit" class="btn btn-crud" data-toggle="modal" data-target="#modalForm" id="editForm" title="Edit">
+				<i class="glyphicon glyphicon-pencil"></i>
+			</button>
+			<button type="button" value="delete" class="btn btn-crud" id="delete" title="Delete">
+				<i class="glyphicon glyphicon-trash"></i>
+			</button>
+		</div>
+	</div>
 	<div class="container" id="container-div">
 		<div class="table-responsive">          
-			<table class="table" id="productTable">
+			<table class="table table-fixed table-hover" id="productTable">
 				<thead>
 					<tr>
-						<th>
-							<div class="custom-control custom-checkbox">
-  								<input type="checkbox" class="custom-control-input" id="th-checkbox">
-							</div>
+						<th width="2%">			
 						</th>
-						<th id="th-id">ID</th>
-						<th>Product Name</th>
-						<th>Stock</th>
-						<th>Price</th>
-						<th>Brand</th>
-						<th>Description</th>
+						<th id="th-id" width="0%">ID</th>
+						<th width="20%">Product Name</th>
+						<th width="12%">Stock</th>
+						<th width="12%">Price(Php)</th>
+						<th width="13%">Brand</th>
+						<th width="40%">Description</th>
 					</tr>
 				</thead>
 				<tbody id="tbody">
@@ -42,15 +52,18 @@
 						<tr>
 							<td>
 								<div class="custom-control custom-checkbox">
-  									<input type="checkbox" class="custom-control-input" id="th-checkbox" name="toDelete" value="${list.productId}">
+  									<input type="checkbox" class="custom-control-input" name="toDelete" value="${list.productId}">
 								</div>
 							</td>
 							<td class="productId">
+								<div class="productId-div">
 									${list.productId}
+								</div>
 							</td>
 							<td class="productName">
+								<div class="productName-div">
 									${list.productName}
-	
+								</div>
 							</td>
 							<td class="stock">
 								<div class="stock-div">
@@ -78,11 +91,6 @@
 			</table>
 		</div>
 	</div>
-	
-	<input type="button" value="Add" class="btn btn-success" data-toggle="modal" data-target="#modalForm" id="addForm">
-	<input type="button" value="Edit" class="btn btn-primary" data-toggle="modal" data-target="#modalForm" id="editForm">
-	<input type="button" value="delete" class="btn btn-danger" id="delete">
-
 <!-- Modal -->
 <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -99,7 +107,7 @@
             <!-- Modal Body -->
             <div class="modal-body">                
                 <form role="form">
-                	<table>
+                	<table id="inputForm">
                 		<tr>
                 			<td colspan="2">
 								<div class="form-group">
@@ -120,13 +128,13 @@
 		                	<td>
 		                		<div class="form-group">
 			                    	<label for="price">Price</label>
-			                    	<input type="text" class="form-control" id="price" placeholder="Php 0.00" required/>
+			                    	<input type="text" class="form-control" id="price" onkeypress='return isNumberKey(event)' placeholder="Php 0.00" required/>
 			                  	</div>
 		                	</td>
 		                	<td>
 		                		<div class="form-group">
 				                	<label for="stock">Stocks</label>
-									<input type="text" class="form-control" id="stock" placeholder="0" required/>
+									<input type="text" class="form-control" id="stock" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="0" required/>
 				                </div> 
 		                	</td>
 		                </tr>
@@ -144,8 +152,8 @@
             
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="add">Save</button>
-                <button type="button" class="btn btn-primary" id="edit">Save</button>
+                <button type="button" class="btn btn-light" id="add">Save</button>
+                <button type="button" class="btn btn-light" id="edit">Save</button>
             </div>
         </div>
     </div>

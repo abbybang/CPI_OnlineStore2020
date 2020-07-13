@@ -17,8 +17,19 @@
 	</select>
 	
 	<update id="addProduct">
-		INSERT INTO PRODUCT(PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION)
-		VALUES(#{productId}, #{productName}, #{brand}, #{price}, #{stock}, #{description})
+		INSERT INTO PRODUCT(
+			   PRODUCT_ID, 
+			   PRODUCT_NAME, 
+			   BRAND, 
+			   PRICE, 
+			   STOCK, 
+			   DESCRIPTION)
+		VALUES(#{productId}, 
+			   #{productName}, 
+			   #{brand}, 
+			   #{price}, 
+			   #{stock}, 
+			   #{description})
 	</update>
 	
 	<update id="updateProduct">

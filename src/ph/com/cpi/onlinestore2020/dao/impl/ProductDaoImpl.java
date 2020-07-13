@@ -34,8 +34,7 @@ public class ProductDaoImpl implements ProductDao{
 		List<Product> productList = null;
 		try(SqlSession session = sqlSessionFactory.openSession()){
 			productList = session.selectList("getProductList");
-		}
-		
+		}		
 		return productList;
 	}
 	

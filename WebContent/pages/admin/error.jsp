@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h2>An error occurred. Please <a href="/products">try</a> again.</h2> 
 
 </body>
 </html>
