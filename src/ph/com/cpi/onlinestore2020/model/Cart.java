@@ -9,12 +9,11 @@ public class Cart {
 	private BigDecimal price;
 	private Integer quantity;
 	
-	
-	public Integer getUserId() {
+	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setUserId(Integer userId) {
-		this.customerId = userId;
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 	public Integer getProductId() {
 		return productId;
@@ -41,10 +40,11 @@ public class Cart {
 		this.quantity = quantity;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "Cart [userId=" + customerId + ", productId=" + productId + ", productName=" + productName + ", price="
-				+ price + ", quantity=" + quantity + "]";
+		return "Cart [customerId=" + customerId + ", productId=" + productId + ", productName=" + productName
+				+ ", price=" + price + ", quantity=" + quantity + "]";
 	}
+	
+	
 }

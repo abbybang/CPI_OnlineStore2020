@@ -44,13 +44,19 @@ public class CartController extends HttpServlet {
 			
 			
 			if(action.equals("addProductCart")){				
-				Integer customerId = Integer.parseInt(request.getParameter("customerId"));	
+				Integer customerId = Integer.parseInt(request.getParameter("userId"));	
 				Integer productId = Integer.parseInt(request.getParameter("productId"));	
 				BigDecimal price = new BigDecimal(request.getParameter("price"));				
 				Integer quantity = Integer.parseInt(request.getParameter("quantity"));	
 
+				
+				System.out.println(customerId);
+				System.out.println(productId);
+				System.out.println(price);
+				System.out.println(quantity);
+				
 				System.out.println("ADD--CART CONTROLLER");
-				request.setAttribute("productList", cartService.addCartItems(customerId, productId, price, quantity));
+				request.setAttribute("cartService", cartService.addCartItems(customerId, productId, price, quantity));
 			
 				page = "pages/cart/cart.jsp";
 			}

@@ -8,8 +8,8 @@ import ph.com.cpi.onlinestore2020.model.User;
 import ph.com.cpi.onlinestore2020.service.LoginService;
 
 public class LoginServiceImpl implements LoginService {
+	
 	LoginDaoImpl loginDAOimpl = new LoginDaoImpl();
-
 	@Override
 	public User getUser(String username, String password) throws SQLException {
 		HashMap<String, Object> params = new HashMap<String, Object>();

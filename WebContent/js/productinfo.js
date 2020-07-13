@@ -41,11 +41,11 @@ $(document).ready(function(){
 	    url: "cart",
 	    type:"POST",
 	    data: {
-	        action     : "addProductCart",
-	        USER_ID: $('#customerId').val(),
-	    	PRODUCT_ID      : $('#productId').val(),
-	    	PRICE      : $('#price').val(),
-	    	QUANTITY      : $('#quantity').val()
+	        action        : "addProductCart",
+	        userId        : userId,
+	        productId     : productId,
+	        price         : price,
+	        quantity      : $('#quantityValue').val()
 	    }
 	    }).done(function(text){       	
 	    	console.log("success");

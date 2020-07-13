@@ -30,7 +30,6 @@ public class CartServiceImpl implements CartService {
 		params.put("price", price);
 		params.put("quantity", quantity);
 		cartItems.addCartItems(params);
-		List<Cart> students = cartItems.getCartItems(params);
-		return students;
+		return null;
 	}
 }

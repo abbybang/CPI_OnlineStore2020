@@ -23,7 +23,7 @@
 	
 	<update id="addCartItems">
 		INSERT INTO CART(USER_ID, PRODUCT_ID, PRICE, QUANTITY)
-		VALUES(#{customerId}, #{PRODUCT_ID}, #{price}, #{PRICE}, #{quantity})
+		VALUES(#{customerId}, #{productId}, #{price}, #{quantity})
 	</update>
 	
 </mapper>
