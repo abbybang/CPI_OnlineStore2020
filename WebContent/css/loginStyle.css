@@ -348,3 +348,96 @@ h1 {
 	opacity:1;
 	transition: .3s ease-in-out;
 }
+
+@media(max-width: 760px){
+	#loginBtn {
+		font-size: 13px!important;
+	}
+	
+	.mandatory-err-msg {
+		top: 19px!important;
+   		right: -10px!important;
+	}
+}
+
+@media(max-width: 655px){
+	#loginBtn {
+    	font-size: 10px!important;
+    	height: 46px!important;
+	}
+	
+	#loginForm input {
+    	width: 84%;
+    	font-size: 13px;
+    	height: 47px;
+   		padding-left: 30px;
+	}
+	
+	#loginInfo h1 {
+    	font-size: 35px!important;
+	}
+	
+	#loginInfo h3 {
+    	font-size: 11px;
+	}
+	
+	#loginForm > p {
+		font-size: 11px!important;
+	}
+	
+	#loginInfo img {
+    	height: 115px;
+	}
+	
+	#footer i label {
+		display:none;
+	}
+}
+
+@media(max-width: 500px){
+	#loginInfo img {
+    	height: 96px;
+	}
+	
+	#loginInfo h1 {
+   	 	font-size: 28px;
+   	 	margin: 4px;
+	}
+	
+	#loginInfo h3 {
+    	font-size: 9px;
+	}
+	
+	#loginInfo h3 span {
+	    padding: 6px!important;
+	    border-radius: 1px 14px 1px 16px;
+	}
+	
+	#loginForm input {
+		width: 96%;
+	    font-size: 13px;
+	    height: 36px;
+	    padding-left: 22px;
+	}
+	
+	#loginBtn {
+    	height: 41px!important;
+    	width: 35%!important;
+    	padding: 0!important;
+   	 	left: 7px;
+  	  	font-size: 8px!important;
+	}
+	
+	#loginForm > p {
+		font-size: 9px!important;
+	}
+	
+	#footer i label {
+		display:none;
+	}
+	
+	.mandatory-err-msg {
+		top: 12px!important;
+    	right: -25px!important;
+	}
+}
