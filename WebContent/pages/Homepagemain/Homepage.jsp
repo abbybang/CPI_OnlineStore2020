@@ -12,13 +12,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<jsp:include page="/pages/Homepagemain/homepagenav.jsp"/>
-<jsp:include page="/pages/Homepagemain/homepageheader.jsp"/>
+<jsp:include page="/pages/Homepagemain/homepageheader1.jsp"/>
+<jsp:include page="/pages/Homepagemain/homepageheader2.jsp"/>
 <jsp:include page="/pages/Homepagemain/homepageaboutus.jsp"/>
-
 <jsp:include page="/pages/Homepagemain/homepagelaptopsection.jsp"/>
-
 <jsp:include page="/pages/Homepagemain/homepagesupportsection.jsp"/>
+
 <jsp:include page="/pages/Homepagemain/homepagecontact.jsp"/>
 <link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
@@ -35,7 +34,7 @@ body, html {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("homeimages/mac3.jpg");
+  background-image: url("homeimages/bg.jpg");
   min-height: 100%;
 }
 
@@ -63,8 +62,6 @@ body, html {
   </div>
   </div>
   
-
-
 </body>
 
 <jsp:include page="/pages/Homepagemain/homepagefooter.jsp"/>

@@ -12,10 +12,10 @@
 <div class="bgimg-2 ish-container ish-row ish-center ish-dark-grey ish-padding-64" id="support">
  <h3 class="ish-center">SUPPORT</h3>
   <p class="ish-center ish-large">
-To find solutions to common issues, please visit our free self-help support services like FAQ, Acer Community and the Acer America YouTube Channel.</p>
+To find solutions to common issues, please visit our free self-help support services like FAQ, Online Community and the Online America YouTube Channel.</p>
  <p class="ish-center"> In-Warranty Support
 
-Get help with your Acer product at any time day or night. Acer phone and chat technicians can assist with product setup, technical troubleshooting and general questions you may have about your Acer product.
+Get help with your Online product at any time day or night. Online phone and chat technicians can assist with product setup, technical troubleshooting and general questions you may have about your Online product.
 
 Phone: 1-866-695-2237
 Available 24/7 - US and Canada

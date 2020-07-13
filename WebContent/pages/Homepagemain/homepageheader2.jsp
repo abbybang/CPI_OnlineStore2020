@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>HEADER</title>
+<title>HEADER2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 
@@ -18,8 +18,8 @@
 <!-- Header with full-height image -->
 
 
-<header class="bgimg-1 ish-display-container ish-grayscale-min" id="home"style="padding:50px 150px" >
-  <div class="ish-display-left ish-text-white" style="padding:48px">
+<header class="bgimg-1 ish-display-container ish-grayscale-min" id="home">
+  <div class="ish-display-left ish-text-white">
   </div> 
 <div class="ish-content ish-display-container ish-grayscale-min" id="home">
   <img class="mySlides" src="homeimages/apple.jpg" style="width:100%">

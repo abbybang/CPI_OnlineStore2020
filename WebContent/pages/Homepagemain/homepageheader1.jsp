@@ -7,21 +7,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Nav</title>
+<title>Header1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 
 </head>
 
 <body>
-<!-- Navbar (sit on top) -->
+<!-- header1 (sit on top) -->
 <div class="ish-top">
   <div class="ish-bar ish-darkblue ish-card" id="myNavbar">
     <a href="#home" class="ish-bar-item ish-button ish-wide ish-text-white">HOME</a>
     
     <!-- Right-sided navbar links -->
     <div class="ish-right ish-hide-small">
-      <a href="#laptops" class="ish-bar-item ish-button  ish-text-white"> LAPTOPS</a>
+      <a href="#products" class="ish-bar-item ish-button  ish-text-white"> PRODUCTS</a>
       <a href="#about" class="ish-bar-item ish-button  ish-text-white">ABOUT</a>
       <a href="#contact" class="ish-bar-item ish-button  ish-text-white"  onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">CONTACT</a>
       <a href="#support" class="ish-bar-item ish-button  ish-text-white">SUPPORT</a>

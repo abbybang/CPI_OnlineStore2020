@@ -22,7 +22,7 @@
 <body>
 
 <!-- Work Section -->
-<div class="ish-container" style="padding:50px 16px" id="laptops">
+<div class="ish-container" style="padding:50px 16px" id="products">
   <h3 class="ish-center ish-text-darkblue ish-xxlarge">PRODUCTS</h3>
  
 <div class="container" >          
@@ -48,7 +48,7 @@
 							</div>
 						</td>
 						<td class="productimage">
-								<img alt="Not Found" height= "150" width="150" type="image" src="${pageContext.request.contextPath}/productinfoimages/99.jpg">
+								<img alt="Not Found" height= "150" width="150" type="image" src="${pageContext.request.contextPath}/productinfoimages/${productInfo.productId}.jpg">
 							</td>
 						<td class="productName">
 							<div class="productName-div ">

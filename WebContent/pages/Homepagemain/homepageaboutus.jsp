@@ -16,12 +16,12 @@
   <p class="ish-center ish-large ">WHO WE ARE</p>
   <div class="ish-row-padding ish-center" style="margin-top:64px">
     <div class="ish-quarter ">
-      <i class="fa fa-desktop ish-margin-bottom ish-jumbo ish-center"></i>
+      <i class="fa fa-desktop   ish-margin-bottom ish-jumbo ish-center"></i>
       <p class="ish-large ish-text-darkblue">Responsive</p>
       <p class="ish-text-darkblue">full range of services, checks and updates to keep your device fresh and running smoothly.</p>
     </div>
     <div class="ish-quarter">
-      <i class="fa fa-heart ish-margin-bottom ish-jumbo"></i>
+      <i class="fa fa-heart  ish-margin-bottom ish-jumbo"></i>
       <p class="ish-large">Passion</p>
       <p class="ish-text-darkblue">Get help with your online product at any time day or night. Acer phone and chat technicians can assist with product setup, technical troubleshooting and general questions you may have about your online product.</p>
     </div>

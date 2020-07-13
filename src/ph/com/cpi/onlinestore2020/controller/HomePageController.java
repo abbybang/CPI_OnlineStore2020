@@ -47,6 +47,7 @@ public class HomePageController extends HttpServlet {
 		RequestDispatcher requestDispatcher = null;
 		try {
 			Integer productId = Integer.parseInt(request.getParameter("productId"));
+			Integer userId = Integer.parseInt(request.getParameter("userId"));
 			
 			String action = request.getParameter("action");
 			
