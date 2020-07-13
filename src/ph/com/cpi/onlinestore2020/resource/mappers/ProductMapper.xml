@@ -17,8 +17,19 @@
 	</select>
 	
 	<update id="addProduct">
-		INSERT INTO PRODUCT(PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION)
-		VALUES(#{productId}, #{productName}, #{brand}, #{price}, #{stock}, #{description})
+		INSERT INTO PRODUCT(
+			   PRODUCT_ID, 
+			   PRODUCT_NAME, 
+			   BRAND, 
+			   PRICE, 
+			   STOCK, 
+			   DESCRIPTION)
+		VALUES(#{productId}, 
+			   #{productName}, 
+			   #{brand}, 
+			   #{price}, 
+			   #{stock}, 
+			   #{description})
 	</update>
 	
 	<update id="updateProduct">
@@ -34,9 +45,14 @@
 	<update id="deleteProduct">
 		DELETE FROM PRODUCT WHERE PRODUCT_ID = #{productId}
 	</update>
-	
-	<select id="getProductInfo" resultMap="productListMap">
-		SELECT PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = #{productId}
+
+	<select resultType="java.lang.Integer" id="newProductId">
+		SELECT MAX(NVL(PRODUCT_ID, 0)) + 1 FROM PRODUCT
 	</select>
 	
+	<select id="getProductId" resultMap="productListMap">
+		SELECT PRODUCT_ID, PRODUCT_NAME, BRAND, PRICE, STOCK, DESCRIPTION 
+		  FROM PRODUCT 
+		 WHERE PRODUCT_ID = #{productId}
+	</select>
 </mapper>

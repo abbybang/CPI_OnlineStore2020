@@ -9,8 +9,9 @@ import ph.com.cpi.onlinestore2020.model.Product;
 
 public interface ProductService {
 	public List<Product> getProductList() throws SQLException;
-	public List<Product> getProductInfo(Integer productId) throws SQLException;
+	public Product getProductId(Integer productId) throws SQLException;
 	public List<Product> addProduct(Integer productId, String productName, String brand, BigDecimal price, Integer stock, String description) throws SQLException;
 	public List<Product> updateProduct(Integer productId, String productName, String brand, BigDecimal price, Integer stock, String description) throws SQLException;
 	public List<Product> deleteProduct(String[] productId) throws SQLException;
+	public Integer generateProductId() throws SQLException;
 }

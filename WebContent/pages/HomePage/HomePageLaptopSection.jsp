@@ -11,19 +11,17 @@
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 <link rel="stylesheet" href= "css/HomePageCss/hoverpageselection.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- <script>var contextPath = "${pageContext.request.contextPath}/";</script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>var contextPath = "${pageContext.request.contextPath}/";</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
 </head>
-
 
 <body>
 
 <!-- Work Section -->
 <div class="ish-container" style="padding:50px 16px" id="products">
-  <h3 class="ish-center ish-text-darkblue ish-xxlarge">PRODUCTS</h3>
+ <h3 class="ish-center ish-text-darkblue ish-xxlarge">PRODUCTS</h3>
  
 <div class="container" >          
   <table class="table table-bordered">
@@ -48,7 +46,7 @@
 							</div>
 						</td>
 						<td class="productimage">
-								<img alt="Not Found" height= "150" width="150" type="image" src="${pageContext.request.contextPath}/productinfoimages/${productInfo.productId}.jpg">
+								<img alt="Not Found" height= "150" width="150" type="image" src="${pageContext.request.contextPath}/productinfoimages/${list.productId}.jpg">
 							</td>
 						<td class="productName">
 							<div class="productName-div ">

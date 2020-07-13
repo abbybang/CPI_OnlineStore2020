@@ -12,16 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<jsp:include page="/pages/Homepagemain/homepageheader1.jsp"/>
-<jsp:include page="/pages/Homepagemain/homepageheader2.jsp"/>
-<jsp:include page="/pages/Homepagemain/homepageaboutus.jsp"/>
-<jsp:include page="/pages/Homepagemain/homepagelaptopsection.jsp"/>
-<jsp:include page="/pages/Homepagemain/homepagesupportsection.jsp"/>
-
-<jsp:include page="/pages/Homepagemain/homepagecontact.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageHeader1.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageHeader2.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageAboutUs.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageLaptopSection.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageSupportSection.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageContact.jsp"/>
 <link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/lib/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script> 
+
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
@@ -64,5 +64,5 @@ body, html {
   
 </body>
 
-<jsp:include page="/pages/Homepagemain/homepagefooter.jsp"/>
+<jsp:include page="/pages/HomePage/HomePageFooter.jsp"/>
 </html>

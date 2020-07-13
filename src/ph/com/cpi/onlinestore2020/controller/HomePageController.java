@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ph.com.cpi.onlinestore2020.model.User;
 import ph.com.cpi.onlinestore2020.service.impl.HomePageServiceImpl;
 import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
 
@@ -47,14 +48,14 @@ public class HomePageController extends HttpServlet {
 		RequestDispatcher requestDispatcher = null;
 		try {
 			Integer productId = Integer.parseInt(request.getParameter("productId"));
-			Integer userId = Integer.parseInt(request.getParameter("userId"));
-			
+			User user = new User();
 			String action = request.getParameter("action");
 			
 			if(action.equals("get")) {
 
 				ProductServiceImpl productService = null;
-				request.setAttribute("productList", productService.getProductInfo(productId));
+				request.setAttribute("productList", productService.getProductId(productId));
+				
 			}else {
 				page = "pages/Homepagemain/Homepage.jsp";
 			}

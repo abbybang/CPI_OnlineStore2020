@@ -7,11 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD:WebContent/META-INF/adminButton.jsp
 
-=======
-	<h1>You are logged in</h1>
-	<p>${ user }</p>
->>>>>>> 04f7eca08ede11b9c0bfafb09fa4d57dcda9f23e:WebContent/pages/home/SampleHome.jsp
+	<h2>An error occurred. Please <a href="/products">try</a> again.</h2> 
+
 </body>
 </html>

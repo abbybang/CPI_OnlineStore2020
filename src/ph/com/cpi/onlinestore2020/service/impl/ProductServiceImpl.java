@@ -64,20 +64,19 @@ public class ProductServiceImpl implements ProductService{
 		List<Product> students = productList.getProductList();
 		return students;
 	}
-
-
-	public Object getHomePageList() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	//GENERATE PRODUCT NEW ID
+	@Override
+	public Integer generateProductId() throws SQLException {
+		System.out.println("SERVICE: " + productList.generateProductId());
+		return productList.generateProductId();
 	}
-
 	
 	//GET PRODUCT LIST ID
-		@Override
-	public List<Product> getProductInfo(Integer productId) throws SQLException{
+	@Override
+	public Product getProductId(Integer productId) throws SQLException{
 		HashMap<String, Object> params = new HashMap<String, Object>();
 		params.put(  "productId", productId  );
-		return productList.getProductInfo(params);
+		return productList.getProductId(params);
 		}
-
 }

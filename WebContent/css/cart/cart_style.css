@@ -1,0 +1,12 @@
+#ordersDiv, #summaryDiv {
+	float: left;
+}
+
+div#ordersDiv {
+    width: max-content;
+}
+
+div#summaryDiv {
+    width: max-content;
+    margin-left: 20px;
+}
