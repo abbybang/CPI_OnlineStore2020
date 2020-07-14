@@ -25,6 +25,8 @@ function userLogin( username, password ){
 
 		if(errMsg){
 			alertify.alert("<i class='fa fa-exclamation-triangle'> " + errMsg + "</i>");
+		}else{
+        	window.location.href = contextPath;
 		}
 	});
 }

@@ -56,7 +56,7 @@ public class LoginController extends HttpServlet {
 				 try { 
 					 user = loginServiceImpl.getUser(username, password); 
 					 if(user != null) {
-						 if(user.getStatus().equalsIgnoreCase("Y")) {
+						 if(user.getIsAdmin().equalsIgnoreCase("Y")) {
 							 pagePath = request.getContextPath()+"/products";
 						 } else {
 							 pagePath = request.getContextPath()+"/Home-page";

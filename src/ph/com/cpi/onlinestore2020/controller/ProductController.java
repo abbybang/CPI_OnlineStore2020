@@ -46,10 +46,8 @@ public class ProductController extends HttpServlet{
 					String description = request.getParameter("description");
 	
 					if(action.equals("add")) {
-						System.out.println("ADD--PRODUCT CONTROLLER");
 						request.setAttribute("productList", productList.addProduct(productList.generateProductId(), productName, brand, price, stock, description));
 					}else if(action.equals("update")) {
-						System.out.println("UPDATE--PRODUCT CONTROLLER");
 						Integer productId = Integer.parseInt(request.getParameter("productId"));
 						request.setAttribute("productList", productList.updateProduct(productId, productName, brand, price, stock, description));
 					}

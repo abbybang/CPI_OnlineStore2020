@@ -123,7 +123,7 @@ $(document).ready(function(){
         		event : "logout"
         	}
         }).done(function(){
-        	window.location.href = contextPath;
+        	window.location.href = contextPath + "/products";
         })
 	});
 });
