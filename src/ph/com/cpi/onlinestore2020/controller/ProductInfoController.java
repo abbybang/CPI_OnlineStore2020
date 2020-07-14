@@ -8,7 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import ph.com.cpi.onlinestore2020.model.User;
 import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
 
 public class ProductInfoController extends HttpServlet {
@@ -25,7 +27,6 @@ public class ProductInfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String page = "pages/viewProduct/ShowProduct.jsp";
 		try {
-			
 			Integer productId = Integer.parseInt(request.getParameter("productId"));
 			request.setAttribute("productInfo", productService.getProductId(productId));
 		} catch (SQLException e) {

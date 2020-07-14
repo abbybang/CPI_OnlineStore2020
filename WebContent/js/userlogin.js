@@ -24,8 +24,7 @@ function userLogin( username, password ){
 		var errMsg = $("#errMsg").val();
 
 
-		if(errMsg){
-			alertify.alert("<i class='fa fa-exclamation-triangle'> " + errMsg + "</i>");
-		}
+
+		
 	});
 }

@@ -10,5 +10,8 @@
 
 	<h2>An error occurred. Please <a href="/products">try</a> again.</h2> 
 
+	<h1>You are logged in</h1>
+	<p>${ user }</p>
+
 </body>
 </html>

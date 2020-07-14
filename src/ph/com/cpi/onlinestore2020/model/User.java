@@ -11,97 +11,115 @@ public class User {
 	private String passWord;
 	private String isAdmin;
 
+
+
 	public Integer getUserId() {
 		return userId;
 	}
+
+
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
-	public String getPassWord() {
-		return passWord;
-	}
 
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
-	}
-
-	public String getIsAdmin() {
-		return isAdmin;
-	}
-
-	public void setIsAdmin(String isAdmin) {
-		this.isAdmin = isAdmin;
-	}
-
-	public void setUserID(Integer userId) {
-		this.userId = userId;
-	}
 
 	public String getFname() {
 		return fname;
 	}
 
+
+
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
+
+
 
 	public String getLname() {
 		return lname;
 	}
 
+
+
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
+
+
 
 	public String getEmail() {
 		return email;
 	}
 
+
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
 
 	public String getAddress() {
 		return address;
 	}
 
+
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
+
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+
 
 	public String getUserName() {
 		return userName;
 	}
 
+
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
-	public String getPassword() {
+
+
+	public String getPassWord() {
 		return passWord;
 	}
 
-	public void setPassword(String password) {
-		this.passWord = password;
+
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 
-	public String getStatus() {
+
+
+	public String getIsAdmin() {
 		return isAdmin;
 	}
 
-	public void setStatus(String status) {
-		this.isAdmin = status;
+
+
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
 	}
+
+
 
 	@Override
 	public String toString() {

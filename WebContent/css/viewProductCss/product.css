@@ -1,9 +1,63 @@
-.showProduct {
-    background-color: #061D40;
-    border-style: solid;
-    border-color: black;
-    color: white;
+
+.Product {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
 }
-#quantityValue{
-	width: 30px!important;
+
+.price {
+  color: grey;
+  font-size: 22px;
 }
+.Product stock {
+  color: grey;
+  font-size: 22px;
+}
+
+.Product button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #061D40;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.productname {
+  color: black;
+  font-size: 50px;
+}
+.brand {
+  color: black;
+  font-size: 30px;
+}
+
+    
+.Product input{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #061D40;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+  font-size: 18px;
+}
+
+.Product button:hover {
+  opacity: 0.7;
+}
+
+
+.Product input[type="button"]:hover{
+		 opacity: 0.7;
+}
+.Product input[type="text"]:hover{
+		 
+}
+	

@@ -5,7 +5,12 @@
 <html>
 <head>
 <link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
+<<<<<<< HEAD
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script>
+=======
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script>
+>>>>>>> f61ba0a52be8bb4814985e50b8b40e8c12ece737
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/loginStyle.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/third-party/font-awesome/css/font-awesome.css">

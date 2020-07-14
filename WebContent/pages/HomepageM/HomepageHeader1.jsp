@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Header1</title>
+<title>LAPTOP FACTORY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
 
@@ -18,7 +18,7 @@
 <div class="ish-top">
   <div class="ish-bar ish-darkblue ish-card" id="myNavbar">
     <a href="#home" class="ish-bar-item ish-button ish-wide ish-text-white">HOME</a>
-    
+    <a href="#welcome" class="ish-bar-item ish-button ish-wide ish-text-white">Welcome ${user.getUsername()}!</a>
     <!-- Right-sided navbar links -->
     <div class="ish-right ish-hide-small">
       <a href="#products" class="ish-bar-item ish-button  ish-text-white"> PRODUCTS</a>

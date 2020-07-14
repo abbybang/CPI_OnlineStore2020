@@ -25,6 +25,10 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script> 
 <link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
+<<<<<<< HEAD:WebContent/pages/HomepageM/Homepage.jsp
+=======
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/Homepageview.js"></script> 
+>>>>>>> f61ba0a52be8bb4814985e50b8b40e8c12ece737:WebContent/pages/Homepagemain/Homepage.jsp
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
