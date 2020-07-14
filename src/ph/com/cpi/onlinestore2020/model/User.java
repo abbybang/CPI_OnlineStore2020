@@ -11,18 +11,24 @@ public class User {
 	private String passWord;
 	private String isAdmin;
 
+	
 
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
 
 	public Integer getUserId() {
 		return userId;
 	}
 
 
-
-	public void setUserId(Integer userId) {
+	public void setUserID(Integer userId) {
 		this.userId = userId;
 	}
-
 
 
 	public String getFname() {
@@ -95,11 +101,6 @@ public class User {
 		this.userName = userName;
 	}
 
-
-
-	public String getPassWord() {
-		return passWord;
-	}
 
 
 

@@ -2,8 +2,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>OnlineStore2020</display-name>
 
-
-	
 <!--REGISTRATION CONTROLLER==========================================-->
   <servlet>
   	<servlet-name>registrationcontroller</servlet-name>
@@ -66,6 +64,15 @@
  		<servlet-name>CartController</servlet-name>
  		<url-pattern>/cart</url-pattern>
  	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>HomePageController</servlet-name>
+ 		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>HomePageController</servlet-name>
+ 		<url-pattern>/Home-page</url-pattern>
+ 	</servlet-mapping>
 
 
   
@@ -73,8 +80,6 @@
     <welcome-file>Homepage</welcome-file>
   </welcome-file-list>
 
-
-  
   
 
 </web-app>

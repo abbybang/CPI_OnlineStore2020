@@ -17,7 +17,6 @@ import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
 /**
  * Servlet implementation class HomePageController
  */
-@WebServlet("/HomePageController")
 public class HomePageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HomePageServiceImpl homepageList = new HomePageServiceImpl();
@@ -33,8 +32,8 @@ public class HomePageController extends HttpServlet {
 	}catch(Exception e) {
 		e.printStackTrace();
 		page = "/pages/error.jsp";
+		
 	}
-	
 	rd = request.getRequestDispatcher(page);
 	rd.forward(request, response);
 }
@@ -64,6 +63,7 @@ public class HomePageController extends HttpServlet {
 			e.printStackTrace();
 			page = "pages/error.jsp";
 		}
+	
 		requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);
 		 
