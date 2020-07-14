@@ -1,9 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+<head><link rel="icon" href="homeimages/favicon.ico" type="image/gif" sizes="16x16"></head>
 <jsp:include page="/pages/header.jsp" />
 <body>
+<div class="content">
+
+    <div class="loader-wrapper">
+   <div class="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  </div>
+  
 	<div id="registrationContainer">
 		<h1>Sign up now!</h1>
 		<div id="registrationInfo">
