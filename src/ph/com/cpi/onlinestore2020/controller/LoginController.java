@@ -84,5 +84,15 @@ public class LoginController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		try {
+			String action = request.getParameter("action");	
+
+			if(action.equals("logout")) {
+				pagePath =request.getContextPath() + "/Home-page";
+				response.sendRedirect(pagePath);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

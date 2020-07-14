@@ -113,6 +113,19 @@ $(document).ready(function(){
 	});
 	getData();
 	$('#th-id').hide();
+	
+	//LOGOUT ADMIN
+	$("#logout").bind("click", function(){
+		$.ajax({
+        	url: contextPath  + "user-login",
+        	type:"POST",
+        	data: {
+        		action : "logout"
+        	}
+        }).done(function(){
+        	window.location.href = contextPath;
+        })
+	});
 });
 
 //HIDE PRODUCT ID COLUMN==========================================
