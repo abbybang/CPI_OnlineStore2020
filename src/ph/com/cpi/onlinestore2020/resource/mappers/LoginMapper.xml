@@ -19,7 +19,8 @@
 	</resultMap>
 
 	<select id="getUser" resultMap="userMap">
-		SELECT * FROM USER_TBL WHERE USERNAME = #{username} AND PASSWORD = #{password}
+		SELECT * FROM USER_TBL WHERE LOWER(USERNAME) = LOWER(#{username}) 
+				AND LOWER(PASSWORD) = LOWER(#{password})
 	</select>
 	
 	<update id="addUser">

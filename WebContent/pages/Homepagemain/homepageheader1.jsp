@@ -25,7 +25,13 @@
       <a href="#about" class="ish-bar-item ish-button  ish-text-white">ABOUT</a>
       <a href="#contact" class="ish-bar-item ish-button  ish-text-white"  onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">CONTACT</a>
       <a href="#support" class="ish-bar-item ish-button  ish-text-white">SUPPORT</a>
-      <a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">ACCOUNT</a>
+      
+      <c:if test="${ sessionScope.user == null }">
+      	<a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">${ account }</a>
+      </c:if>
+      <c:if test="${ sessionScope.user != null }">
+      	<a href="#" class="ish-bar-item ish-button  ish-text-white">${ account }</a>
+      </c:if>
       
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->

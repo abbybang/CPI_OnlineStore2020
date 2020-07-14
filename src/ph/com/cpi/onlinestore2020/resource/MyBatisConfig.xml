@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
 <configuration>	
 
@@ -9,7 +7,7 @@
 			<transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.OracleDriver"/>
-				<property name="url" value="jdbc:oracle:thin:@18.138.228.62:1521:BASELINE"/>
+				<property name="url" value="jdbc:oracle:thin:@18.141.168.151:1521:BASELINE"/>
 				<property name="username" value="HR"/>
 				<property name="password" value="cpi12345"/>
 			</dataSource>

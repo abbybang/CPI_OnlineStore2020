@@ -20,11 +20,13 @@ function userLogin( username, password ){
 			password: password
 		}
 	}).done(function(result){
-		$("#loginContainer").html(result);
+		$('#errMsg').val($(result).filter('#errMsg').val());
 		var errMsg = $("#errMsg").val();
 
 		if(errMsg){
 			alertify.alert("<i class='fa fa-exclamation-triangle'> " + errMsg + "</i>");
+		} else {
+			window.location.href = contextPath + "Home-page";
 		}
 	});
 }

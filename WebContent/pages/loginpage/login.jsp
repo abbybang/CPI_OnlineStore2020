@@ -43,6 +43,7 @@
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		$('.content').remove();
 		$("#loginBtn").bind( "click", function(){
 			var username = $("#username").val();
 			var password = $("#password").val();
