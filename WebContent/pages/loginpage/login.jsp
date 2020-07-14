@@ -10,11 +10,11 @@
    <div class="content">
 
     <div class="loader-wrapper">
-   <div class="loader"></div>
+   		<div class="loader"></div>
 
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-  </div>
+    	<div class="loader-section section-left"></div>
+    	<div class="loader-section section-right"></div>
+  	</div>
   </div>
   
 	<div id="loginContainer">
@@ -40,9 +40,12 @@
 	</div>
 	<jsp:include page="/pages/footer.jsp" />
 	<input type="hidden" value="${errMsg}" id="errMsg">
+	<input type="hidden" value="${pagePath}" id="pagePath">
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		$('.content').remove();
 		$("#loginBtn").bind( "click", function(){
 			var username = $("#username").val();
 			var password = $("#password").val();

@@ -22,17 +22,20 @@ function userLogin( username, password ){
 			password: password
 		}
 	}).done(function(result){
-		$("#loginContainer").html(result);
+		try{
+			$('#errMsg').val($(result).filter('#errMsg').val());
+		}catch(er){
+			console.log(er);
+			$('#errMsg').val('');
+		}
 		var errMsg = $("#errMsg").val();
 		
 		if(errMsg){
-			alertify.alert("<i class='fa fa-exclamation-triangle'>" + errMsg + "</i>");
-		}else{
-			window.location.href = contextPath + "/Homepage";
+			alertify.alert("<i class='fa fa-exclamation-triangle'> " + errMsg + "</i>");
+		} else {
+			window.location.href = result;
+
 		}
-
-
-
 		
 	});
 }

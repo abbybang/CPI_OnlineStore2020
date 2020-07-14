@@ -22,10 +22,10 @@
 <jsp:include page="/pages/HomepageM/HomepageSupportSection.jsp"/>
 <jsp:include page="/pages/HomepageM/HomepageContact.jsp"/>
 <script>var contextPath = "${pageContext.request.contextPath}/";</script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script> 
+
 <link rel="stylesheet" href= "css/HomePageCss/Preloader.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script> 
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}

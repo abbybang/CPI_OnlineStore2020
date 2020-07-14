@@ -10,8 +10,9 @@
 <title>LAPTOP FACTORY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href= "css/HomePageCss/HomePageCss.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script>
 <script>var contextPath = "${pageContext.request.contextPath}/";</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/HPviewfunctions/HomePageView.js"></script>
 
 <script>
 var userId = '${sessionScope.user.userId}';
@@ -35,12 +36,14 @@ var userId = '${sessionScope.user.userId}';
       <a href="#products" class="ish-bar-item ish-button  ish-text-white"> PRODUCTS</a>
       <a href="#about" class="ish-bar-item ish-button  ish-text-white">ABOUT</a>
       <a href="#contact" class="ish-bar-item ish-button  ish-text-white"  onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">CONTACT</a>
-      <a href="#support" class="ish-bar-item ish-button  ish-text-white">SUPPORT</a>
-      <a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">SIGNIN</a>
-      
-    <c:if test="${sessionScope.user!=null}">
-    <a href="${pageContext.request.contextPath}/Homepage"class="ish-bar-item ish-button  ish-text-white" id="logout">LOGOUT</a>
-    </c:if>
+      <a href="#support" class="ish-bar-item ish-button  ish-text-white">SUPPORT</a>   
+      <c:if test="${ sessionScope.user == null }">
+      	<a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">${ account }</a>
+      </c:if>
+      <c:if test="${ sessionScope.user != null }">
+      	<a class="ish-bar-item ish-button  ish-text-white" id="signOut">${ account }</a>
+      </c:if>
+
       
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
