@@ -2,6 +2,19 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>OnlineStore2020</display-name>
   
+	
+<!--REGISTRATION CONTROLLER==========================================-->
+  <servlet>
+  	<servlet-name>registrationcontroller</servlet-name>
+  	<servlet-class>ph.com.cpi.onlinestore2020.controller.RegistrationController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>registrationcontroller</servlet-name>
+  	<url-pattern>/user-register</url-pattern>
+  </servlet-mapping>
+ 
+<!--ONLINE STORE CONTROLLER==========================================--> 
 	<servlet>
  		<servlet-name>OnlineStoreController</servlet-name>
  		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
@@ -10,7 +23,8 @@
  		<servlet-name>OnlineStoreController</servlet-name>
  		<url-pattern>/Homepage</url-pattern>
  	</servlet-mapping>
-	
+
+<!--LOGIN CONTROLLER================================================-->	
 	<servlet>
 		<servlet-name>logincontroller</servlet-name>
 		<servlet-class>ph.com.cpi.onlinestore2020.controller.LoginController</servlet-class>
@@ -20,6 +34,7 @@
   		<url-pattern>/user-login</url-pattern>
 	</servlet-mapping>
   
+<!--PRODUCT CONTROLLER==============================================-->
 	<servlet>
 		<servlet-name>ProductController</servlet-name>
 		<servlet-class>ph.com.cpi.onlinestore2020.controller.ProductController</servlet-class>
@@ -29,6 +44,7 @@
 		<url-pattern>/products</url-pattern>
 	</servlet-mapping>
 	
+<!--PRODUCT INFO CONTROLLER=========================================-->
 	<servlet>
 		<servlet-name>ProductInfoController</servlet-name>
 		<servlet-class>ph.com.cpi.onlinestore2020.controller.ProductInfoController</servlet-class>
@@ -38,6 +54,7 @@
 		<url-pattern>/ShowProduct</url-pattern>
 	</servlet-mapping>
 	
+<!--CART CONTROLLER=================================================-->
 	<servlet>
  		<servlet-name>CartController</servlet-name>
  		<servlet-class>ph.com.cpi.onlinestore2020.controller.CartController</servlet-class>
@@ -53,4 +70,8 @@
 		<welcome-file>products</welcome-file>
 	</welcome-file-list> 
 
+  
+
+  
+  
 </web-app>

@@ -8,11 +8,31 @@ public class User {
 	private String address;
 	private String phoneNumber;
 	private String userName;
-	private String password;
-	private String status;
+	private String passWord;
+	private String isAdmin;
 	
 	public Integer getUserId() {
 		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	public void setUserID(Integer userId) {
@@ -68,25 +88,25 @@ public class User {
 	}
 
 	public String getPassword() {
-		return password;
+		return passWord;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.passWord = password;
 	}
 
 	public String getStatus() {
-		return status;
+		return isAdmin;
 	}
 
 	public void setStatus(String status) {
-		this.status = status;
+		this.isAdmin = status;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userID=" + userId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", address="
-				+ address + ", phoneNumber=" + phoneNumber + ", userName=" + userName + ", password=" + password
-				+ ", status=" + status + "]";
+				+ address + ", phoneNumber=" + phoneNumber + ", userName=" + userName + ", password=" + passWord
+				+ ", status=" + isAdmin + "]";
 	}
 }

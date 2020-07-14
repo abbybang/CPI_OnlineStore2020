@@ -55,4 +55,16 @@ public class CartServiceImpl implements CartService {
 		params.put("productID", productID);
 		cartDAO.deleteItem(params);
 	}
+	
+	//ADD PRODUCT
+	@Override
+	public List<Cart> addCartItems(Integer customerId, Integer productId, BigDecimal price, Integer quantity) throws SQLException {
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("customerId", customerId);
+		params.put("productId", productId);
+		params.put("price", price);
+		params.put("quantity", quantity);
+		cartDAO.addCartItems(params);
+		return null;
+	}
 }

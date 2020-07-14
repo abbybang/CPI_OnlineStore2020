@@ -36,20 +36,9 @@ public class CartDAOImpl implements CartDAO {
 		try(SqlSession session = sqlSessionFactory.openSession()) {
 			cartItems = session.selectList("getCartItems", params);
 		}
-		
-//		Cart item1 = new Cart(1, 11, "Aspire 3 A315-42-R4BG", new BigDecimal(19999), 3);
-//		Cart item2 = new Cart(1, 12, "Aspire 5 A514-53-39QP", new BigDecimal(25999), 1);
-//		Cart item3 = new Cart(1, 13, "Aspire 5 A514-52KG-31B8", new BigDecimal(26999), 2);
-//		
-//		cartItems.add(item1);
-//		cartItems.add(item2);
-//		cartItems.add(item3);
-		
-//		cartItems = null;
-		
 		return cartItems;
 	}
-
+	
 	@Override
 	public void addTransaction(HashMap<String, Object> params) throws SQLException {
 		try(SqlSession session = sqlSessionFactory.openSession()) {
@@ -83,4 +72,11 @@ public class CartDAOImpl implements CartDAO {
 		}
 	}
 	
+	@Override
+	public void addCartItems(HashMap<String, Object> params) throws SQLException{
+		try(SqlSession session = sqlSessionFactory.openSession()){
+			session.update("addCartItems",params);
+			session.commit();
+		}
+	}
 }
