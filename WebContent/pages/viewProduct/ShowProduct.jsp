@@ -15,7 +15,6 @@
 			var userId = '${sessionScope.user.userId}';
 			var productId =	'${productInfo.productId}';
 			var price =	'${productInfo.price}';
-			console.log(userId);
 	</script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/third-party/jquery-3.5.1.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/productinfo.js"></script>
@@ -27,7 +26,10 @@
 	  <img alt="Not Found" height= "400" width="400" type="image" src="${pageContext.request.contextPath}/productinfoimages/${productInfo.productId}.jpg">
 	  <div class="productname">${productInfo.productName}</div>
 	  <div class="brand">${productInfo.brand}</div>
+	  
 	  <p id="price"><fmt:formatNumber type="number" pattern="###,###.##" value="${productInfo.price}"/></p>
+	  <div id="description">${productInfo.description}</div>
+	  <br>
 	 
 	  <form>
 		  <input type="button" value="-" id="minus"> 

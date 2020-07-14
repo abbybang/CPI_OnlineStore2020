@@ -9,9 +9,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ph.com.cpi.onlinestore2020.model.Cart;
 import ph.com.cpi.onlinestore2020.model.Transaction;
+import ph.com.cpi.onlinestore2020.model.User;
 import ph.com.cpi.onlinestore2020.service.impl.CartServiceImpl;
 
 public class CartController extends HttpServlet {
@@ -25,9 +27,25 @@ public class CartController extends HttpServlet {
 		
 		try {
 			String action = request.getParameter("action");
-			Integer customerID = Integer.parseInt(request.getParameter("customerID"));
+			HttpSession session = request.getSession();
+			User user = (User) session.getAttribute("user");
+			Integer customerID = user.getUserId();
 			
-			if(action.equals("view")) {
+			if(action != null && action.equals("confirm")) {
+				page = "pages/Homepagemain/Homepage.jsp";
+				BigDecimal grandTotal = new BigDecimal(Double.parseDouble(request.getParameter("grandTotal")));
+				cartService.addTransaction(customerID, grandTotal);
+				Transaction transaction = cartService.getTransaction(customerID).get(0);
+				List<Cart> cartItems = cartService.getCartItems(customerID);
+				
+				for(Cart item : cartItems) {
+					cartService.addSale(transaction.getTransactionID(), item.getProductId(), item.getPrice(), item.getQuantity());
+				}
+				
+				for(Cart item : cartItems) {
+					cartService.deleteItem(customerID, item.getProductId());
+				}
+			} else {
 				page = "pages/cart/cart.jsp";
 				
 				List<Cart> cartItems = cartService.getCartItems(customerID);
@@ -46,33 +64,10 @@ public class CartController extends HttpServlet {
 				request.setAttribute("cartItems", cartItems);
 				request.setAttribute("grandTotal", grandTotal);
 				request.setAttribute("itemCount", itemCount);
-				
-				System.out.println("Is cartItems empty? " + (cartItems == null));
-				System.out.println("cartItems.size(): " + cartItems.size());
-				System.out.println("Customer ID: " + customerID);
-				System.out.println("Performed 'view' action");
-			} else if(action.equals("confirm")) {
-				page = "pages/cart/cart.jsp";
-				BigDecimal grandTotal = new BigDecimal(Double.parseDouble(request.getParameter("grandTotal")));
-				cartService.addTransaction(customerID, grandTotal);
-				Transaction transaction = cartService.getTransaction(customerID).get(0);
-				List<Cart> cartItems = cartService.getCartItems(customerID);
-				
-				for(Cart item : cartItems) {
-					cartService.addSale(transaction.getTransactionID(), item.getProductId(), item.getPrice(), item.getQuantity());
-				}
-				
-				for(Cart item : cartItems) {
-					cartService.deleteItem(customerID, item.getProductId());
-				}
-				
-				System.out.println("Transaction ID: " + transaction.getTransactionID());
-				System.out.println("Performed 'confirm' action");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);
 	}
@@ -87,24 +82,16 @@ public class CartController extends HttpServlet {
 			
 			if(action.equals("addProductCart")){				
 				Integer customerId = Integer.parseInt(request.getParameter("userId"));	
-				Integer productId = Integer.parseInt(request.getParameter("productId"));	
-				BigDecimal price = new BigDecimal(request.getParameter("price"));				
+				Integer productId = Integer.parseInt(request.getParameter("productId"));
+				BigDecimal price = new BigDecimal(request.getParameter("price"));		
 				Integer quantity = Integer.parseInt(request.getParameter("quantity"));	
-
 				
-				System.out.println(customerId);
-				System.out.println(productId);
-				System.out.println(price);
-				System.out.println(quantity);
-				
-				System.out.println("ADD--CART CONTROLLER");
 				request.setAttribute("cartService", cartService.addCartItems(customerId, productId, price, quantity));
 			
 				page = "pages/cart/cart.jsp";
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			System.out.println("FAILED--ADD--CART CONTROLLER");
 			page = "pages/cart/cart.jsp";
 		}
 		requestDispatcher = request.getRequestDispatcher(page);

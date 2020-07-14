@@ -1,3 +1,6 @@
+body{
+  margin: 0;
+}
 
 .Product {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -7,10 +10,16 @@
   font-family: arial;
 }
 
-.price {
+
+.Product #price{
   color: grey;
   font-size: 22px;
 }
+.Product #description{
+  color: black;
+  font-size: 22px;
+}
+
 .Product stock {
   color: grey;
   font-size: 22px;

@@ -42,8 +42,8 @@ public class HomePageController extends HttpServlet {
 	}catch(Exception e) {
 		e.printStackTrace();
 		page = "/pages/error.jsp";
+		
 	}
-	
 	rd = request.getRequestDispatcher(page);
 	rd.forward(request, response);
 }
@@ -73,6 +73,7 @@ public class HomePageController extends HttpServlet {
 			e.printStackTrace();
 			page = "pages/error.jsp";
 		}
+	
 		requestDispatcher = request.getRequestDispatcher(page);
 		requestDispatcher.forward(request, response);
 		 

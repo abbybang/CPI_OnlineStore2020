@@ -2,17 +2,7 @@ function initCartPage() {
 	console.log("Inside initCartPage()");
 	
 	$("button#shopBtn").click(function() {
-//		$.ajax({
-//			url: contextPath + "",
-//			data: {
-//				
-//			},
-//			method: ""
-//		}).done(function(result) {
-//			$("").html(result);
-//		}).fail(function(result) {
-//			console.log(result);
-//		});
+		window.location.href = contextPath;
 		
 	    console.log("'Continue Shopping' button was clicked.");
 	});
@@ -28,17 +18,7 @@ function initCartPage() {
 				productID = matches[1];
 			}
 			
-//			$.ajax({
-//				url: contextPath + "",
-//				data: {
-//					
-//				},
-//				method: "POST"
-//			}).done(function(result) {
-//				$("").html(result);
-//			}).fail(function(result) {
-//				console.log(result);
-//			});
+			window.location.href = contextPath + "ShowProduct?productId=" + productID;
 
 			console.log("Customer ID: " + customerID);
 			console.log("Product ID: " + productID);
@@ -48,20 +28,20 @@ function initCartPage() {
 	});
 	
 	$("button#confirmBtn").click(function() {
-//		$.ajax({
-//			url: contextPath + "cart",
-//			data: {
-//				customerID: customerID,
-//				grandTotal: grandTotal,
-//				action: "confirm"
-//			},
-//			method: "POST"
-//		}).done(function(result) {
-//			$("#mainDiv").html(result);
-//		}).fail(function(result) {
-//			console.log(result);
-//		});
+		$.ajax({
+			url: contextPath + "cart",
+			data: {
+				action: "confirm",
+				grandTotal: grandTotal
+			},
+			method: "GET"
+		}).done(function(result) {
+			window.location.href = contextPath;
+		}).fail(function(result) {
+			console.log(result);
+		});
 		
 	    console.log("'Confirm' button was clicked.");
 	});
+	
 }

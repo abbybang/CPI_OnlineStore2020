@@ -30,6 +30,10 @@
 			<button type="button" value="delete" class="btn btn-crud" id="delete" title="Delete">
 				<i class="glyphicon glyphicon-trash"></i>
 			</button>
+			<button type="button" class="btn btn-danger" id="logout">
+				<i class="glyphicon glyphicon-log-out"></i>
+				<span>Logout</span>
+			</button>
 		</div>
 	</div>
 	<div class="container" id="container-div">

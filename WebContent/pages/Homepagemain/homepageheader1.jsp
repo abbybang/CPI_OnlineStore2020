@@ -30,7 +30,7 @@
       	<a href="${pageContext.request.contextPath}/user-login" class="ish-bar-item ish-button  ish-text-white">${ account }</a>
       </c:if>
       <c:if test="${ sessionScope.user != null }">
-      	<a href="#" class="ish-bar-item ish-button  ish-text-white">${ account }</a>
+      	<a class="ish-bar-item ish-button  ish-text-white" id="signOut">${ account }</a>
       </c:if>
       
     </div>
