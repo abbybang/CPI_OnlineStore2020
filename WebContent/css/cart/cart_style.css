@@ -46,3 +46,7 @@ div#checkoutDiv {
 .imageDiv#emptyCartDiv {
 	margin: auto;
 }
+
+#shopBtn{
+	margin-top: 20px;
+}

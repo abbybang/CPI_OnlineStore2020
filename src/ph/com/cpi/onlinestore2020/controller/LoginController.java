@@ -29,10 +29,7 @@ public class LoginController extends HttpServlet {
 			HttpSession session = request.getSession();
 			User user = (User) session.getAttribute("user");
 			if( user != null) {
-
-				pagePath =  "pages/loginpage/login.jsp";
-
-				pagePath =  "pages/HomepageM/Homepage.jsp";
+				pagePath = request.getContextPath()+"/Home-page";
 
 				request.setAttribute("user", user);
 				dispatcher = request.getRequestDispatcher(pagePath);
@@ -91,5 +88,13 @@ public class LoginController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		try {
+			if(event.equals("logout")) {
+				pagePath =request.getContextPath() + "/Homepage";
+				response.sendRedirect(pagePath);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

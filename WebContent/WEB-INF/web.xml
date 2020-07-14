@@ -21,7 +21,7 @@
  	</servlet>
  	<servlet-mapping>
  		<servlet-name>OnlineStoreController</servlet-name>
- 		<url-pattern>/Homepage</url-pattern>
+ 		<url-pattern>/Home-page</url-pattern>
  	</servlet-mapping>
 
 
@@ -65,21 +65,12 @@
  		<url-pattern>/cart</url-pattern>
  	</servlet-mapping>
  	
- 	<servlet>
- 		<servlet-name>HomePageController</servlet-name>
- 		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
- 	</servlet>
- 	<servlet-mapping>
- 		<servlet-name>HomePageController</servlet-name>
- 		<url-pattern>/Home-page</url-pattern>
- 	</servlet-mapping>
-
-
+ 
   
   <welcome-file-list>
-    <welcome-file>Homepage</welcome-file>
+    <welcome-file>Home-page</welcome-file>
   </welcome-file-list>
 
-  
+
 
 </web-app>

@@ -10,6 +10,8 @@ function loginValidation( username, password ){
 	}
 } 
 
+
+
 function userLogin( username, password ){
 	$.ajax({
 		url: contextPath + "user-login",
@@ -22,6 +24,12 @@ function userLogin( username, password ){
 	}).done(function(result){
 		$("#loginContainer").html(result);
 		var errMsg = $("#errMsg").val();
+		
+		if(errMsg){
+			alertify.alert("<i class='fa fa-exclamation-triangle'>" + errMsg + "</i>");
+		}else{
+			window.location.href = contextPath + "/Homepage";
+		}
 
 
 

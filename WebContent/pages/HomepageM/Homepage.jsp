@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<title>ONLINE STORE</title>
+<title>Laptop Factory Ph</title>
 <head>
 <link rel="icon" href="homeimages/favicon.ico" type="image/gif" sizes="16x16">
 

@@ -41,7 +41,7 @@ $(document).ready(function(){
 		var total;
 		if(userId == "")
 		{
-			window.location.href = "pages/loginpage/login.jsp";
+			window.location.href = contextPath + "user-login";
 		}
 		else{
 			if(qty == 0)
@@ -71,12 +71,10 @@ $(document).ready(function(){
 	$("#checkout").click(function() {
 		if(userId == "")
 		{
-			window.location.href = "pages/loginpage/login.jsp";
+			window.location.href = contextPath + "user-login";
 		}
 		else{
-			window.location.href = "pages/cart/cart.jsp";
+			window.location.href = contextPath + "cart";
 		}
 	});
-
-	
 });
