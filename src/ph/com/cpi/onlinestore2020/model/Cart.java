@@ -22,8 +22,8 @@ public class Cart {
 	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Integer userId) {
-		this.customerId = userId;
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 	public Integer getProductId() {
 		return productId;

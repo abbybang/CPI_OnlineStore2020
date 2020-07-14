@@ -28,17 +28,7 @@ function initCartPage() {
 				productID = matches[1];
 			}
 			
-//			$.ajax({
-//				url: contextPath + "",
-//				data: {
-//					
-//				},
-//				method: "POST"
-//			}).done(function(result) {
-//				$("").html(result);
-//			}).fail(function(result) {
-//				console.log(result);
-//			});
+			window.location.href = contextPath + "ShowProduct?productId=" + productID;
 
 			console.log("Customer ID: " + customerID);
 			console.log("Product ID: " + productID);
@@ -64,4 +54,5 @@ function initCartPage() {
 		
 	    console.log("'Confirm' button was clicked.");
 	});
+	
 }

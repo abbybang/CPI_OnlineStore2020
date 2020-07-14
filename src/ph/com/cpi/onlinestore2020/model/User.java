@@ -11,7 +11,7 @@ public class User {
 	private String password;
 	private String status;
 	
-	public Integer userId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
