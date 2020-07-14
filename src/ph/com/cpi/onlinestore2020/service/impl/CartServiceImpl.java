@@ -64,7 +64,7 @@ public class CartServiceImpl implements CartService {
 		params.put("productId", productId);
 		params.put("price", price);
 		params.put("quantity", quantity);
-		cartItems.addCartItems(params);
+		cartDAO.addCartItems(params);
 		return null;
 	}
 }

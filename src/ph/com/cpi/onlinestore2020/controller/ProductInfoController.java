@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import ph.com.cpi.onlinestore2020.model.User;
 import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
-import sun.rmi.server.Dispatcher;
 
 public class ProductInfoController extends HttpServlet {
 	ProductServiceImpl productService = new ProductServiceImpl();
@@ -38,19 +37,7 @@ public class ProductInfoController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			String action = request.getParameter("action");
-			if(action.equalsIgnoreCase("checkout"))
-			{
-				String userId = request.getParameter("userID");
-				request.setAttribute("customerID", userId);
-				request.setAttribute("action", "view");
-				response.sendRedirect("pages/cart/cart.jsp");
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+		doGet(request, response);
 	}
 
 }

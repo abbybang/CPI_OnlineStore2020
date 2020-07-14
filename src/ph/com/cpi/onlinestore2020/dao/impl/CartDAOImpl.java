@@ -49,7 +49,6 @@ public class CartDAOImpl implements CartDAO {
 		
 		return cartItems;
 	}
-<<<<<<< HEAD
 	@Override
 	public void addCartItems(HashMap<String, Object> params) throws SQLException{
 		try(SqlSession session = sqlSessionFactory.openSession()){
@@ -57,7 +56,6 @@ public class CartDAOImpl implements CartDAO {
 			session.commit();
 		}
 	}
-=======
 
 	@Override
 	public void addTransaction(HashMap<String, Object> params) throws SQLException {
@@ -92,5 +90,4 @@ public class CartDAOImpl implements CartDAO {
 		}
 	}
 	
->>>>>>> 2f2428837f1ee6ae608d76756cb9ca2b91b44eab
 }

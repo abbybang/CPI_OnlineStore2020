@@ -3,7 +3,6 @@
   <display-name>OnlineStore2020</display-name>
   
 	<servlet>
-<<<<<<< HEAD
 		<servlet-name>logincontroller</servlet-name>
 		<servlet-class>ph.com.cpi.onlinestore2020.controller.LoginController</servlet-class>
 	</servlet>
@@ -23,25 +22,13 @@
   </servlet-mapping>
   
 	<servlet>
-=======
->>>>>>> 2f2428837f1ee6ae608d76756cb9ca2b91b44eab
  		<servlet-name>OnlineStoreController</servlet-name>
  		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
  	</servlet>
  	<servlet-mapping>
  		<servlet-name>OnlineStoreController</servlet-name>
  		<url-pattern>/Homepage</url-pattern>
- 	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>logincontroller</servlet-name>
-		<servlet-class>ph.com.cpi.onlinestore2020.controller.LoginController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>logincontroller</servlet-name>
-  		<url-pattern>/user-login</url-pattern>
-	</servlet-mapping>
-  
+ 	</servlet-mapping>  
 	<servlet>
 		<servlet-name>ProductController</servlet-name>
 		<servlet-class>ph.com.cpi.onlinestore2020.controller.ProductController</servlet-class>
@@ -67,6 +54,15 @@
  	<servlet-mapping>
  		<servlet-name>CartController</servlet-name>
  		<url-pattern>/cart</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>HomePageController</servlet-name>
+ 		<servlet-class>ph.com.cpi.onlinestore2020.controller.HomePageController</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>HomePageController</servlet-name>
+ 		<url-pattern>/HomeXage</url-pattern>
  	</servlet-mapping>
 
 	<welcome-file-list> 

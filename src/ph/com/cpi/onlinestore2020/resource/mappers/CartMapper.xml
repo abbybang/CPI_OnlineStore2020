@@ -29,11 +29,11 @@
 		   AND C.USER_ID = #{customerID}
 	</select>
 	
-<<<<<<< HEAD
 	<update id="addCartItems">
 		INSERT INTO CART(USER_ID, PRODUCT_ID, PRICE, QUANTITY)
 		VALUES(#{customerId}, #{productId}, #{price}, #{quantity})
-=======
+	</update>
+	
 	<select id="getTransactionID" resultMap="transactionMap">
 		 SELECT
 		        TRANSACTION_ID,
@@ -65,7 +65,6 @@
 	
 	<update id="deleteItem">
 		DELETE FROM CART WHERE USER_ID = #{customerID} AND PRODUCT_ID = #{productID}
->>>>>>> 2f2428837f1ee6ae608d76756cb9ca2b91b44eab
 	</update>
 	
 </mapper>

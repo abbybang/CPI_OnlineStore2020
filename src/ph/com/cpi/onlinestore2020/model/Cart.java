@@ -9,14 +9,6 @@ public class Cart {
 	private BigDecimal price;
 	private Integer quantity;
 	
-<<<<<<< HEAD
-	public Integer getCustomerId() {
-		return customerId;
-	}
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
-=======
-	
 	public Cart(BigDecimal customerId, BigDecimal productId, String productName, BigDecimal price, BigDecimal quantity) {
 		super();
 		this.customerId = customerId.intValue();
@@ -29,10 +21,10 @@ public class Cart {
 	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Integer userId) {
-		this.customerId = userId;
->>>>>>> 2f2428837f1ee6ae608d76756cb9ca2b91b44eab
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
+	
 	public Integer getProductId() {
 		return productId;
 	}
