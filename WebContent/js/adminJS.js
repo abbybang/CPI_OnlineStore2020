@@ -120,7 +120,7 @@ $(document).ready(function(){
         	url: contextPath  + "user-login",
         	type:"POST",
         	data: {
-        		action : "logout"
+        		event : "logout"
         	}
         }).done(function(){
         	window.location.href = contextPath;
