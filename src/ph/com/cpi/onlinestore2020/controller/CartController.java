@@ -31,8 +31,8 @@ public class CartController extends HttpServlet {
 			User user = (User) session.getAttribute("user");
 			Integer customerID = user.getUserId();
 			
-			if(action.equals("confirm")) {
-				page = "pages/cart/cart.jsp";
+			if(action != null && action.equals("confirm")) {
+				page = "pages/Homepagemain/Homepage.jsp";
 				BigDecimal grandTotal = new BigDecimal(Double.parseDouble(request.getParameter("grandTotal")));
 				cartService.addTransaction(customerID, grandTotal);
 				Transaction transaction = cartService.getTransaction(customerID).get(0);

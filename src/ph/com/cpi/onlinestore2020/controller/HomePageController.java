@@ -16,7 +16,6 @@ import ph.com.cpi.onlinestore2020.service.impl.ProductServiceImpl;
 /**
  * Servlet implementation class HomePageController
  */
-@WebServlet("/HomePageController")
 public class HomePageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HomePageServiceImpl homepageList = new HomePageServiceImpl();

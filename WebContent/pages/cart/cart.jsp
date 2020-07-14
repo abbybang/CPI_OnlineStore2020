@@ -230,9 +230,9 @@
 			<br>
 		</div>
 	</body>
-<!-- 	<script type="text/javascript"> -->
-// 		$(document).ready(function() {
-// 			initCartPage();
-// 		});
-<!-- 	</script> -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			initCartPage();
+		});
+ 	</script>
 </html>
