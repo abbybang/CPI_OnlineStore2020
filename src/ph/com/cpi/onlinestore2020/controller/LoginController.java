@@ -57,16 +57,18 @@ public class LoginController extends HttpServlet {
 					 user = loginServiceImpl.getUser(username, password); 
 					 if(user != null) {
 						 if(user.getStatus().equalsIgnoreCase("Y")) {
-							 pagePath = "pages/home/AdminPage.jsp";
+							 pagePath = request.getContextPath()+"/products";
 						 } else {
-							 pagePath = "pages/Homepagemain/Homepage.jsp";
+							 pagePath = request.getContextPath()+"/Home-page";
 						 }
 						 
-						 dispatcher = request.getRequestDispatcher(pagePath);
+						// dispatcher = request.getRequestDispatcher(pagePath);
 						 request.setAttribute("user", user);
 						 HttpSession session = request.getSession();
 						 session.setAttribute("user", user);
-						 dispatcher.forward(request, response);
+						 
+						 //dispatcher.forward(request, response);
+						 response.sendRedirect(pagePath);
 					 } else {
 						 pagePath = "pages/loginpage/login.jsp";
 						 String errMsg = "The credentials you have entered is invalid. Please try again.";
